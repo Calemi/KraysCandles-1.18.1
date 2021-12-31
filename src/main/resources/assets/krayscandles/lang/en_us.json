@@ -19,6 +19,7 @@
   "item.krayscandles.soul_essence_greater": "Greater Soul Essence",
   "item.krayscandles.soul_essence_blessed_depleted": "Blessed Soul Essence (Depleted)",
   "item.krayscandles.soul_essence_blessed": "Blessed Soul Essence",
+  "lore.soul_essence": "Blade of the Cursed Night increases drop chance.",
 
   "item.krayscandles.iron_press": "Iron Press (Empty)",
   "item.krayscandles.iron_press_full": "Iron Press (Full)",
@@ -152,5 +153,26 @@
 
   "itemGroup.krayscandles.tabMain": "Kray's Candles - Main",
   "itemGroup.krayscandles.tabCandle": "Kray's Candles - Candles",
-  "itemGroup.krayscandles.tabTool": "Kray's Candles - Wands & Weapons"
+  "itemGroup.krayscandles.tabTool": "Kray's Candles - Wands & Weapons",
+
+
+
+
+
+  "lore.key.shift": "Shift",
+  "lore.key.ctrl": "Ctrl",
+  "lore.info": "Info",
+  "lore.controls": "Controls",
+  "lore.type.use": "Use",
+  "lore.type.use-open-hand": "Use-Open-Hand",
+  "lore.type.use-wrench": "Use-Wrench",
+  "lore.type.use-wallet": "Use-Wallet",
+  "lore.type.sneak-use": "Sneak-Use",
+  "lore.type.sneak-use-blueprint": "Sneak-Use-Blueprint",
+  "lore.type.sneak-use-book": "Sneak-Use-Book",
+  "lore.type.sneak-break-block": "Sneak-Break-Block",
+  "lore.type.release-use": "Release-Use",
+  "lore.type.left-click-block": "Left-Click-Block",
+  "lore.type.sneak-left-click-block": "Sneak-Left-Click-Block",
+  "lore.type.left-click-blueprint": "Left-Click-Blueprint"
 }

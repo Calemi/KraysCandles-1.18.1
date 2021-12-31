@@ -15,6 +15,8 @@ public class InitSetup {
      */
     public static void initCommon(final FMLCommonSetupEvent event) {
         LogHelper.log(KCReference.MOD_NAME, "Initializing Common-Side for " + KCReference.MOD_NAME);
+
+        InitEvents.initCommon();
     }
 
     /**
@@ -22,6 +24,9 @@ public class InitSetup {
      */
     public static void initClient(final FMLClientSetupEvent event) {
         LogHelper.log(KCReference.MOD_NAME, "Initializing Client-Side for " + KCReference.MOD_NAME);
+
+        InitEvents.initClient();
+        InitRenderLayers.init();
     }
 }
 

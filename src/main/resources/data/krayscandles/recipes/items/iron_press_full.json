@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "sss",
+    "sis",
+    "sss"
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "krayscandles:iron_press"
+    },
+    "s":
+    {
+      "item": "krayscandles:soybean"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:iron_press_full",
+    "count": 1
+  }
+}

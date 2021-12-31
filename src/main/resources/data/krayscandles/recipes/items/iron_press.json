@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "xlx",
+    "xgx",
+    "xxx"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    "g":
+    {
+      "item": "minecraft:glass"
+    },
+    "l":
+    {
+      "item": "minecraft:lever"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:iron_press",
+    "count": 1
+  }
+}

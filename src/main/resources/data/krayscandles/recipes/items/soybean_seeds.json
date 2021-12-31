@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "krayscandles:soybean"
+    }
+  ],
+  "result":
+  {
+    "item": "krayscandles:soybean_crop",
+    "count": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "krayscandles:iron_press_full"
+    }
+  ],
+  "result":
+  {
+    "item": "krayscandles:wax_chunk_soy_raw",
+    "count": 16
+  }
+}

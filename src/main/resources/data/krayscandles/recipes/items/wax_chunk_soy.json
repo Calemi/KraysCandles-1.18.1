@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "krayscandles:wax_chunk_soy_raw"
+  },
+  "result": "krayscandles:wax_chunk_soy",
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -7,9 +7,6 @@ import net.minecraft.world.level.block.Block;
  */
 public class BlockBase extends Block {
 
-    /**
-     * @param properties The specific properties for the Block. (Creative Tab, hardness, material, etc.)
-     */
     public BlockBase (Properties properties) {
         super(properties);
     }

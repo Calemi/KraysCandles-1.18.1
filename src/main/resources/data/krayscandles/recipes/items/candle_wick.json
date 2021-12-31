@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "s",
+    "w",
+    "i"
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "minecraft:iron_nugget"
+    },
+    "w":
+    {
+      "item": "krayscandles:wax_chunk_soy_small"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:candle_wick",
+    "count": 2
+  }
+}
