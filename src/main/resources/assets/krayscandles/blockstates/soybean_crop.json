@@ -1,0 +1,16 @@
+{
+  "variants": {
+
+    "age=0": {"model": "krayscandles:block/soybean_crop0"},
+    "age=1": {"model": "krayscandles:block/soybean_crop1"},
+    "age=2": {"model": "krayscandles:block/soybean_crop2"},
+    "age=3": {"model": "krayscandles:block/soybean_crop3"},
+    "age=4": {"model": "krayscandles:block/soybean_crop4"},
+    "age=5": {"model": "krayscandles:block/soybean_crop5"},
+    "age=6": {"model": "krayscandles:block/soybean_crop6"},
+    "age=7": {"model": "krayscandles:block/soybean_crop7"}
+  }
+
+
+
+}

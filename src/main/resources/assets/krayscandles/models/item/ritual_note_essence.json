@@ -1,0 +1,55 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [512, 512],
+	"textures": {
+		"0": "krayscandles:items/ritual_note_essence",
+		"1": "krayscandles:items/ritual_note_back",
+		"particle": "krayscandles:items/ritual_note_essence"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 0.1, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 16, 16, 0], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [90, 0, 0],
+			"translation": [0.25, 2.25, 3.75],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [90, 0, 0],
+			"translation": [0.25, 2.25, 3.75],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [60, 0, 0],
+			"translation": [-9, 12.25, 3.75],
+			"scale": [0.87, 0.87, 0.87]
+		},
+		"firstperson_lefthand": {
+			"rotation": [72, 0, 0],
+			"translation": [0, 5.75, 4.25],
+			"scale": [0.39, 0.39, 0.39]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [62, 0, 0],
+			"translation": [0, 3, 0],
+			"scale": [0.82, 0.82, 0.82]
+		},
+		"fixed": {
+			"rotation": [-90, -180, 0],
+			"translation": [0, 0, -9.25],
+			"scale": [1.17, 1.17, 1.17]
+		}
+	}
+}

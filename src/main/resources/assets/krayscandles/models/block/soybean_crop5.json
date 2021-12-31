@@ -1,0 +1,7 @@
+{
+
+  "parent": "block/crop",
+  "textures": {
+    "crop": "krayscandles:blocks/soybean_crop_stage5"
+  }
+}

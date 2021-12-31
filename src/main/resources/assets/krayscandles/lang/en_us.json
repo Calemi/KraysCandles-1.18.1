@@ -1,0 +1,156 @@
+{
+  "item.krayscandles.wax_chunk_soy_raw":"Raw Chunk of Soy Wax",
+  "item.krayscandles.wax_chunk_soy": "Chunk of Soy Wax",
+  "item.krayscandles.wax_chunk_soy_small": "Small Chunks of Soy Wax",
+
+  "item.krayscandles.wax_chunk_blessed": "Chunk of Blessed Wax",
+  "item.krayscandles.wax_chunk_blessed_small": "Small Chunks of Blessed Wax",
+  "item.krayscandles.wax_chunk_cursed": "Chunk of Cursed Wax",
+  "item.krayscandles.wax_chunk_cursed_small": "Small Chunks of Cursed Wax",
+  "item.krayscandles.wax_chunk_purged": "Chunk of Purged Wax",
+  "item.krayscandles.wax_chunk_purged_small": "Small Chunks of Purged Wax",
+  "item.krayscandles.wax_chunk_bee": "Chunk of Bee Wax",
+  "item.krayscandles.wax_ear": "Clump of Ear Wax",
+
+  "item.krayscandles.candle_wick": "Candle Wick",
+
+  "item.krayscandles.soul_essence_lesser": "Lesser Soul Essence",
+  "item.krayscandles.soul_essence_greater_depleted": "Greater Soul Essence (Depleted)",
+  "item.krayscandles.soul_essence_greater": "Greater Soul Essence",
+  "item.krayscandles.soul_essence_blessed_depleted": "Blessed Soul Essence (Depleted)",
+  "item.krayscandles.soul_essence_blessed": "Blessed Soul Essence",
+
+  "item.krayscandles.iron_press": "Iron Press (Empty)",
+  "item.krayscandles.iron_press_full": "Iron Press (Full)",
+  "item.krayscandles.iron_press_blessed": "Iron Press (Blessed)",
+  "item.krayscandles.iron_press_cursed": "Iron Press (Cursed)",
+  "item.krayscandles.iron_press_purged": "Iron Press (Purged)",
+
+  "item.krayscandles.wand_hilt": "Great Wand Hilt",
+  "item.krayscandles.scalpel_hilt": "Scalpel Hilt",
+  "item.krayscandles.scalpel_blade_dull": "Dull Scalpel Blade",
+  "item.krayscandles.scalpel_blade_sharp": "Sharpened Scalpel Blade",
+  "item.krayscandles.night_sword_hilt": "Hilt of the Cursed Night",
+  "item.krayscandles.night_sword_blade_dull": "Dull Blade of the Cursed Night",
+  "item.krayscandles.night_sword_blade_sharp": "Sharpened Blade of the Cursed Night",
+
+  "item.krayscandles.stone_man_head": "Stone Statue Head",
+  "item.krayscandles.stone_man_body": "Stone Statue Body",
+  "item.krayscandles.stone_man_base": "Stone Statue Base",
+  "item.krayscandles.stone_statue_uncarved": "Stone Statue (Uncarved)",
+  "item.krayscandles.stone_statue_carved": "Stone Statue (Carved)",
+
+  "item.krayscandles.zombie_ear": "Zombie Ear",
+  "item.krayscandles.flying_bat_eyeball": "Flying Bat Eyeball",
+  "item.krayscandles.q_tip": "Cotton Swab",
+  "item.krayscandles.cloth_cursed": "Cursed Cloth",
+  "item.krayscandles.wings_wraith": "Wings of the Damned",
+  "item.krayscandles.wings_divine": "Divine Wings",
+
+  "item.krayscandles.soybean": "Soybean",
+  "item.krayscandles.garlic": "Garlic",
+
+  "item.krayscandles.rune_catalyst": "Rune Catalyst",
+  "item.krayscandles.rune_blessed_flight": "Rune of Blessed Flight",
+  "item.krayscandles.rune_cursed_night": "Rune of the Cursed Night",
+  "item.krayscandles.rune_purged_light": "Rune of the Purged Light",
+  "item.krayscandles.rune_great_fire": "Rune of the Great Fire",
+  "item.krayscandles.rune_great_levitation": "Rune of Great Levitation",
+  "item.krayscandles.rune_zen_healing": "Rune of Zen Healing",
+  "item.krayscandles.rune_great_magic": "Rune of The Great Magician",
+  "item.krayscandles.rune_great_luck": "Rune of Great Luck",
+  "item.krayscandles.rune_great_energy": "Rune of Great Energy",
+  "item.krayscandles.rune_great_mining": "Rune of The Great Mines",
+  "item.krayscandles.rune_null": "Rune of Nullification",
+
+  "item.krayscandles.helmet_blessed_night": "Helm of The Blessed Night",
+
+  "item.krayscandles.wand_basic": "Greater Wand of Fire",
+  "item.krayscandles.wand_energy": "Greater Wand of Energy",
+  "item.krayscandles.wand_mining": "Greater Wand of Mining",
+  "item.krayscandles.wand_magician": "Greater Wand of The Magician",
+  "item.krayscandles.wand_levitation": "Greater Wand of Levitation",
+  "item.krayscandles.wand_blessed_light": "Blessed Staff of the Light",
+
+  "item.krayscandles.scalpel": "Scalpel",
+  "item.krayscandles.wax_sword": "Wax Katana",
+  "item.krayscandles.blade_night": "Blade of the Cursed Night",
+
+  "item.krayscandles.ritual_note_essence": "Essence Ritual Note",
+  "item.krayscandles.ritual_note_rune": "Rune Ritual Note",
+  "item.krayscandles.ritual_note_candle": "Candle Ritual Note",
+  "item.krayscandles.ritual_note_wand": "Wand Ritual Note",
+  "item.krayscandles.ritual_note_wraith": "Wraith Ritual Note",
+
+  "item.krayscandles.music_disc_chunk": "Music Disc",
+
+
+
+
+
+  "block.krayscandles.candle_soy": "Soy Candle",
+
+  "block.krayscandles.candle_soy_colored_white": "White Soy Candle",
+  "block.krayscandles.candle_soy_colored_orange": "Orange Soy Candle",
+  "block.krayscandles.candle_soy_colored_magenta": "Magenta Soy Candle",
+  "block.krayscandles.candle_soy_colored_light_blue": "Light Blue Soy Candle",
+  "block.krayscandles.candle_soy_colored_yellow": "Yellow Soy Candle",
+  "block.krayscandles.candle_soy_colored_lime": "Lime Soy Candle",
+  "block.krayscandles.candle_soy_colored_pink": "Pink Soy Candle",
+  "block.krayscandles.candle_soy_colored_blue": "Blue Soy Candle",
+  "block.krayscandles.candle_soy_colored_gray": "Gray Soy Candle",
+  "block.krayscandles.candle_soy_colored_light_gray": "Light Gray Soy Candle",
+  "block.krayscandles.candle_soy_colored_cyan": "Cyan Soy Candle",
+  "block.krayscandles.candle_soy_colored_purple": "Purple Soy Candle",
+  "block.krayscandles.candle_soy_colored_brown": "Brown Soy Candle",
+  "block.krayscandles.candle_soy_colored_green": "Green Soy Candle",
+  "block.krayscandles.candle_soy_colored_red": "Red Soy Candle",
+  "block.krayscandles.candle_soy_colored_black": "Black Soy Candle",
+
+  "block.krayscandles.candle_blessed": "Blessed Candle of The Heavens",
+  "block.krayscandles.candle_cursed": "Cursed Candle of The Night",
+  "block.krayscandles.candle_purged": "Purged Candle of The Light",
+  "block.krayscandles.candle_fire": "Great Candle of Fire",
+  "block.krayscandles.candle_levitate": "Great Candle of Levitation",
+  "block.krayscandles.candle_zen": "Great Candle of Zen Healing",
+  "block.krayscandles.candle_invis": "Great Candle of Invisibility",
+  "block.krayscandles.candle_luck": "Great Candle of Luck",
+  "block.krayscandles.candle_energy": "Great Candle of Energy",
+  "block.krayscandles.candle_cavern": "Great Candles of Caverns",
+  "block.krayscandles.candle_null": "Cursed Candle of Nullification",
+  "block.krayscandles.candle_wax_bee": "Bee Wax Candle",
+  "block.krayscandles.candle_wax_ear": "Ear Wax Candle",
+
+  "block.krayscandles.candle_soy_mount": "Soy Candle Mount",
+
+  "block.krayscandles.lantern_soul_trapped": "Trapped Soul Lantern",
+
+  "block.krayscandles.stone_altar_tile": "Stone Altar",
+  "block.krayscandles.statue": "Statue of the Ancient Candle",
+
+  "block.krayscandles.soybean_crop": "Soybean Seeds",
+
+  "block.krayscandles.waxed_red_sand": "Waxed Red Sand",
+  "block.krayscandles.waxed_sand": "Waxed Sand",
+  "block.krayscandles.waxed_gravel": "Waxed Gravel",
+
+
+
+
+  "entity.krayscandles.wraith_fire": "Wraith of Fire",
+  "entity.krayscandles.wraith_water": "Wraith of Water",
+  "entity.krayscandles.wraith_air": "Wraith of Air",
+  "entity.krayscandles.wraith_explosion": "Wraith of Explosions",
+  "entity.krayscandles.wraith_magic": "Wraith of Magic",
+  "entity.krayscandles.wraith_mob": "Wraith of Monsters",
+  "entity.krayscandles.wraith_damned": "Wraith of the Damned",
+  "entity.krayscandles.vampire": "Vampire",
+
+
+
+
+
+  "itemGroup.krayscandles.tabMain": "Kray's Candles - Main",
+  "itemGroup.krayscandles.tabCandle": "Kray's Candles - Candles",
+  "itemGroup.krayscandles.tabTool": "Kray's Candles - Wands & Weapons"
+}

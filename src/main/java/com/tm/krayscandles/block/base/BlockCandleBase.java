@@ -14,9 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -36,7 +34,7 @@ import java.util.function.ToIntFunction;
 /**
  * The base class for Candle Blocks.
  */
-public abstract class CandleBlockBase extends BlockBase implements EntityBlock {
+public abstract class BlockCandleBase extends BaseEntityBlock implements EntityBlock {
 
     /**
      * The state of the Candle being lit.
@@ -48,12 +46,12 @@ public abstract class CandleBlockBase extends BlockBase implements EntityBlock {
      */
     public static final ToIntFunction<BlockState> LIGHT_EMISSION = (blockState) -> blockState.getValue(LIT) ? 14 : 0;
 
-    public CandleBlockBase() {
+    public BlockCandleBase() {
         super(Block.Properties.of(Material.DECORATION, MaterialColor.COLOR_YELLOW).strength(0.5F).sound(SoundType.CANDLE).lightLevel(LIGHT_EMISSION).noOcclusion());
         registerDefaultState(getStateDefinition().any().setValue(LIT, false));
     }
 
-    public CandleBlockBase(Properties properties) {
+    public BlockCandleBase(Properties properties) {
         super(properties);
         registerDefaultState(getStateDefinition().any().setValue(LIT, false));
     }
@@ -212,6 +210,11 @@ public abstract class CandleBlockBase extends BlockBase implements EntityBlock {
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return getCandleShape(state);
+    }
+
+
+    public RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
     }
 
     @Override

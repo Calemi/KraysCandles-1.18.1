@@ -1,0 +1,7 @@
+{
+	"parent": "krayscandles:block/candle_soy",
+	"textures": {
+		"0": "krayscandles:blocks/candle_soy_colored_blue",
+		"particle": "krayscandles:blocks/candle_soy_colored_blue"
+	}
+}

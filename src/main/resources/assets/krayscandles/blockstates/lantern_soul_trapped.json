@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "krayscandles:block/lantern_soul_trapped"
+    },
+    "hanging=true": {
+      "model": "krayscandles:block/lantern_soul_trapped_hanging"
+    }
+  }
+}

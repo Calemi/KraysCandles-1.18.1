@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "krayscandles:block/candle_energy", "y": 90},
+    "facing=south": { "model": "krayscandles:block/candle_energy", "y": 90},
+    "facing=west": { "model": "krayscandles:block/candle_energy"},
+    "facing=east": { "model": "krayscandles:block/candle_energy"}
+  }
+}

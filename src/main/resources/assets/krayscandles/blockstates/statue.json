@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "krayscandles:block/statue" },
+    "facing=south": { "model": "krayscandles:block/statue", "y":  180},
+    "facing=west": { "model": "krayscandles:block/statue", "y":  270},
+    "facing=east": { "model": "krayscandles:block/statue", "y":  90}
+  }
+}

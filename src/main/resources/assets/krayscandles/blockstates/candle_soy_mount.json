@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "krayscandles:block/candle_soy_mount" },
+    "facing=south": { "model": "krayscandles:block/candle_soy_mount", "y":  180},
+    "facing=west": { "model": "krayscandles:block/candle_soy_mount", "y":  270},
+    "facing=east": { "model": "krayscandles:block/candle_soy_mount", "y":  90}
+  }
+}

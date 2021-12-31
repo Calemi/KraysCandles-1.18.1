@@ -1,0 +1,21 @@
+{
+  "parent": "krayscandles:block/candle_soy",
+  "overrides": [
+    {"predicate": {"color": 0},  "model": "krayscandles:block/candle_soy_colored_white"},
+    {"predicate": {"color": 1},  "model": "krayscandles:block/candle_soy_colored_orange"},
+    {"predicate": {"color": 2},  "model": "krayscandles:block/candle_soy_colored_magenta"},
+    {"predicate": {"color": 3},  "model": "krayscandles:block/candle_soy_colored_light_blue"},
+    {"predicate": {"color": 4},  "model": "krayscandles:block/candle_soy_colored_yellow"},
+    {"predicate": {"color": 5},  "model": "krayscandles:block/candle_soy_colored_lime"},
+    {"predicate": {"color": 6},  "model": "krayscandles:block/candle_soy_colored_pink"},
+    {"predicate": {"color": 7},  "model": "krayscandles:block/candle_soy_colored_gray"},
+    {"predicate": {"color": 8},  "model": "krayscandles:block/candle_soy_colored_light_gray"},
+    {"predicate": {"color": 9},  "model": "krayscandles:block/candle_soy_colored_cyan"},
+    {"predicate": {"color": 10},  "model": "krayscandles:block/candle_soy_colored_purple"},
+    {"predicate": {"color": 11},  "model": "krayscandles:block/candle_soy_colored_blue"},
+    {"predicate": {"color": 12},  "model": "krayscandles:block/candle_soy_colored_brown"},
+    {"predicate": {"color": 13},  "model": "krayscandles:block/candle_soy_colored_green"},
+    {"predicate": {"color": 14},  "model": "krayscandles:block/candle_soy_colored_red"},
+    {"predicate": {"color": 15},  "model": "krayscandles:block/candle_soy_colored_black"}
+  ]
+}

@@ -1,6 +1,11 @@
 package com.tm.krayscandles.main;
 
+import com.tm.krayscandles.init.InitItems;
 import com.tm.krayscandles.init.InitSetup;
+import com.tm.krayscandles.tab.KCCandleTab;
+import com.tm.krayscandles.tab.KCMainTab;
+import com.tm.krayscandles.tab.KCToolTab;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -21,6 +26,10 @@ public class KraysCandles {
      */
     public static IEventBus MOD_EVENT_BUS;
 
+    public static final CreativeModeTab TAB_MAIN = new KCMainTab();
+    public static final CreativeModeTab TAB_CANDLE = new KCCandleTab();
+    public static final CreativeModeTab TAB_TOOL = new KCToolTab();
+
     /**
      * Everything starts here.
      */
@@ -33,5 +42,7 @@ public class KraysCandles {
         MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         MOD_EVENT_BUS.addListener(InitSetup::initCommon);
         MOD_EVENT_BUS.addListener(InitSetup::initClient);
+
+        InitItems.init();
     }
 }

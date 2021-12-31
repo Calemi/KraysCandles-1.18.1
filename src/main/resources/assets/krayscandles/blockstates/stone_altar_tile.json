@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=south": { "model": "krayscandles:block/stone_altar_tile" },
+    "facing=north": { "model": "krayscandles:block/stone_altar_tile", "y":  180},
+    "facing=east": { "model": "krayscandles:block/stone_altar_tile", "y":  270},
+    "facing=west": { "model": "krayscandles:block/stone_altar_tile", "y":  90}
+  }
+}

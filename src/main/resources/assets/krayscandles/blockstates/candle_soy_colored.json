@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "krayscandles:block/candle_soy_colored_white"
+    },
+    "color=orange": {
+      "model": "krayscandles:block/candle_soy_colored_orange"
+    },
+    "color=magenta": {
+      "model": "krayscandles:block/candle_soy_colored_magenta"
+    },
+    "color=light_blue": {
+      "model": "krayscandles:block/candle_soy_colored_light_blue"
+    },
+    "color=yellow": {
+      "model": "krayscandles:block/candle_soy_colored_yellow"
+    },
+    "color=lime": {
+      "model": "krayscandles:block/candle_soy_colored_lime"
+    },
+    "color=pink": {
+      "model": "krayscandles:block/candle_soy_colored_pink"
+    },
+    "color=blue": {
+      "model": "krayscandles:block/candle_soy_colored_blue"
+    },
+    "color=gray": {
+      "model": "krayscandles:block/candle_soy_colored_gray"
+    },
+    "color=light_gray": {
+      "model": "krayscandles:block/candle_soy_colored_light_gray"
+    },
+    "color=cyan": {
+      "model": "krayscandles:block/candle_soy_colored_cyan"
+    },
+    "color=purple": {
+      "model": "krayscandles:block/candle_soy_colored_purple"
+    },
+    "color=brown": {
+      "model": "krayscandles:block/candle_soy_colored_brown"
+    },
+    "color=green": {
+      "model": "krayscandles:block/candle_soy_colored_green"
+    },
+    "color=red": {
+      "model": "krayscandles:block/candle_soy_colored_red"
+    },
+    "color=black": {
+      "model": "krayscandles:block/candle_soy_colored_black"
+    }
+  }
+}
