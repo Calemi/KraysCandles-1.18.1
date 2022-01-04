@@ -1,7 +1,9 @@
 package com.tm.krayscandles.init;
 
 import com.tm.calemicore.util.helper.LogHelper;
+import com.tm.krayscandles.client.render.RenderStoneAltarTile;
 import com.tm.krayscandles.main.KCReference;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
@@ -27,6 +29,8 @@ public class InitSetup {
 
         InitEvents.initClient();
         InitRenderLayers.init();
+
+        BlockEntityRenderers.register(InitBlockEntityTypes.STONE_ALTAR_TILE.get(), RenderStoneAltarTile::new);
     }
 }
 

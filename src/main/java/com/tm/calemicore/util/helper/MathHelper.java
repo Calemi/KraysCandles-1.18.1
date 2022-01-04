@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class MathHelper {
 
-    private static final Random random = new Random();
+    public static final Random random = new Random();
 
     /**
      * @param startingValue The number to start the array with.

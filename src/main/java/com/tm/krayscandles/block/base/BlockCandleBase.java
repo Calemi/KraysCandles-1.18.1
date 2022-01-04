@@ -212,7 +212,6 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
         return getCandleShape(state);
     }
 
-
     public RenderShape getRenderShape(BlockState pState) {
         return RenderShape.MODEL;
     }

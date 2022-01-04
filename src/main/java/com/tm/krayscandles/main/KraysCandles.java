@@ -1,5 +1,6 @@
 package com.tm.krayscandles.main;
 
+import com.tm.krayscandles.init.InitBlockEntityTypes;
 import com.tm.krayscandles.init.InitItems;
 import com.tm.krayscandles.init.InitSetup;
 import com.tm.krayscandles.tab.KCCandleTab;
@@ -44,5 +45,6 @@ public class KraysCandles {
         MOD_EVENT_BUS.addListener(InitSetup::initClient);
 
         InitItems.init();
+        InitBlockEntityTypes.BLOCK_ENTITY_TYPES.register(MOD_EVENT_BUS);
     }
 }

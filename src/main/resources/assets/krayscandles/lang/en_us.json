@@ -15,11 +15,13 @@
   "item.krayscandles.candle_wick": "Candle Wick",
 
   "item.krayscandles.soul_essence_lesser": "Lesser Soul Essence",
+  "lore.soul_essence_lesser.1": "A rare drop from mobs.",
+  "lore.soul_essence_lesser.2": "Blade of the Cursed Night will increase its drop chance.",
   "item.krayscandles.soul_essence_greater_depleted": "Greater Soul Essence (Depleted)",
   "item.krayscandles.soul_essence_greater": "Greater Soul Essence",
   "item.krayscandles.soul_essence_blessed_depleted": "Blessed Soul Essence (Depleted)",
   "item.krayscandles.soul_essence_blessed": "Blessed Soul Essence",
-  "lore.soul_essence": "Blade of the Cursed Night increases drop chance.",
+
 
   "item.krayscandles.iron_press": "Iron Press (Empty)",
   "item.krayscandles.iron_press_full": "Iron Press (Full)",
@@ -42,7 +44,9 @@
   "item.krayscandles.stone_statue_carved": "Stone Statue (Carved)",
 
   "item.krayscandles.zombie_ear": "Zombie Ear",
-  "item.krayscandles.flying_bat_eyeball": "Flying Bat Eyeball",
+  "lore.zombie_ear": "Drops from Zombies hit by a Scalpel.",
+  "item.krayscandles.flying_bat_eyeball": "Drops from Bats hit by a Scalpel.",
+  "lore.flying_bat_eyeball": "A rare drop from mobs.",
   "item.krayscandles.q_tip": "Cotton Swab",
   "item.krayscandles.cloth_cursed": "Cursed Cloth",
   "item.krayscandles.wings_wraith": "Wings of the Damned",

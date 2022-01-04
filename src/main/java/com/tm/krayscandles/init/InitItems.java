@@ -1,12 +1,14 @@
 package com.tm.krayscandles.init;
 
 import com.tm.krayscandles.block.BlockSoybeanCrop;
-import com.tm.krayscandles.block.base.BlockCropBase;
+import com.tm.krayscandles.block.BlockStoneAltarTile;
 import com.tm.krayscandles.block.base.BlockItemBase;
 import com.tm.krayscandles.block.candle.BlockCandleSoy;
+import com.tm.krayscandles.item.ItemFlyingBatEyeball;
+import com.tm.krayscandles.item.ItemSoulEssenceLesser;
+import com.tm.krayscandles.item.ItemZombieEar;
 import com.tm.krayscandles.item.base.ItemBase;
 import com.tm.krayscandles.item.base.ItemFoodBase;
-import com.tm.krayscandles.item.base.ItemSoulEssence;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.main.KraysCandles;
 import net.minecraft.world.item.CreativeModeTab;
@@ -54,7 +56,7 @@ public class InitItems {
 
     public static final RegistryObject<Item> CANDLE_WICK =                   regItem("candle_wick", ItemBase::new);
 
-    public static final RegistryObject<Item> SOUL_ESSENCE_LESSER =           regItem("soul_essence_lesser", ItemSoulEssence::new);
+    public static final RegistryObject<Item> SOUL_ESSENCE_LESSER =           regItem("soul_essence_lesser", ItemSoulEssenceLesser::new);
     public static final RegistryObject<Item> SOUL_ESSENCE_GREATER_DEPLETED = regItem("soul_essence_greater_depleted", ItemBase::new);
     //public static final RegistryObject<Item> SOUL_ESSENCE_GREATER =          regItem("soul_essence_greater", () -> new ItemRitual(RitualRecipes.ESSENCE_GREATER));
     public static final RegistryObject<Item> SOUL_ESSENCE_BLESSED_DEPLETED = regItem("soul_essence_blessed_depleted", ItemBase::new);
@@ -80,8 +82,8 @@ public class InitItems {
     public static final RegistryObject<Item> STONE_STATUE_UNCARVED =         regItem("stone_statue_uncarved", ItemBase::new);
     public static final RegistryObject<Item> STONE_STATUE_CARVED =           regItem("stone_statue_carved", ItemBase::new);
 
-    //public static final RegistryObject<Item> ZOMBIE_EAR =                    regItem("zombie_ear", ItemZombieEar::new);
-    //public static final RegistryObject<Item> FLYING_BAT_EYEBALL =            regItem("flying_bat_eyeball", ItemBatEyeball::new);
+    public static final RegistryObject<Item> ZOMBIE_EAR =                    regItem("zombie_ear", ItemZombieEar::new);
+    public static final RegistryObject<Item> FLYING_BAT_EYEBALL =            regItem("flying_bat_eyeball", ItemFlyingBatEyeball::new);
     public static final RegistryObject<Item> Q_TIP =                         regItem("q_tip", ItemBase::new);
     public static final RegistryObject<Item> CLOTH_CURSED =                  regItem("cloth_cursed", ItemBase::new);
     public static final RegistryObject<Item> WINGS_WRAITH =                  regItem("wings_wraith", ItemBase::new);
@@ -162,7 +164,7 @@ public class InitItems {
     //public static final RegistryObject<Block> LANTERN_SOUL_TRAPPED =          regBlock("lantern_soul_trapped", KraysCandles.TAB_MAIN, BlockLanternSoulTrapped::new);
 
     //RITUAL
-    //public static final RegistryObject<Block> STONE_ALTAR_TILE =              regBlock("stone_altar_tile", KraysCandles.TAB_MAIN, BlockStoneAltarTile::new);
+    public static final RegistryObject<Block> STONE_ALTAR_TILE =              regBlock("stone_altar_tile", KraysCandles.TAB_MAIN, BlockStoneAltarTile::new);
     //public static final RegistryObject<Block> STATUE =                        regBlock("statue", KraysCandles.TAB_MAIN, BlockStatue::new);
 
     //CROPS
