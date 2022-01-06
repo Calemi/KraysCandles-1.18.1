@@ -3,6 +3,9 @@ package com.tm.krayscandles.block.base;
 import com.mojang.math.Vector3d;
 import com.tm.calemicore.util.Location;
 import com.tm.calemicore.util.helper.SoundHelper;
+import com.tm.krayscandles.blockentity.base.BlockEntityCandleBase;
+import com.tm.krayscandles.init.InitBlockEntityTypes;
+import com.tm.krayscandles.ritual.IRitualItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -15,6 +18,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -34,7 +40,7 @@ import java.util.function.ToIntFunction;
 /**
  * The base class for Candle Blocks.
  */
-public abstract class BlockCandleBase extends BaseEntityBlock implements EntityBlock {
+public abstract class BlockCandleBase extends BaseEntityBlock implements EntityBlock, IRitualItem {
 
     /**
      * The state of the Candle being lit.
@@ -60,6 +66,8 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
      * @return The collision and selection shape of the Candle.
      */
     public abstract VoxelShape getCandleShape(BlockState state);
+
+    public abstract BlockEntityType<? extends BlockEntityCandleBase> getBlockEntityType();
 
     /**
      * Renders the flames being emitted when Candle is lit.
@@ -181,6 +189,11 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
     @Override
     public void attack(BlockState state, Level level, BlockPos pos, Player player) {
         extinguishCandle(new Location(level, pos));
+    }
+
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
+        return createTickerHelper(blockEntityType, getBlockEntityType(), BlockEntityCandleBase::tick);
     }
 
     @Override

@@ -3,7 +3,11 @@ package com.tm.krayscandles.init;
 import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.client.render.RenderStoneAltarTile;
 import com.tm.krayscandles.main.KCReference;
+import com.tm.krayscandles.ritual.RitualRecipes;
+import com.tm.krayscandles.ritual.RitualStructureTypes;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
@@ -19,6 +23,9 @@ public class InitSetup {
         LogHelper.log(KCReference.MOD_NAME, "Initializing Common-Side for " + KCReference.MOD_NAME);
 
         InitEvents.initCommon();
+
+        RitualStructureTypes.init();
+        RitualRecipes.init();
     }
 
     /**
@@ -29,6 +36,8 @@ public class InitSetup {
 
         InitEvents.initClient();
         InitRenderLayers.init();
+
+        ItemProperties.register(InitItems.CANDLE_SOY_COLORED_ITEM.get(), new ResourceLocation("color"), (stack, level, player, damage) -> stack.getDamageValue());
 
         BlockEntityRenderers.register(InitBlockEntityTypes.STONE_ALTAR_TILE.get(), RenderStoneAltarTile::new);
     }

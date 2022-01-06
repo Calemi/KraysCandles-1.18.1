@@ -47,13 +47,18 @@ public class BlockStoneAltarTile extends BlockBase implements EntityBlock {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
 
         Location location = new Location(level, pos);
-        ItemStack stack = player.getItemInHand(InteractionHand.MAIN_HAND);
+        ItemStack heldStack = player.getItemInHand(InteractionHand.MAIN_HAND);
 
         if (location.getBlockEntity() != null && location.getBlockEntity() instanceof BlockEntityStoneAltarTile alterTile) {
 
-            if (alterTile.getRitualStack().isEmpty() && !stack.isEmpty()) {
-                alterTile.placeRitualStack(stack.copy());
-                stack.shrink(1);
+            if (alterTile.getRitualStack().isEmpty() && !heldStack.isEmpty()) {
+
+                ItemStack ritualStack = heldStack.copy();
+                ritualStack.setCount(1);
+
+                alterTile.placeRitualStack(ritualStack);
+                heldStack.shrink(1);
+
                 SoundHelper.playAtLocation(location, SoundEvents.END_PORTAL_FRAME_FILL, SoundSource.BLOCKS, 1, 1);
                 return InteractionResult.SUCCESS;
             }

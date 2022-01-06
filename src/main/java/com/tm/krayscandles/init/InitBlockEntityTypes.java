@@ -2,6 +2,10 @@ package com.tm.krayscandles.init;
 
 import com.google.common.collect.Sets;
 import com.tm.krayscandles.blockentity.BlockEntityStoneAltarTile;
+import com.tm.krayscandles.blockentity.candle.BlockEntityCandleFire;
+import com.tm.krayscandles.blockentity.candle.BlockEntityCandleSoy;
+import com.tm.krayscandles.blockentity.candle.BlockEntityCandleSoyColored;
+import com.tm.krayscandles.blockentity.candle.BlockEntityCandleWaxBee;
 import com.tm.krayscandles.main.KCReference;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -15,19 +19,18 @@ public class InitBlockEntityTypes {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, KCReference.MOD_ID);
 
-    //public static final RegistryObject<TileEntityType<TileEntityCandleSoy>> IRON_CHEST = TILE_ENTITY_TYPES.register(
-            //"iron_chest", () -> new BlockEntityType<>(TileEntityCandleSoy::new, Sets.newHashSet(InitItems.CANDLE_SOY.get()), null));
-
-    //public static final RegistryObject<TileEntityType<TileEntityCandleSoy>> CANDLE_SOY = TILE_ENTITY_TYPES.register(
-            //"candle_soy", () -> new BlockEntityType<>(TileEntityCandleSoy::new, Sets.newHashSet(InitItems.CANDLE_SOY.get(), InitItems.CANDLE_SOY_COLORED.get()), null));
+    public static final RegistryObject<BlockEntityType<BlockEntityCandleSoy>> CANDLE_SOY = BLOCK_ENTITY_TYPES.register(
+            "candle_soy", () -> new BlockEntityType<>(BlockEntityCandleSoy::new, Sets.newHashSet(InitItems.CANDLE_SOY.get()), null));
+    public static final RegistryObject<BlockEntityType<BlockEntityCandleSoyColored>> CANDLE_SOY_COLORED = BLOCK_ENTITY_TYPES.register(
+            "candle_soy_colored", () -> new BlockEntityType<>(BlockEntityCandleSoyColored::new, Sets.newHashSet(InitItems.CANDLE_SOY_COLORED.get(), InitItems.CANDLE_SOY_COLORED.get()), null));
     //public static final RegistryObject<TileEntityType<TileEntityCandleBlessed>> CANDLE_BLESSED = TILE_ENTITY_TYPES.register(
             //"candle_blessed", () -> new BlockEntityType<>(TileEntityCandleBlessed::new, Sets.newHashSet(InitItems.CANDLE_BLESSED.get()), null));
     //public static final RegistryObject<TileEntityType<TileEntityCandleCursed>> CANDLE_CURSED = TILE_ENTITY_TYPES.register(
             //"candle_cursed", () -> new BlockEntityType<>(TileEntityCandleCursed::new, Sets.newHashSet(InitItems.CANDLE_CURSED.get()), null));
     //public static final RegistryObject<TileEntityType<TileEntityCandlePurged>> CANDLE_PURGED = TILE_ENTITY_TYPES.register(
             //"candle_purged", () -> new BlockEntityType<>(TileEntityCandlePurged::new, Sets.newHashSet(InitItems.CANDLE_PURGED.get()), null));
-    //public static final RegistryObject<TileEntityType<TileEntityCandleFire>> CANDLE_FIRE = TILE_ENTITY_TYPES.register(
-            //"candle_fire", () -> new BlockEntityType<>(TileEntityCandleFire::new, Sets.newHashSet(InitItems.CANDLE_FIRE.get()), null));
+    public static final RegistryObject<BlockEntityType<BlockEntityCandleFire>> CANDLE_FIRE = BLOCK_ENTITY_TYPES.register(
+            "candle_fire", () -> new BlockEntityType<>(BlockEntityCandleFire::new, Sets.newHashSet(InitItems.CANDLE_FIRE.get()), null));
     //public static final RegistryObject<TileEntityType<TileEntityCandleLevitate>> CANDLE_LEVITATE = TILE_ENTITY_TYPES.register(
             //"candle_levitate", () -> new BlockEntityType<>(TileEntityCandleLevitate::new, Sets.newHashSet(InitItems.CANDLE_LEVITATE.get()), null));
     //public static final RegistryObject<TileEntityType<TileEntityCandleZen>> CANDLE_ZEN = TILE_ENTITY_TYPES.register(
@@ -42,8 +45,8 @@ public class InitBlockEntityTypes {
             //"candle_cavern", () -> new BlockEntityType<>(TileEntityCandleCavern::new, Sets.newHashSet(InitItems.CANDLE_CAVERN.get()), null));
     //public static final RegistryObject<TileEntityType<TileEntityCandleNull>> CANDLE_NULL = TILE_ENTITY_TYPES.register(
             //"candle_null", () -> new BlockEntityType<>(TileEntityCandleNull::new, Sets.newHashSet(InitItems.CANDLE_NULL.get()), null));
-    //public static final RegistryObject<TileEntityType<TileEntityCandleWaxBee>> CANDLE_WAX_BEE = TILE_ENTITY_TYPES.register(
-            //"candle_wax_bee", () -> new BlockEntityType<>(TileEntityCandleWaxBee::new, Sets.newHashSet(InitItems.CANDLE_WAX_BEE.get()), null));
+    public static final RegistryObject<BlockEntityType<BlockEntityCandleWaxBee>> CANDLE_WAX_BEE = BLOCK_ENTITY_TYPES.register(
+            "candle_wax_bee", () -> new BlockEntityType<>(BlockEntityCandleWaxBee::new, Sets.newHashSet(InitItems.CANDLE_WAX_BEE.get()), null));
     //public static final RegistryObject<TileEntityType<TileEntityCandleWaxEar>> CANDLE_WAX_EAR = TILE_ENTITY_TYPES.register(
             //"candle_wax_ear", () -> new BlockEntityType<>(TileEntityCandleWaxEar::new, Sets.newHashSet(InitItems.CANDLE_WAX_EAR.get()), null));
 

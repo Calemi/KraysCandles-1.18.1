@@ -1,29 +1,29 @@
 package com.tm.krayscandles.ritual;
 
 import com.tm.calemicore.util.Location;
+import com.tm.calemicore.util.helper.SoundHelper;
+import com.tm.krayscandles.block.base.BlockCandleBase;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * An ingredient to a Ritual that requires a specific Block to be placed in a specific Location.
+ * An ingredient to a Ritual that requires a Candle to be lit, and placed in a specific Location.
  */
-public class RitualBlock {
-
-    private final BlockState state;
-    private final BlockPos offset;
+public class RitualBlockCandle  extends RitualBlock {
 
     /**
      * Creates a ritual block that will be used as an ingredient for a ritual.
      * @param block The required Block for the ritual.
      * @param offset The required offset from the ritual center.
      */
-    public RitualBlock(Block block, BlockPos offset) {
-        this.state = block.defaultBlockState();
-        this.offset = offset;
+    public RitualBlockCandle(Block block, BlockPos offset) {
+        super(block, offset);
     }
 
     /**
@@ -33,8 +33,8 @@ public class RitualBlock {
      * @param y The required y offset from the ritual center.
      * @param z The required z offset from the ritual center.
      */
-    public RitualBlock(Block block, int x, int y, int z) {
-        this(block, new BlockPos(x, y, z));
+    public RitualBlockCandle(Block block, int x, int y, int z) {
+        super(block, x, y, z);
     }
 
     /**
@@ -42,33 +42,17 @@ public class RitualBlock {
      * Offset will be at the origin (0, 0, 0).
      * @param block The required Block for the ritual.
      */
-    public RitualBlock(Block block) {
-        this(block, new BlockPos(0, 0, 0));
-    }
-
-    public BlockState getState() {
-        return state;
-    }
-
-    public BlockPos getOffset() {
-        return offset;
-    }
-
-    /**
-     * @param level The Level the ritual is in.
-     * @param origin The origin of the ritual.
-     * @return The real Location of the ritual block.
-     */
-    public Location getRealLocation(Level level, BlockPos origin) {
-        return new Location(level, origin.offset(getOffset()));
+    public RitualBlockCandle(Block block) {
+        super(block, 0, 0, 0);
     }
 
     /**
      * @param rotation The rotation of the origin.
      * @return A new ritual block with its location computed by a rotation of the center.
      */
-    public RitualBlock rotate(Rotation rotation) {
-        return new RitualBlock(state.getBlock(), offset.rotate(rotation));
+    @Override
+    public RitualBlockCandle rotate(Rotation rotation) {
+        return new RitualBlockCandle(getState().getBlock(), getOffset().rotate(rotation));
     }
 
     /**
@@ -76,8 +60,16 @@ public class RitualBlock {
      * @param origin The origin of the ritual.
      * @return true, if the ritual block is perfectly valid for the ritual.
      */
+    @Override
     public boolean isValid(Level level, BlockPos origin) {
-        return level.getBlockState(origin.offset(offset)).getBlock().defaultBlockState() == state;
+
+        Location location = new Location(level, origin.offset(getOffset()));
+
+        if (location.getBlock() instanceof BlockCandleBase) {
+            return location.getBlockState().getValue(BlockCandleBase.LIT);
+        }
+
+        return false;
     }
 
     /**
@@ -86,5 +78,16 @@ public class RitualBlock {
      * @param origin The origin of the ritual.
      * @param player The Player performing the ritual.
      */
-    public void onRitualComplete(Level level, BlockPos origin, Player player) {}
+    @Override
+    public void onRitualComplete(Level level, BlockPos origin, Player player) {
+
+        Location location = getRealLocation(level, origin);
+
+        if (location.getBlock() instanceof BlockCandleBase) {
+            BlockCandleBase.setLit(location, false);
+        }
+
+        level.addParticle(ParticleTypes.LARGE_SMOKE, location.x + 0.5F, location.y + 0.4F, location.z + 0.5F, 0, 0, 0);
+        SoundHelper.playAtLocation(location, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.05F, 1.0F);
+    }
 }

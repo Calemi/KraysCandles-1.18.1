@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "bpb",
+    "pbp",
+    "sss"
+  ],
+  "key":
+  {
+    "b":
+    {
+      "item": "krayscandles:soul_essence_lesser"
+    },
+    "s":
+    {
+      "item": "minecraft:stone"
+    },
+    "p":
+    {
+      "item": "minecraft:stone_pressure_plate"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:stone_altar_tile",
+    "count": 1
+  }
+}

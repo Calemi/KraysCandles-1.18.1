@@ -1,7 +1,9 @@
 package com.tm.krayscandles.blockentity;
 
+import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.blockentity.base.BlockEntityBase;
 import com.tm.krayscandles.init.InitBlockEntityTypes;
+import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
@@ -44,14 +46,13 @@ public class BlockEntityStoneAltarTile extends BlockEntityBase {
     public void load(CompoundTag tag) {
         super.load(tag);
         CompoundTag stackTag = tag.getCompound("Stack");
-        ritualStack = ItemStack.of(tag);
+        ritualStack = ItemStack.of(stackTag);
     }
 
     @Override
-    public CompoundTag save(CompoundTag tag) {
+    public void saveAdditional(CompoundTag tag) {
         CompoundTag stackTag = new CompoundTag();
         ritualStack.save(stackTag);
         tag.put("Stack", stackTag);
-        return super.save(tag);
     }
 }

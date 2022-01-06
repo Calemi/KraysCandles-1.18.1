@@ -3,6 +3,7 @@ package com.tm.krayscandles.main;
 import com.tm.krayscandles.init.InitBlockEntityTypes;
 import com.tm.krayscandles.init.InitItems;
 import com.tm.krayscandles.init.InitSetup;
+import com.tm.krayscandles.init.InitSounds;
 import com.tm.krayscandles.tab.KCCandleTab;
 import com.tm.krayscandles.tab.KCMainTab;
 import com.tm.krayscandles.tab.KCToolTab;
@@ -45,6 +46,7 @@ public class KraysCandles {
         MOD_EVENT_BUS.addListener(InitSetup::initClient);
 
         InitItems.init();
+        InitSounds.SOUNDS.register(MOD_EVENT_BUS);
         InitBlockEntityTypes.BLOCK_ENTITY_TYPES.register(MOD_EVENT_BUS);
     }
 }

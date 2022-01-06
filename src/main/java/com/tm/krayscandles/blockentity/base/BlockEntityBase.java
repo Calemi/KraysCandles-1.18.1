@@ -50,8 +50,8 @@ public class BlockEntityBase extends BlockEntity {
      * @param tag The CompoundTag to save to.
      */
     @Override
-    public CompoundTag save(CompoundTag tag) {
-        return super.save(tag);
+    protected void saveAdditional(CompoundTag tag) {
+        super.saveAdditional(tag);
     }
 
     //Packet Methods
@@ -75,14 +75,14 @@ public class BlockEntityBase extends BlockEntity {
     @Override
     public CompoundTag getUpdateTag() {
         CompoundTag tag = new CompoundTag();
-        save(tag);
+        saveAdditional(tag);
         return tag;
     }
 
     @Override
     public CompoundTag getTileData() {
         CompoundTag tag = new CompoundTag();
-        save(tag);
+        saveAdditional(tag);
         return tag;
     }
 }

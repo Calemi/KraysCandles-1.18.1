@@ -13,6 +13,8 @@ public class KCCandleTab extends CreativeModeTab {
 
     @Override
     public ItemStack makeIcon () {
-        return new ItemStack(InitItems.CANDLE_SOY.get());
+        ItemStack stack = new ItemStack(InitItems.CANDLE_SOY_COLORED_ITEM.get());
+        stack.setDamageValue(14);
+        return stack;
     }
 }

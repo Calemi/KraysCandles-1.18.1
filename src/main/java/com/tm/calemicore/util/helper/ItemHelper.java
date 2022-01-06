@@ -1,6 +1,7 @@
 package com.tm.calemicore.util.helper;
 
 import com.tm.calemicore.util.Location;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
@@ -10,6 +11,19 @@ import net.minecraft.world.level.Level;
  * Use this class to help with Items.
  */
 public class ItemHelper {
+
+    /**
+     * @param stack The ItemStack to get the NBT of.
+     * @return The NBT tag of the given ItemStack.
+     */
+    public static CompoundTag getNBT (ItemStack stack) {
+
+        if (stack.getTag() == null) {
+            stack.setTag(new CompoundTag());
+        }
+
+        return stack.getTag();
+    }
 
     /**
      * Spawns an Item Stack.
