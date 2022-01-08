@@ -4,7 +4,6 @@ import com.mojang.math.Vector3d;
 import com.tm.calemicore.util.Location;
 import com.tm.calemicore.util.helper.SoundHelper;
 import com.tm.krayscandles.blockentity.base.BlockEntityCandleBase;
-import com.tm.krayscandles.init.InitBlockEntityTypes;
 import com.tm.krayscandles.ritual.IRitualItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
@@ -189,6 +188,11 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
     @Override
     public void attack(BlockState state, Level level, BlockPos pos, Player player) {
         extinguishCandle(new Location(level, pos));
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return getBlockEntityType().create(pos, state);
     }
 
     @Override

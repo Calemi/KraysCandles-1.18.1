@@ -1,21 +1,17 @@
 package com.tm.krayscandles.init;
 
-import com.tm.krayscandles.block.candle.BlockCandleWaxBee;
+import com.tm.krayscandles.block.BlockWaxed;
+import com.tm.krayscandles.block.candle.*;
 import com.tm.krayscandles.block.BlockSoybeanCrop;
 import com.tm.krayscandles.block.BlockStatue;
 import com.tm.krayscandles.block.BlockStoneAltarTile;
 import com.tm.krayscandles.block.base.BlockItemBase;
-import com.tm.krayscandles.block.candle.BlockCandleFire;
-import com.tm.krayscandles.block.candle.BlockCandleSoy;
-import com.tm.krayscandles.block.candle.BlockCandleSoyColored;
-import com.tm.krayscandles.block.candle.BlockCandleSoyColoredItem;
-import com.tm.krayscandles.item.ItemFlyingBatEyeball;
-import com.tm.krayscandles.item.ItemRitual;
-import com.tm.krayscandles.item.ItemSoulEssenceLesser;
-import com.tm.krayscandles.item.ItemZombieEar;
+import com.tm.krayscandles.item.*;
 import com.tm.krayscandles.item.base.ItemBase;
 import com.tm.krayscandles.item.base.ItemFoodBase;
-import com.tm.krayscandles.item.wand.ItemWandFire;
+import com.tm.krayscandles.item.base.ItemMagicSwordBase;
+import com.tm.krayscandles.item.tier.KCSwordTiers;
+import com.tm.krayscandles.item.wand.*;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.main.KraysCandles;
 import com.tm.krayscandles.ritual.RitualRecipes;
@@ -117,17 +113,17 @@ public class InitItems {
 
 
     //WANDS
-    public static final RegistryObject<Item> WAND_FIRE =                    regItem("wand_fire", ItemWandFire::new);
-    //public static final RegistryObject<Item> WAND_ENERGY =                   regItem("wand_energy", ItemWandEnergy::new);
-    //public static final RegistryObject<Item> WAND_MINING =                   regItem("wand_mining", ItemWandMine::new);
-    //public static final RegistryObject<Item> WAND_MAGICIAN =                 regItem("wand_magician", ItemWandMagician::new);
-    //public static final RegistryObject<Item> WAND_LEVITATION =               regItem("wand_levitation", ItemWandLevitation::new);
+    public static final RegistryObject<Item> WAND_FIRE =                     regItem("wand_fire", ItemWandFire::new);
+    public static final RegistryObject<Item> WAND_ENERGY =                   regItem("wand_energy", ItemWandEnergy::new);
+    public static final RegistryObject<Item> WAND_MINING =                   regItem("wand_mining", ItemWandMining::new);
+    public static final RegistryObject<Item> WAND_MAGICIAN =                 regItem("wand_magician", ItemWandMagician::new);
+    public static final RegistryObject<Item> WAND_LEVITATION =               regItem("wand_levitation", ItemWandLevitation::new);
     //public static final RegistryObject<Item> WAND_BLESSED_LIGHT =            regItem("wand_blessed_light", ItemWandBlessedLight::new);
 
     //WEAPONS
-    //public static final RegistryObject<Item> SCALPEL =                  regItem("scalpel", () -> new ItemMagicSword(KCSwordTiers.SCALPEL));
-    //public static final RegistryObject<Item> WAX_SWORD =                regItem("wax_sword", () -> new ItemMagicSword(KCSwordTiers.WAX));
-    //public static final RegistryObject<Item> BLADE_NIGHT =              regItem("blade_night", ItemNightSword::new);
+    public static final RegistryObject<Item> SCALPEL =                  regItem("scalpel", () -> new ItemMagicSwordBase(KCSwordTiers.SCALPEL));
+    public static final RegistryObject<Item> WAX_SWORD =                regItem("wax_sword", () -> new ItemMagicSwordBase(KCSwordTiers.WAX));
+    public static final RegistryObject<Item> BLADE_NIGHT =              regItem("blade_night", ItemBladeNight::new);
 
     //ARMOR
     //public static final RegistryObject<Item> HELMET_BLESSED_NIGHT =     regItem("helmet_blessed_night", ItemBlessedNightHelmet::new);
@@ -140,7 +136,7 @@ public class InitItems {
     public static final RegistryObject<Item> RITUAL_NOTE_WRAITH =       regItem("ritual_note_wraith", ItemBase::new);
 
     //MUSIC DISCS
-    //public static final RegistryObject<Item> MUSIC_DISC_CHUNK =         regItem("music_disc_chunk", () -> new ItemDiscChunk(InitSounds.MUSIC_DISC_CHUNK));
+    public static final RegistryObject<Item> MUSIC_DISC_CHUNK =         regItem("music_disc_chunk", () -> new ItemDiscChunk(InitSounds.MUSIC_DISC_CHUNK));
 
 
 
@@ -151,19 +147,19 @@ public class InitItems {
     public static final RegistryObject<Block> CANDLE_SOY_COLORED =     BLOCKS.register("candle_soy_colored", BlockCandleSoyColored::new);
     public static final RegistryObject<Item>  CANDLE_SOY_COLORED_ITEM =        regItem("candle_soy_colored", () -> new BlockCandleSoyColoredItem(CANDLE_SOY_COLORED.get()));
 
-    //public static final RegistryObject<Block> CANDLE_BLESSED =                regBlock("candle_blessed", KraysCandles.TAB_CANDLE, BlockCandleBlessed::new);
-    //public static final RegistryObject<Block> CANDLE_CURSED =                 regBlock("candle_cursed", KraysCandles.TAB_CANDLE, BlockCandleCursed::new);
-    //public static final RegistryObject<Block> CANDLE_PURGED =                 regBlock("candle_purged", KraysCandles.TAB_CANDLE, BlockCandlePurged::new);
+    public static final RegistryObject<Block> CANDLE_BLESSED =                regBlock("candle_blessed", KraysCandles.TAB_CANDLE, BlockCandleBlessed::new);
+    public static final RegistryObject<Block> CANDLE_CURSED =                 regBlock("candle_cursed", KraysCandles.TAB_CANDLE, BlockCandleCursed::new);
+    public static final RegistryObject<Block> CANDLE_PURGED =                 regBlock("candle_purged", KraysCandles.TAB_CANDLE, BlockCandlePurged::new);
     public static final RegistryObject<Block> CANDLE_FIRE =                   regBlock("candle_fire", KraysCandles.TAB_CANDLE, BlockCandleFire::new);
-    //public static final RegistryObject<Block> CANDLE_LEVITATE =               regBlock("candle_levitate", KraysCandles.TAB_CANDLE, BlockCandleLevitate::new);
-    //public static final RegistryObject<Block> CANDLE_ZEN =                    regBlock("candle_zen", KraysCandles.TAB_CANDLE, BlockCandleZen::new);
-    //public static final RegistryObject<Block> CANDLE_INVIS =                  regBlock("candle_invis", KraysCandles.TAB_CANDLE, BlockCandleInvis::new);
-    //public static final RegistryObject<Block> CANDLE_LUCK =                   regBlock("candle_luck", KraysCandles.TAB_CANDLE, BlockCandleLuck::new);
-    //public static final RegistryObject<Block> CANDLE_ENERGY =                 regBlock("candle_energy", KraysCandles.TAB_CANDLE, BlockCandleEnergy::new);
-    //public static final RegistryObject<Block> CANDLE_CAVERN =                 regBlock("candle_cavern", KraysCandles.TAB_CANDLE, BlockCandleCavern::new);
-    //public static final RegistryObject<Block> CANDLE_NULL =                   regBlock("candle_null", KraysCandles.TAB_CANDLE, BlockCandleNull::new);
+    public static final RegistryObject<Block> CANDLE_LEVITATE =               regBlock("candle_levitate", KraysCandles.TAB_CANDLE, BlockCandleLevitate::new);
+    public static final RegistryObject<Block> CANDLE_ZEN =                    regBlock("candle_zen", KraysCandles.TAB_CANDLE, BlockCandleZen::new);
+    public static final RegistryObject<Block> CANDLE_INVIS =                  regBlock("candle_invis", KraysCandles.TAB_CANDLE, BlockCandleInvis::new);
+    public static final RegistryObject<Block> CANDLE_LUCK =                   regBlock("candle_luck", KraysCandles.TAB_CANDLE, BlockCandleLuck::new);
+    public static final RegistryObject<Block> CANDLE_ENERGY =                 regBlock("candle_energy", KraysCandles.TAB_CANDLE, BlockCandleEnergy::new);
+    public static final RegistryObject<Block> CANDLE_CAVERN =                 regBlock("candle_cavern", KraysCandles.TAB_CANDLE, BlockCandleCavern::new);
+    public static final RegistryObject<Block> CANDLE_NULL =                   regBlock("candle_null", KraysCandles.TAB_CANDLE, BlockCandleNull::new);
     public static final RegistryObject<Block> CANDLE_WAX_BEE =                regBlock("candle_wax_bee", KraysCandles.TAB_CANDLE, BlockCandleWaxBee::new);
-    //public static final RegistryObject<Block> CANDLE_WAX_EAR =                regBlock("candle_wax_ear", KraysCandles.TAB_CANDLE, BlockCandleWaxEar::new);
+    public static final RegistryObject<Block> CANDLE_WAX_EAR =                regBlock("candle_wax_ear", KraysCandles.TAB_CANDLE, BlockCandleWaxEar::new);
 
     //CANDLE HOLDERS
     //public static final RegistryObject<Block> CANDLE_SOY_MOUNT =              regBlock("candle_soy_mount", KraysCandles.TAB_CANDLE, BlockSoyCandleMount::new);
@@ -179,9 +175,9 @@ public class InitItems {
     public static final RegistryObject<Block> SOYBEAN_CROP =                  regBlock("soybean_crop", KraysCandles.TAB_MAIN, BlockSoybeanCrop::new);
 
     //WAXED BLOCKS
-    //public static final RegistryObject<Block> WAXED_RED_SAND =                regBlock("waxed_red_sand", KraysCandles.TAB_MAIN, BlockWaxed::new);
-    //public static final RegistryObject<Block> WAXED_SAND =                    regBlock("waxed_sand", KraysCandles.TAB_MAIN, BlockWaxed::new);
-    //public static final RegistryObject<Block> WAXED_GRAVEL =                  regBlock("waxed_gravel", KraysCandles.TAB_MAIN, BlockWaxed::new);*/
+    public static final RegistryObject<Block> WAXED_RED_SAND =                regBlock("waxed_red_sand", KraysCandles.TAB_MAIN, BlockWaxed::new);
+    public static final RegistryObject<Block> WAXED_SAND =                    regBlock("waxed_sand", KraysCandles.TAB_MAIN, BlockWaxed::new);
+    public static final RegistryObject<Block> WAXED_GRAVEL =                  regBlock("waxed_gravel", KraysCandles.TAB_MAIN, BlockWaxed::new);
 
 
     /**

@@ -2,6 +2,7 @@ package com.tm.krayscandles.item.base;
 
 import com.tm.krayscandles.main.KraysCandles;
 import com.tm.krayscandles.ritual.IRitualItem;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -34,6 +35,7 @@ public abstract class ItemWandBase extends ItemBase implements IRitualItem {
 
         if (castWand(level, player)) {
             player.getCooldowns().addCooldown(this, getCooldown() * 20);
+            player.playSound(SoundEvents.CONDUIT_AMBIENT, 1, 10);
             return InteractionResultHolder.success(heldStack);
         }
 

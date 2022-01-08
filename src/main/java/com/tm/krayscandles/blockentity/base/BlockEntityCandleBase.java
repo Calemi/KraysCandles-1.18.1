@@ -1,6 +1,6 @@
 package com.tm.krayscandles.blockentity.base;
 
-import com.tm.calemicore.util.helper.EffectHelper;
+import com.tm.calemicore.util.helper.MobEffectHelper;
 import com.tm.krayscandles.block.base.BlockCandleBase;
 import com.tm.krayscandles.soul.ITrappedSoul;
 import com.tm.krayscandles.soul.Soul;
@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * The base class for Candle Block Entities.
  */
-public abstract  class BlockEntityCandleBase extends BlockEntityBase implements ITrappedSoul {
+public abstract class BlockEntityCandleBase extends BlockEntityBase implements ITrappedSoul {
 
     /**
      * The range of the Candle's effects.
@@ -88,7 +88,7 @@ public abstract  class BlockEntityCandleBase extends BlockEntityBase implements 
                             if (type == null || livingEntity.getType().equals(type)) {
 
                                 for (MobEffectInstance effect : blockEntity.getCandleEffects()) {
-                                    EffectHelper.addPotionEffect(effect.getEffect(), 60, effect.getAmplifier(), livingEntity);
+                                    MobEffectHelper.addMobEffect(effect.getEffect(), 60, effect.getAmplifier(), livingEntity);
                                 }
 
                                 blockEntity.onEntityEffect(livingEntity);

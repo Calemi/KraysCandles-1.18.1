@@ -29,26 +29,26 @@ public class RitualRecipes {
     public static final RitualRecipe RUNE_NULL = new RitualRecipe();
 
     public static final RitualRecipe CANDLE_BASE = new RitualRecipe(RitualStructureTypes.CANDLE, true);
-//    public static final RitualRecipe CANDLE_BLESSED = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_CURSED = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_PURGED = new RitualRecipe();
+    public static final RitualRecipe CANDLE_BLESSED = new RitualRecipe();
+    public static final RitualRecipe CANDLE_CURSED = new RitualRecipe();
+    public static final RitualRecipe CANDLE_PURGED = new RitualRecipe();
     public static final RitualRecipe CANDLE_FIRE = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_LEVITATE = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_ZEN = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_INVIS = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_LUCK = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_ENERGY = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_MINING = new RitualRecipe();
-//    public static final RitualRecipe CANDLE_NULL = new RitualRecipe();
-//
+    public static final RitualRecipe CANDLE_LEVITATE = new RitualRecipe();
+    public static final RitualRecipe CANDLE_ZEN = new RitualRecipe();
+    public static final RitualRecipe CANDLE_INVIS = new RitualRecipe();
+    public static final RitualRecipe CANDLE_LUCK = new RitualRecipe();
+    public static final RitualRecipe CANDLE_ENERGY = new RitualRecipe();
+    public static final RitualRecipe CANDLE_MINING = new RitualRecipe();
+    public static final RitualRecipe CANDLE_NULL = new RitualRecipe();
+
     public static final RitualRecipe WAND_BASE = new RitualRecipe(RitualStructureTypes.WAND, true);
     public static final RitualRecipe WAND_FIRE = new RitualRecipe();
-//    public static final RitualRecipe WAND_ENERGY = new RitualRecipe();
-//    public static final RitualRecipe WAND_MINING = new RitualRecipe();
-//    public static final RitualRecipe WAND_INVIS = new RitualRecipe();
-//    public static final RitualRecipe WAND_LEVITATE = new RitualRecipe();
-//    public static final RitualRecipe WAND_BLESSED = new RitualRecipe();
-//
+    public static final RitualRecipe WAND_ENERGY = new RitualRecipe();
+    public static final RitualRecipe WAND_MINING = new RitualRecipe();
+    public static final RitualRecipe WAND_INVIS = new RitualRecipe();
+    public static final RitualRecipe WAND_LEVITATE = new RitualRecipe();
+    public static final RitualRecipe WAND_BLESSED = new RitualRecipe();
+
 //    public static final RitualRecipe WRAITH = new RitualRecipe(RitualStructureTypes.WRAITH);
 
     public static void init() {
@@ -116,49 +116,49 @@ public class RitualRecipes {
         CANDLE_BASE.addIngredient(InitItems.WAX_CHUNK_CURSED_SMALL.get(), 4);
         CANDLE_BASE.addIngredient(InitItems.WAX_CHUNK_PURGED_SMALL.get(), 4);
 
-//        CANDLE_BLESSED.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_BLESSED.setHandItem(InitItems.RUNE_BLESSED_FLIGHT.get());
-//        CANDLE_BLESSED.setBlockResult(InitItems.CANDLE_BLESSED.get());
-//
-//        CANDLE_CURSED.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_CURSED.setHandItem(InitItems.RUNE_CURSED_NIGHT.get());
-//        CANDLE_CURSED.setBlockResult(InitItems.CANDLE_CURSED.get());
-//
-//        CANDLE_PURGED.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_PURGED.setHandItem(InitItems.RUNE_PURGED_LIGHT.get());
-//        CANDLE_PURGED.setBlockResult(InitItems.CANDLE_PURGED.get());
-//
+        CANDLE_BLESSED.addBaseRecipe(CANDLE_BASE);
+        CANDLE_BLESSED.setHandItem(InitItems.RUNE_BLESSED_FLIGHT.get());
+        CANDLE_BLESSED.setBlockResult(InitItems.CANDLE_BLESSED.get());
+
+        CANDLE_CURSED.addBaseRecipe(CANDLE_BASE);
+        CANDLE_CURSED.setHandItem(InitItems.RUNE_CURSED_NIGHT.get());
+        CANDLE_CURSED.setBlockResult(InitItems.CANDLE_CURSED.get());
+
+        CANDLE_PURGED.addBaseRecipe(CANDLE_BASE);
+        CANDLE_PURGED.setHandItem(InitItems.RUNE_PURGED_LIGHT.get());
+        CANDLE_PURGED.setBlockResult(InitItems.CANDLE_PURGED.get());
+
         CANDLE_FIRE.addBaseRecipe(CANDLE_BASE);
         CANDLE_FIRE.setHandItem(InitItems.RUNE_GREAT_FIRE.get());
         CANDLE_FIRE.setBlockResult(InitItems.CANDLE_FIRE.get());
-//
-//        CANDLE_LEVITATE.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_LEVITATE.setHandItem(InitItems.RUNE_GREAT_LEVITATION.get());
-//        CANDLE_LEVITATE.setBlockResult(InitItems.CANDLE_LEVITATE.get());
-//
-//        CANDLE_ZEN.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_ZEN.setHandItem(InitItems.RUNE_ZEN_HEALING.get());
-//        CANDLE_ZEN.setBlockResult(InitItems.CANDLE_ZEN.get());
-//
-//        CANDLE_INVIS.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_INVIS.setHandItem(InitItems.RUNE_GREAT_MAGIC.get());
-//        CANDLE_INVIS.setBlockResult(InitItems.CANDLE_INVIS.get());
-//
-//        CANDLE_LUCK.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_LUCK.setHandItem(InitItems.RUNE_GREAT_LUCK.get());
-//        CANDLE_LUCK.setBlockResult(InitItems.CANDLE_LUCK.get());
-//
-//        CANDLE_ENERGY.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_ENERGY.setHandItem(InitItems.RUNE_GREAT_ENERGY.get());
-//        CANDLE_ENERGY.setBlockResult(InitItems.CANDLE_ENERGY.get());
-//
-//        CANDLE_MINING.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_MINING.setHandItem(InitItems.RUNE_GREAT_MINING.get());
-//        CANDLE_MINING.setBlockResult(InitItems.CANDLE_CAVERN.get());
-//
-//        CANDLE_NULL.addBaseRecipe(CANDLE_BASE);
-//        CANDLE_NULL.setHandItem(InitItems.RUNE_NULL.get());
-//        CANDLE_NULL.setBlockResult(InitItems.CANDLE_NULL.get());
+
+        CANDLE_LEVITATE.addBaseRecipe(CANDLE_BASE);
+        CANDLE_LEVITATE.setHandItem(InitItems.RUNE_GREAT_LEVITATION.get());
+        CANDLE_LEVITATE.setBlockResult(InitItems.CANDLE_LEVITATE.get());
+
+        CANDLE_ZEN.addBaseRecipe(CANDLE_BASE);
+        CANDLE_ZEN.setHandItem(InitItems.RUNE_ZEN_HEALING.get());
+        CANDLE_ZEN.setBlockResult(InitItems.CANDLE_ZEN.get());
+
+        CANDLE_INVIS.addBaseRecipe(CANDLE_BASE);
+        CANDLE_INVIS.setHandItem(InitItems.RUNE_GREAT_MAGIC.get());
+        CANDLE_INVIS.setBlockResult(InitItems.CANDLE_INVIS.get());
+
+        CANDLE_LUCK.addBaseRecipe(CANDLE_BASE);
+        CANDLE_LUCK.setHandItem(InitItems.RUNE_GREAT_LUCK.get());
+        CANDLE_LUCK.setBlockResult(InitItems.CANDLE_LUCK.get());
+
+        CANDLE_ENERGY.addBaseRecipe(CANDLE_BASE);
+        CANDLE_ENERGY.setHandItem(InitItems.RUNE_GREAT_ENERGY.get());
+        CANDLE_ENERGY.setBlockResult(InitItems.CANDLE_ENERGY.get());
+
+        CANDLE_MINING.addBaseRecipe(CANDLE_BASE);
+        CANDLE_MINING.setHandItem(InitItems.RUNE_GREAT_MINING.get());
+        CANDLE_MINING.setBlockResult(InitItems.CANDLE_CAVERN.get());
+
+        CANDLE_NULL.addBaseRecipe(CANDLE_BASE);
+        CANDLE_NULL.setHandItem(InitItems.RUNE_NULL.get());
+        CANDLE_NULL.setBlockResult(InitItems.CANDLE_NULL.get());
 
 
 
@@ -169,28 +169,28 @@ public class RitualRecipes {
         WAND_FIRE.addIngredient(InitItems.CANDLE_FIRE.get().asItem());
         WAND_FIRE.setDropResult(InitItems.WAND_FIRE.get());
 
-//        WAND_ENERGY.addBaseRecipe(WAND_BASE);
-//        WAND_ENERGY.addIngredient(InitItems.CANDLE_ENERGY.get().asItem());
-//        WAND_ENERGY.setDropResult(InitItems.WAND_ENERGY.get());
-//
-//        WAND_MINING.addBaseRecipe(WAND_BASE);
-//        WAND_MINING.addIngredient(InitItems.CANDLE_CAVERN.get().asItem());
-//        WAND_MINING.setDropResult(InitItems.WAND_MINING.get());
-//
-//        WAND_INVIS.addBaseRecipe(WAND_BASE);
-//        WAND_INVIS.addIngredient(InitItems.CANDLE_INVIS.get().asItem());
-//        WAND_INVIS.setDropResult(InitItems.WAND_MAGICIAN.get());
-//
-//        WAND_LEVITATE.addBaseRecipe(WAND_BASE);
-//        WAND_LEVITATE.addIngredient(InitItems.CANDLE_LEVITATE.get().asItem());
-//        WAND_LEVITATE.setDropResult(InitItems.WAND_LEVITATION.get());
-//
-//        WAND_BLESSED.addBaseRecipe(WAND_BASE);
-//        WAND_BLESSED.addIngredient(InitItems.CANDLE_BLESSED.get().asItem());
-//        WAND_BLESSED.setDropResult(InitItems.WAND_BLESSED_LIGHT.get());
-//
-//
-//
+        WAND_ENERGY.addBaseRecipe(WAND_BASE);
+        WAND_ENERGY.addIngredient(InitItems.CANDLE_ENERGY.get().asItem());
+        WAND_ENERGY.setDropResult(InitItems.WAND_ENERGY.get());
+
+        WAND_MINING.addBaseRecipe(WAND_BASE);
+        WAND_MINING.addIngredient(InitItems.CANDLE_CAVERN.get().asItem());
+        WAND_MINING.setDropResult(InitItems.WAND_MINING.get());
+
+        WAND_INVIS.addBaseRecipe(WAND_BASE);
+        WAND_INVIS.addIngredient(InitItems.CANDLE_INVIS.get().asItem());
+        WAND_INVIS.setDropResult(InitItems.WAND_MAGICIAN.get());
+
+        WAND_LEVITATE.addBaseRecipe(WAND_BASE);
+        WAND_LEVITATE.addIngredient(InitItems.CANDLE_LEVITATE.get().asItem());
+        WAND_LEVITATE.setDropResult(InitItems.WAND_LEVITATION.get());
+
+        WAND_BLESSED.addBaseRecipe(WAND_BASE);
+        WAND_BLESSED.addIngredient(InitItems.CANDLE_BLESSED.get().asItem());
+        //WAND_BLESSED.setDropResult(InitItems.WAND_BLESSED_LIGHT.get());
+
+
+
 //        WRAITH.setHandItem(Items.NETHER_STAR);
 //        WRAITH.addIngredient(InitEntityTypes.WRAITH_FIRE.get());
 //        WRAITH.addIngredient(InitEntityTypes.WRAITH_WATER.get());

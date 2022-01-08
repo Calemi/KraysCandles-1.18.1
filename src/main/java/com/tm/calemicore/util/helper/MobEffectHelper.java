@@ -6,9 +6,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 
 /**
- * Use this class to help with Potion Effects.
+ * Use this class to help with Mob Effects.
  */
-public class EffectHelper {
+public class MobEffectHelper {
 
     /**
      * Applies a effect to Entities.
@@ -17,7 +17,7 @@ public class EffectHelper {
      * @param amplifier The power of the effect. Starts at 0.
      * @param entities The entities that will receive the effect.
      */
-    public static void addPotionEffect(MobEffect effect, int durationTicks, int amplifier, LivingEntity... entities) {
+    public static void addMobEffect(MobEffect effect, int durationTicks, int amplifier, LivingEntity... entities) {
 
         for (LivingEntity player : entities) {
 
@@ -34,7 +34,7 @@ public class EffectHelper {
      * @param amplifier The power of the effect. Starts at 0.
      * @param entities The entities that will receive the effect.
      */
-    public static void addInfinitePotionEffect(MobEffect effect, int amplifier, LivingEntity... entities) {
-        addPotionEffect(effect, 1000000, amplifier, entities);
+    public static void addInfiniteMobEffect(MobEffect effect, int amplifier, LivingEntity... entities) {
+        addMobEffect(effect, 1000000, amplifier, entities);
     }
 }

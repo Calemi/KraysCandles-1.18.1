@@ -14,6 +14,8 @@ public class InitRenderLayers {
     public static void init() {
 
         ItemBlockRenderTypes.setRenderLayer(InitItems.SOYBEAN_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(InitItems.CANDLE_BLESSED.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(InitItems.CANDLE_WAX_BEE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(InitItems.CANDLE_INVIS.get(), RenderType.translucent());
     }
 }

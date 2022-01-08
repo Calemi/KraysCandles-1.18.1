@@ -80,6 +80,7 @@
   "item.krayscandles.scalpel": "Scalpel",
   "item.krayscandles.wax_sword": "Wax Katana",
   "item.krayscandles.blade_night": "Blade of the Cursed Night",
+  "lore.blade_night": "Hold a Soul Lantern in off-hand to capture souls.",
 
   "item.krayscandles.ritual_note_essence": "Essence Ritual Note",
   "item.krayscandles.ritual_note_rune": "Rune Ritual Note",
@@ -88,6 +89,7 @@
   "item.krayscandles.ritual_note_wraith": "Wraith Ritual Note",
 
   "item.krayscandles.music_disc_chunk": "Music Disc",
+  "item.krayscandles.music_disc_chunk.desc": "Kray - chunk",
 
 
 
@@ -178,5 +180,10 @@
   "lore.type.release-use": "Release-Use",
   "lore.type.left-click-block": "Left-Click-Block",
   "lore.type.sneak-left-click-block": "Sneak-Left-Click-Block",
-  "lore.type.left-click-blueprint": "Left-Click-Blueprint"
+  "lore.type.left-click-blueprint": "Left-Click-Blueprint",
+
+
+
+
+  "mob_effect.krayscandles.flight": "Flight"
 }

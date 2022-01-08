@@ -14,15 +14,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BlockCandleSoy extends BlockCandleBase {
+public class BlockCandleWaxEar extends BlockCandleBase {
 
     public static final VoxelShape SHAPE = Shapes.or(
-            Block.box(7.75, 8, 7.75, 8.25, 10, 8.25),
-            Block.box(7, 0, 7, 9, 8, 9));
+            Block.box(6, 0, 6, 10, 2, 10),
+            Block.box(7, 2, 7, 9, 7.5, 9));
 
     @Override
     public BlockEntityType<? extends BlockEntityCandleBase> getBlockEntityType() {
-        return InitBlockEntityTypes.CANDLE_SOY.get();
+        return InitBlockEntityTypes.CANDLE_WAX_EAR.get();
     }
 
     @Override
@@ -37,6 +37,6 @@ public class BlockCandleSoy extends BlockCandleBase {
 
     @Override
     public void renderFlame(Level level, BlockPos pos, BlockState state, Vector3d particlePos) {
-        CandleParticleHelper.renderFlame(level, pos,  particlePos.x, particlePos.y + 0.2D, particlePos.z);
+        CandleParticleHelper.renderFlame(level, pos,  particlePos.x, particlePos.y + 0.1D, particlePos.z);
     }
 }

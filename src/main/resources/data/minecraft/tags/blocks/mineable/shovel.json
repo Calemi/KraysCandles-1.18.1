@@ -1,0 +1,9 @@
+{
+  "replace" : false,
+  "values" : [
+    "krayscandles:waxed_red_sand",
+    "krayscandles:waxed_sand",
+    "krayscandles:waxed_gravel"
+
+  ]
+}

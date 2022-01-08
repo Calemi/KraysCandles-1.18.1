@@ -7,6 +7,7 @@ import com.tm.krayscandles.block.base.BlockBase;
 import com.tm.krayscandles.blockentity.BlockEntityStoneAltarTile;
 import com.tm.krayscandles.init.InitBlockEntityTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -38,6 +39,7 @@ public class BlockStoneAltarTile extends BlockBase implements EntityBlock {
 
     public BlockStoneAltarTile() {
         super(Block.Properties.copy(Blocks.STONE));
+        registerDefaultState(getStateDefinition().any().setValue(FACING, Direction.NORTH));
     }
 
     /**
