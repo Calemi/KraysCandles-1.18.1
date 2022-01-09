@@ -4,7 +4,10 @@ import com.mojang.math.Vector3d;
 import com.tm.calemicore.util.Location;
 import com.tm.calemicore.util.helper.SoundHelper;
 import com.tm.krayscandles.blockentity.base.BlockEntityCandleBase;
-import com.tm.krayscandles.ritual.IRitualItem;
+import com.tm.krayscandles.init.InitItems;
+import com.tm.krayscandles.ritual.RitualResultItem;
+import com.tm.krayscandles.soul.BlockEntitySoulHolder;
+import com.tm.krayscandles.util.helper.SoulHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -39,7 +42,7 @@ import java.util.function.ToIntFunction;
 /**
  * The base class for Candle Blocks.
  */
-public abstract class BlockCandleBase extends BaseEntityBlock implements EntityBlock, IRitualItem {
+public abstract class BlockCandleBase extends BaseEntityBlock implements EntityBlock, RitualResultItem {
 
     /**
      * The state of the Candle being lit.
@@ -84,7 +87,7 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
         boolean flintAndSteel = lighter.getItem() == Items.FLINT_AND_STEEL;
         boolean lantern = lighter.getItem() == Items.LANTERN;
         boolean soulLantern = lighter.getItem() == Items.SOUL_LANTERN;
-        boolean trappedSoulLantern = false; //lighter.getItem() == InitItems.LANTERN_SOUL_TRAPPED.get().asItem();
+        boolean trappedSoulLantern = lighter.getItem() == InitItems.LANTERN_SOUL_TRAPPED.get().asItem();
 
         //Checks if the Candle isn't already lit.
         if (!isLit(location.getBlockState())) {
@@ -102,11 +105,9 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
 
                 else {
 
-                    /*if (lighter.getItem().equals(InitItems.LANTERN_SOUL_TRAPPED.get().asItem())) {
-                        String soulType = BlockLanternSoulTrappedItem.getSoulType(lighter);
-                        String soulName = BlockLanternSoulTrappedItem.getSoulName(lighter);
-                        attachSoul(location, soulType, soulName);
-                    }*/
+                    if (lighter.getItem().equals(InitItems.LANTERN_SOUL_TRAPPED.get().asItem())) {
+                        SoulHelper.setSoulBlock(location, SoulHelper.getSoulStack(lighter));
+                    }
 
                     SoundHelper.playAtLocation(location, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1, 1);
                 }
@@ -123,7 +124,7 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
         //Checks the Candle is lit. If so, extinguish it.
         if (isLit(location.getBlockState())) {
             setLit(location, false);
-            attachSoul(location, "", "");
+            SoulHelper.removeSoulBlock(location);
             SoundHelper.playAtLocation(location, SoundEvents.FIRE_EXTINGUISH, SoundSource.PLAYERS, 1, 2);
         }
     }
@@ -146,21 +147,6 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
     }
 
     /**
-     * Attaches a Soul to the Candle.
-     * @param location The Location of the Candle.
-     * @param soulType The soulType to attach.
-     * @param soulName The soulName to attach.
-     */
-    public static void attachSoul(Location location, String soulType, String soulName) {
-
-        /*if (location.getBlockEntity() instanceof TileEntityCandleBase) {
-
-            TileEntityCandleBase candle = (TileEntityCandleBase) location.getTileEntity();
-            candle.setSoul(soulType, soulName);
-        }*/
-    }
-
-    /**
      * Used to light the Candle when a Player right clicks it.
      */
     @Override
@@ -171,9 +157,9 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
 
         //Checks if the Candle is lit. If so, attempt to trap a Soul.
         if (isLit(state)) {
-            /*if (stack.getItem() == InitItems.LANTERN_SOUL_TRAPPED.get().asItem() || stack.getItem() == Items.SOUL_LANTERN) {
-                BlockLanternSoulTrappedItem.trapSoul(player, stack, ((ISoulFlame)location.getTileEntity()).getEntityTypeFromSoul());
-            }*/
+            if (stack.getItem() == InitItems.LANTERN_SOUL_TRAPPED.get().asItem() || stack.getItem() == Items.SOUL_LANTERN) {
+                SoulHelper.setSoulStack(stack, ((BlockEntitySoulHolder)location.getBlockEntity()).getSoul());
+            }
         }
 
         //If not, attempt to light the Candle.

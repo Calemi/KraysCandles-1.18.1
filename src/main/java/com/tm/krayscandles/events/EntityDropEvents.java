@@ -23,19 +23,19 @@ public class EntityDropEvents {
         if (entity instanceof Witch) {
 
             if (MathHelper.rollChance(50 + lootingMultiplier)) {
-                event.getDrops().add(new ItemEntity(level, entity.position().x, entity.position().y, entity.position().z, new ItemStack(InitItems.SOYBEAN_CROP.get().asItem())));
+                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.SOYBEAN_CROP.get().asItem())));
             }
 
             if (MathHelper.rollChance(20 + lootingMultiplier)) {
-                //event.getDrops().add(new ItemEntity(level, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(InitItems.FLYING_BAT_EYEBALL.get().asItem())));
+                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.FLYING_BAT_EYEBALL.get().asItem())));
             }
 
             if (MathHelper.rollChance(10 + lootingMultiplier)) {
-                //event.getDrops().add(new ItemEntity(level, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(InitItems.ZOMBIE_EAR.get().asItem())));
+                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.ZOMBIE_EAR.get().asItem())));
             }
 
             if (MathHelper.rollChance(10 + lootingMultiplier)) {
-                //event.getDrops().add(new ItemEntity(level, entity.getPosX(), entity.getPosY(), entity.getPosZ(), new ItemStack(InitItems.GARLIC.get().asItem())));
+                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.GARLIC.get().asItem())));
             }
         }
 

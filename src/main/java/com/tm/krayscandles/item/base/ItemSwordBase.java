@@ -12,11 +12,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 
-public class ItemMagicSwordBase extends SwordItem {
+public class ItemSwordBase extends SwordItem {
 
     private final Multimap<Attribute, AttributeModifier> attributeModifiers;
 
-    public ItemMagicSwordBase(KCSwordTiers tier) {
+    public ItemSwordBase(KCSwordTiers tier) {
         super(tier, 0, tier.attackSpeed, new Item.Properties().tab(KraysCandles.TAB_TOOL).stacksTo(1));
 
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();

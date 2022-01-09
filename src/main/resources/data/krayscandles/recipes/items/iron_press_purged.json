@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "sew",
+    "eie",
+    "wes"
+  ],
+  "pattern":
+  [
+    "wes",
+    "eie",
+    "sew"
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "krayscandles:iron_press"
+    },
+    "e":
+    {
+      "item": "krayscandles:soul_essence_greater"
+    },
+    "s":
+    {
+      "item": "krayscandles:wax_chunk_cursed"
+    },
+    "w":
+    {
+      "item": "krayscandles:wax_chunk_bee"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:iron_press_purged",
+    "count": 1
+  }
+}

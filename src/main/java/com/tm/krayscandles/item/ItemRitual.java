@@ -1,13 +1,13 @@
 package com.tm.krayscandles.item;
 
 import com.tm.krayscandles.item.base.ItemBase;
-import com.tm.krayscandles.ritual.IRitualItem;
+import com.tm.krayscandles.ritual.RitualResultItem;
 import com.tm.krayscandles.ritual.RitualRecipe;
 
 /**
  * Items with Ritual Recipes to craft them.
  */
-public class ItemRitual extends ItemBase implements IRitualItem {
+public class ItemRitual extends ItemBase implements RitualResultItem {
 
     /**
      * The ritual recipe to craft the Item.

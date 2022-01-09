@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "h",
+    "t",
+    "b"
+  ],
+  "key": {
+
+    "h": {
+      "item": "krayscandles:stone_man_head"
+    },
+    "t": {
+      "item": "krayscandles:stone_man_body"
+    },
+
+    "b": {
+      "item": "krayscandles:stone_man_base"
+    }
+  },
+
+  "result":
+  {
+    "item": "krayscandles:stone_statue_uncarved",
+    "count": 1
+  }
+}

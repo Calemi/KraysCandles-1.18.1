@@ -1,10 +1,10 @@
 package com.tm.krayscandles.ritual;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Rotation;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
@@ -40,8 +40,8 @@ public class RitualStructureType {
         this.soundSupplier = soundSupplier;
     }
 
-    public String getName() {
-        return name;
+    public TranslatableComponent getNameKey() {
+        return new TranslatableComponent("ritual." + name + ".name");
     }
 
     public SoundEvent getSound() {

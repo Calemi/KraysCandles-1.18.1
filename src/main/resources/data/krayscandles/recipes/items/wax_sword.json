@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "s",
+    "s",
+    "w"
+  ],
+  "key":
+  {
+    "w":
+    {
+      "item": "minecraft:stick"
+    },
+    "s":
+    {
+      "item": "krayscandles:wax_chunk_soy_small"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:wax_sword",
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "krayscandles:q_tip"
+    },
+    {
+      "item": "krayscandles:zombie_ear"
+    }
+  ],
+  "result":
+  {
+    "item": "krayscandles:wax_ear",
+    "count": 1
+  }
+}

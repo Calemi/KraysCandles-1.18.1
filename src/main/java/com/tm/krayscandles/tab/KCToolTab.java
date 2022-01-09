@@ -13,6 +13,6 @@ public class KCToolTab extends CreativeModeTab {
 
     @Override
     public ItemStack makeIcon () {
-        return new ItemStack(InitItems.CANDLE_SOY.get());
+        return new ItemStack(InitItems.WAND_LEVITATION.get());
     }
 }

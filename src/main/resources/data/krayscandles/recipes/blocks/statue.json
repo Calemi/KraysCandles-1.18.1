@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "krayscandles:stone_statue_carved"
+    },
+    {
+      "item": "krayscandles:candle_soy"
+    }
+  ],
+  "result":
+  {
+    "item": "krayscandles:statue",
+    "count": 1
+  }
+}

@@ -87,7 +87,7 @@ public class LoreHelper {
      * @param format The color used in the middle.
      * @return A String with surrounding brackets and color in the middle.
      */
-    private static MutableComponent getPlateText (String valueKey, ChatFormatting format) {
+    public static MutableComponent getPlateText (String valueKey, ChatFormatting format) {
         return new TextComponent(ChatFormatting.GRAY + "[").append(new TranslatableComponent(valueKey).withStyle(format)).append(ChatFormatting.GRAY + "]");
     }
 

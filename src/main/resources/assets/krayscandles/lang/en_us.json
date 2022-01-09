@@ -131,6 +131,7 @@
   "block.krayscandles.candle_soy_mount": "Soy Candle Mount",
 
   "block.krayscandles.lantern_soul_trapped": "Trapped Soul Lantern",
+  "lore.lantern_soul_trapped": "Soul:",
 
   "block.krayscandles.stone_altar_tile": "Stone Altar",
   "block.krayscandles.statue": "Statue of the Ancient Candle",
@@ -169,6 +170,7 @@
   "lore.key.ctrl": "Ctrl",
   "lore.info": "Info",
   "lore.controls": "Controls",
+  "lore.recipes": "Recipe",
   "lore.type.use": "Use",
   "lore.type.use-open-hand": "Use-Open-Hand",
   "lore.type.use-wrench": "Use-Wrench",
@@ -185,5 +187,17 @@
 
 
 
-  "mob_effect.krayscandles.flight": "Flight"
+  "mob_effect.krayscandles.flight": "Flight",
+
+
+
+
+  "ritual.essence.name": "Essence Ritual",
+  "ritual.rune.name": "Rune Ritual",
+  "ritual.candle.name": "Candle Ritual",
+  "ritual.wand.name": "Wand Ritual",
+  "ritual.wraith.name": "Wraith Ritual",
+  "ritual.made_in": "Made in the",
+  "ritual.use_item": "Use item in center:",
+  "ritual.place_in_altars": "Place in altars:"
 }

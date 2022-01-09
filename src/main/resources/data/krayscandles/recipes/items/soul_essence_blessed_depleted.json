@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "eee",
+    "eee",
+    "eee"
+  ],
+  "key":
+  {
+    "e":
+    {
+      "item": "krayscandles:soul_essence_greater"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:soul_essence_blessed_depleted",
+    "count": 1
+  }
+}

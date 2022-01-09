@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+      {"item": "krayscandles:soul_essence_greater_depleted"},
+      {"item": "minecraft:paper"}
+  ],
+  "result":
+  {
+    "item": "krayscandles:ritual_note_essence",
+    "count": 1
+  }
+}

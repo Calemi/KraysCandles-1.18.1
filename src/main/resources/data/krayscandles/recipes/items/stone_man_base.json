@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " s ",
+    "sbs",
+    "ses"
+  ],
+  "key":
+  {
+    "b":
+    {
+      "item": "krayscandles:soul_essence_greater"
+    },
+    "s":
+    {
+      "item": "minecraft:stone"
+    },
+    "e":
+    {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:stone_man_base",
+    "count": 1
+  }
+}

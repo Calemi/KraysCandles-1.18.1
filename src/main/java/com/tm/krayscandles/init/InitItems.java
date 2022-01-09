@@ -1,15 +1,12 @@
 package com.tm.krayscandles.init;
 
-import com.tm.krayscandles.block.BlockWaxed;
+import com.tm.krayscandles.block.*;
 import com.tm.krayscandles.block.candle.*;
-import com.tm.krayscandles.block.BlockSoybeanCrop;
-import com.tm.krayscandles.block.BlockStatue;
-import com.tm.krayscandles.block.BlockStoneAltarTile;
 import com.tm.krayscandles.block.base.BlockItemBase;
 import com.tm.krayscandles.item.*;
 import com.tm.krayscandles.item.base.ItemBase;
 import com.tm.krayscandles.item.base.ItemFoodBase;
-import com.tm.krayscandles.item.base.ItemMagicSwordBase;
+import com.tm.krayscandles.item.base.ItemSwordBase;
 import com.tm.krayscandles.item.tier.KCSwordTiers;
 import com.tm.krayscandles.item.wand.*;
 import com.tm.krayscandles.main.KCReference;
@@ -121,12 +118,12 @@ public class InitItems {
     //public static final RegistryObject<Item> WAND_BLESSED_LIGHT =            regItem("wand_blessed_light", ItemWandBlessedLight::new);
 
     //WEAPONS
-    public static final RegistryObject<Item> SCALPEL =                  regItem("scalpel", () -> new ItemMagicSwordBase(KCSwordTiers.SCALPEL));
-    public static final RegistryObject<Item> WAX_SWORD =                regItem("wax_sword", () -> new ItemMagicSwordBase(KCSwordTiers.WAX));
+    public static final RegistryObject<Item> SCALPEL =                  regItem("scalpel", () -> new ItemSwordBase(KCSwordTiers.SCALPEL));
+    public static final RegistryObject<Item> WAX_SWORD =                regItem("wax_sword", () -> new ItemSwordBase(KCSwordTiers.WAX));
     public static final RegistryObject<Item> BLADE_NIGHT =              regItem("blade_night", ItemBladeNight::new);
 
     //ARMOR
-    //public static final RegistryObject<Item> HELMET_BLESSED_NIGHT =     regItem("helmet_blessed_night", ItemBlessedNightHelmet::new);
+    public static final RegistryObject<Item> HELMET_BLESSED_NIGHT =     regItem("helmet_blessed_night", ItemHelmetBlessedNight::new);
 
     //RITUAL NOTES
     public static final RegistryObject<Item> RITUAL_NOTE_ESSENCE =      regItem("ritual_note_essence", ItemBase::new);
@@ -162,10 +159,10 @@ public class InitItems {
     public static final RegistryObject<Block> CANDLE_WAX_EAR =                regBlock("candle_wax_ear", KraysCandles.TAB_CANDLE, BlockCandleWaxEar::new);
 
     //CANDLE HOLDERS
-    //public static final RegistryObject<Block> CANDLE_SOY_MOUNT =              regBlock("candle_soy_mount", KraysCandles.TAB_CANDLE, BlockSoyCandleMount::new);
+    public static final RegistryObject<Block> CANDLE_SOY_MOUNT =              regBlock("candle_soy_mount", KraysCandles.TAB_CANDLE, BlockCandleSoyMount::new);
 
     //TRAPPED SOUL LANTERN
-    //public static final RegistryObject<Block> LANTERN_SOUL_TRAPPED =          regBlock("lantern_soul_trapped", KraysCandles.TAB_MAIN, BlockLanternSoulTrapped::new);
+    public static final RegistryObject<Block> LANTERN_SOUL_TRAPPED =          regBlock("lantern_soul_trapped", KraysCandles.TAB_MAIN, BlockLanternSoulTrapped::new);
 
     //RITUAL
     public static final RegistryObject<Block> STONE_ALTAR_TILE =              regBlock("stone_altar_tile", KraysCandles.TAB_MAIN, BlockStoneAltarTile::new);

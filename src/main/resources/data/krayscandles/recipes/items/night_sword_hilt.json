@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "nnn",
+    " s ",
+    " n "
+  ],
+  "key":
+  {
+    "n":
+    {
+      "item": "minecraft:nether_brick"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:night_sword_hilt",
+    "count": 1
+  }
+}

@@ -13,6 +13,6 @@ public class KCMainTab extends CreativeModeTab {
 
     @Override
     public ItemStack makeIcon () {
-        return new ItemStack(InitItems.CANDLE_SOY.get());
+        return new ItemStack(InitItems.RUNE_GREAT_FIRE.get());
     }
 }

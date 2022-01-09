@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "brb",
+    "b b"
+  ],
+  "key":
+  {
+    "b":
+    {
+      "item": "krayscandles:wax_chunk_blessed_small"
+    },
+    "r":
+    {
+      "item": "krayscandles:rune_cursed_night"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:helmet_blessed_night",
+    "count": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  w",
+    " s ",
+    "w  "
+  ],
+  "key":
+  {
+    "s":
+    {
+      "item": "minecraft:stick"
+    },
+    "w":
+    {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:q_tip",
+    "count": 2
+  }
+}

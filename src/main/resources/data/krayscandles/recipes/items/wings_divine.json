@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "bbb",
+    "bwb",
+    "bbb"
+  ],
+  "key":
+  {
+    "b":
+    {
+      "item": "krayscandles:wax_chunk_blessed_small"
+    },
+    "w":
+    {
+      "item": "krayscandles:wings_wraith"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:wings_divine",
+    "count": 1
+  }
+}

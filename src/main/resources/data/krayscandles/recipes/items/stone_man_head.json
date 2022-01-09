@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "ese",
+    "sbs",
+    "sss"
+  ],
+  "key":
+  {
+    "b":
+    {
+      "item": "krayscandles:soul_essence_greater"
+    },
+    "s":
+    {
+      "item": "minecraft:stone"
+    },
+    "e":
+    {
+      "item": "minecraft:spider_eye"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:stone_man_head",
+    "count": 1
+  }
+}

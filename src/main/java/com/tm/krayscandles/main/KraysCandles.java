@@ -46,5 +46,7 @@ public class KraysCandles {
         InitSounds.SOUNDS.register(MOD_EVENT_BUS);
         InitMobEffects.MOB_EFFECTS.register(MOD_EVENT_BUS);
         InitBlockEntityTypes.BLOCK_ENTITY_TYPES.register(MOD_EVENT_BUS);
+        InitRecipes.RECIPES.register(MOD_EVENT_BUS);
+        InitParticles.PARTICLES.register(MOD_EVENT_BUS);
     }
 }

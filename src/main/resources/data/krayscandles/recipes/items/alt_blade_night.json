@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "b",
+    "r",
+    "h"
+  ],
+  "key":
+  {
+    "b":
+    {
+      "item": "krayscandles:night_sword_blade_sharp"
+    },
+    "r":
+    {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "h":
+    {
+      "item": "krayscandles:night_sword_hilt"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:blade_night",
+    "count": 1
+  }
+}

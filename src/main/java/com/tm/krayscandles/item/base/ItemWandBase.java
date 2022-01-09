@@ -1,7 +1,7 @@
 package com.tm.krayscandles.item.base;
 
 import com.tm.krayscandles.main.KraysCandles;
-import com.tm.krayscandles.ritual.IRitualItem;
+import com.tm.krayscandles.ritual.RitualResultItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.Level;
 /**
  * The base class for Wands.
  */
-public abstract class ItemWandBase extends ItemBase implements IRitualItem {
+public abstract class ItemWandBase extends ItemBase implements RitualResultItem {
 
     public ItemWandBase() {
         super(new Item.Properties().tab(KraysCandles.TAB_TOOL).stacksTo(1));

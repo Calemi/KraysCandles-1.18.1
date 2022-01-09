@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "sss",
+    "sws",
+    "sss"
+  ],
+  "key":
+  {
+    "w":
+    {
+      "item": "krayscandles:wax_chunk_soy_small"
+    },
+    "s":
+    {
+      "item": "minecraft:red_sand"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:waxed_red_sand",
+    "count": 8
+  }
+}

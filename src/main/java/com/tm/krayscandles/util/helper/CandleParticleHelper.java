@@ -1,6 +1,8 @@
 package com.tm.krayscandles.util.helper;
 
 import com.tm.calemicore.util.Location;
+import com.tm.krayscandles.init.InitParticles;
+import com.tm.krayscandles.soul.BlockEntitySoulHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -14,14 +16,13 @@ public class CandleParticleHelper {
 
         ParticleOptions flameType = ParticleTypes.FLAME;
 
-        /*if (blockLocation.getBlockEntity() instanceof ISoulFlame) {
-            ISoulFlame soulFlame = (ISoulFlame) blockLocation.getTileEntity();
+        if (blockLocation.getBlockEntity() instanceof BlockEntitySoulHolder trappedSoul) {
 
-            if (soulFlame.getEntityTypeFromSoul() != null) {
+            if (!trappedSoul.getSoul().isNull()) {
                 flameType = InitParticles.SOUL_FLAME_NORMAL.get();
             }
 
-            if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_FIRE.get()) {
+            /*if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_FIRE.get()) {
                 flameType = InitParticles.SOUL_FLAME_FIRE.get();
             }
 
@@ -47,8 +48,8 @@ public class CandleParticleHelper {
 
             else if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_DAMNED.get()) {
                 flameType = InitParticles.SOUL_FLAME_DAMNED.get();
-            }
-        }*/
+            }*/
+        }
 
         level.addParticle(flameType, x, y, z, 0.0D, 0.0D, 0.0D);
         renderSmoke(level, x, y, z);

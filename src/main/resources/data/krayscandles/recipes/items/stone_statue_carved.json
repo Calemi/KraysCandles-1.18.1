@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "krayscandles:stone_statue_uncarved"
+  },
+  "result": "krayscandles:stone_statue_carved",
+  "count": 1
+}

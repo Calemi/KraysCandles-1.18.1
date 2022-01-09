@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+      {"item": "krayscandles:candle_soy"},
+      {"item": "minecraft:paper"}
+  ],
+  "result":
+  {
+    "item": "krayscandles:ritual_note_candle",
+    "count": 1
+  }
+}

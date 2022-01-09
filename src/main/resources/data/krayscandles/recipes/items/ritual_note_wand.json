@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+      {"item": "krayscandles:wand_hilt"},
+      {"item": "minecraft:paper"}
+  ],
+  "result":
+  {
+    "item": "krayscandles:ritual_note_wand",
+    "count": 1
+  }
+}

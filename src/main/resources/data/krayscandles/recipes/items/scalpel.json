@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  b",
+    " h ",
+    "h  "
+  ],
+  "key":
+  {
+    "h":
+    {
+      "item": "krayscandles:scalpel_hilt"
+    },
+    "b":
+    {
+      "item": "krayscandles:scalpel_blade_sharp"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:scalpel",
+    "count": 1
+  }
+}

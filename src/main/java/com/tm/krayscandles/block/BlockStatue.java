@@ -40,17 +40,15 @@ public class BlockStatue extends BlockBase {
         double zOffset = -0.4D;
 
         switch (state.getValue(FACING)) {
-            case EAST: {
+            case EAST -> {
                 xOffset = 0.4D;
                 zOffset = 0.25D;
-                break;
             }
-            case SOUTH: {
+            case SOUTH -> {
                 xOffset = -0.25D;
                 zOffset = 0.4D;
-                break;
             }
-            case WEST: {
+            case WEST -> {
                 xOffset = -0.4D;
                 zOffset = -0.25D;
             }

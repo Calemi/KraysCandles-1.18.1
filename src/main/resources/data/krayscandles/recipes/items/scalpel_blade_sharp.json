@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "krayscandles:scalpel_blade_dull"
+  },
+  "result": "krayscandles:scalpel_blade_sharp",
+  "count": 1
+}

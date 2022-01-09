@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " i ",
+    "sbs",
+    " b "
+  ],
+  "key":
+  {
+    "b":
+    {
+      "item": "minecraft:bone"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    },
+    "i":
+    {
+      "item": "minecraft:iron_ingot"
+    }
+
+  },
+  "result":
+  {
+    "item": "krayscandles:scalpel_hilt",
+    "count": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " w ",
+    " s ",
+    "sss"
+  ],
+  "key":
+  {
+    "w":
+    {
+      "item": "krayscandles:candle_wick"
+    },
+    "s":
+    {
+      "item": "krayscandles:wax_ear"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:candle_wax_ear",
+    "count": 1
+  }
+}

@@ -2,7 +2,7 @@ package com.tm.krayscandles.blockentity.base;
 
 import com.tm.calemicore.util.helper.MobEffectHelper;
 import com.tm.krayscandles.block.base.BlockCandleBase;
-import com.tm.krayscandles.soul.ITrappedSoul;
+import com.tm.krayscandles.soul.BlockEntitySoulHolder;
 import com.tm.krayscandles.soul.Soul;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * The base class for Candle Block Entities.
  */
-public abstract class BlockEntityCandleBase extends BlockEntityBase implements ITrappedSoul {
+public abstract class BlockEntityCandleBase extends BlockEntityBase implements BlockEntitySoulHolder {
 
     /**
      * The range of the Candle's effects.
@@ -34,7 +34,7 @@ public abstract class BlockEntityCandleBase extends BlockEntityBase implements I
 
     public BlockEntityCandleBase(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
-        trappedSoul = new Soul(null);
+        removeSoul();
     }
 
     /**
@@ -63,6 +63,14 @@ public abstract class BlockEntityCandleBase extends BlockEntityBase implements I
     @Override
     public void setSoul(Soul soul) {
         this.trappedSoul = soul;
+    }
+
+    /**
+     * Removes the current trapped soul.
+     */
+    @Override
+    public void removeSoul() {
+        this.trappedSoul = new Soul(null);
     }
 
     /**

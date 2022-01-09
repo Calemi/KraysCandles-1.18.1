@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  i",
+    " s ",
+    "s  "
+  ],
+
+  "key":
+  {
+    "i":
+    {
+      "item": "minecraft:iron_nugget"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:wand_hilt",
+    "count": 1
+  }
+}

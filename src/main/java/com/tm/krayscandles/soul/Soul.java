@@ -1,5 +1,7 @@
 package com.tm.krayscandles.soul;
 
+import com.tm.calemicore.util.helper.LogHelper;
+import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -35,6 +37,13 @@ public class Soul {
     }
 
     /**
+     * @return true, if there is no attached soul.
+     */
+    public boolean isNull() {
+        return entity == null;
+    }
+
+    /**
      * Use this method to load a Soul from an NBT tag.
      * @param tag The tag to load from.
      * @return The constructed Soul.
@@ -57,7 +66,7 @@ public class Soul {
     public void save(CompoundTag tag) {
         CompoundTag soulTag = new CompoundTag();
         soulTag.putInt("type", type.getId());
-        soulTag.putString("entity", entity != null ? getEntity().getDescriptionId() : "");
+        soulTag.putString("entity", entity != null ? getEntity().getRegistryName().toString() : "");
         tag.put("Soul", soulTag);
     }
 

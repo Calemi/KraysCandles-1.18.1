@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "krayscandles:wax_chunk_blessed"
+    }
+  ],
+  "result":
+  {
+    "item": "krayscandles:wax_chunk_blessed_small",
+    "count": 4
+  }
+}

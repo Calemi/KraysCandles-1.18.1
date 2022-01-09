@@ -6,11 +6,11 @@ import net.minecraft.sounds.SoundEvents;
 
 public class RitualStructureTypes {
 
-    public static final RitualStructureType ESSENCE = new RitualStructureType("Essence", SoundEvents.CONDUIT_ACTIVATE);
-    public static final RitualStructureType RUNE = new RitualStructureType("Rune", InitSounds.RUNE_RITUAL);
-    public static final RitualStructureType CANDLE = new RitualStructureType("Candle", SoundEvents.CONDUIT_ACTIVATE);
-    public static final RitualStructureType WAND = new RitualStructureType("Wand", InitSounds.WAND_RITUAL);
-    public static final RitualStructureType WRAITH = new RitualStructureType("Wraith", InitSounds.WRAITH_RITUAL);
+    public static final RitualStructureType ESSENCE = new RitualStructureType("essence", SoundEvents.CONDUIT_ACTIVATE);
+    public static final RitualStructureType RUNE = new RitualStructureType("rune", InitSounds.RUNE_RITUAL);
+    public static final RitualStructureType CANDLE = new RitualStructureType("candle", SoundEvents.CONDUIT_ACTIVATE);
+    public static final RitualStructureType WAND = new RitualStructureType("wand", InitSounds.WAND_RITUAL);
+    public static final RitualStructureType WRAITH = new RitualStructureType("wraith", InitSounds.WRAITH_RITUAL);
 
     public static void init() {
 

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "pbc",
+    "bib",
+    "cbp"
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "krayscandles:iron_press"
+    },
+    "p":
+    {
+      "item": "krayscandles:wax_chunk_purged"
+    },
+    "b":
+    {
+      "item": "krayscandles:soul_essence_blessed"
+    },
+    "c":
+    {
+      "item": "krayscandles:wax_chunk_cursed"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:iron_press_blessed",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:honeycomb"
+  },
+  "result": "krayscandles:wax_chunk_bee",
+  "experience": 2.0,
+  "cookingtime": 200
+}
