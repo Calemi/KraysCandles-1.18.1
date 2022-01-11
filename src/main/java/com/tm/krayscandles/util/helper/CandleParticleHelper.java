@@ -1,6 +1,7 @@
 package com.tm.krayscandles.util.helper;
 
 import com.tm.calemicore.util.Location;
+import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.init.InitParticles;
 import com.tm.krayscandles.soul.BlockEntitySoulHolder;
 import net.minecraft.core.BlockPos;
@@ -22,33 +23,33 @@ public class CandleParticleHelper {
                 flameType = InitParticles.SOUL_FLAME_NORMAL.get();
             }
 
-            /*if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_FIRE.get()) {
+            if (trappedSoul.getSoul().getEntity() == InitEntityTypes.WRAITH_FIRE.get()) {
                 flameType = InitParticles.SOUL_FLAME_FIRE.get();
             }
 
-            else if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_WATER.get()) {
+            else if (trappedSoul.getSoul().getEntity() == InitEntityTypes.WRAITH_WATER.get()) {
                 flameType = InitParticles.SOUL_FLAME_WATER.get();
             }
 
-            else if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_AIR.get()) {
+            else if (trappedSoul.getSoul().getEntity() == InitEntityTypes.WRAITH_AIR.get()) {
                 flameType = InitParticles.SOUL_FLAME_AIR.get();
             }
 
-            else if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_EXPLOSION.get()) {
+            else if (trappedSoul.getSoul().getEntity() == InitEntityTypes.WRAITH_EXPLOSION.get()) {
                 flameType = InitParticles.SOUL_FLAME_EXPLOSION.get();
             }
 
-            else if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_MAGIC.get()) {
+            else if (trappedSoul.getSoul().getEntity() == InitEntityTypes.WRAITH_MAGIC.get()) {
                 flameType = InitParticles.SOUL_FLAME_MAGIC.get();
             }
 
-            else if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_MOB.get()) {
+            else if (trappedSoul.getSoul().getEntity() == InitEntityTypes.WRAITH_MOB.get()) {
                 flameType = InitParticles.SOUL_FLAME_MOB.get();
             }
 
-            else if (soulFlame.getEntityTypeFromSoul() == InitEntityTypes.WRAITH_DAMNED.get()) {
+            else if (trappedSoul.getSoul().getEntity() == InitEntityTypes.WRAITH_DAMNED.get()) {
                 flameType = InitParticles.SOUL_FLAME_DAMNED.get();
-            }*/
+            }
         }
 
         level.addParticle(flameType, x, y, z, 0.0D, 0.0D, 0.0D);

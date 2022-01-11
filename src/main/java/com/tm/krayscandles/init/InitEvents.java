@@ -12,10 +12,12 @@ public class InitEvents {
      * Called to initialize common events.
      */
     public static void initCommon() {
-        MinecraftForge.EVENT_BUS.register(new EntityDropEvents());
         MinecraftForge.EVENT_BUS.register(new RecipeEvents());
         MinecraftForge.EVENT_BUS.register(new RitualEvent());
         MinecraftForge.EVENT_BUS.register(new WeaponKillEvents());
+        MinecraftForge.EVENT_BUS.register(new WraithSpawnEvents());
+        MinecraftForge.EVENT_BUS.register(new EntityDropEvents());
+        MinecraftForge.EVENT_BUS.register(new VampireEvents());
     }
 
     /**

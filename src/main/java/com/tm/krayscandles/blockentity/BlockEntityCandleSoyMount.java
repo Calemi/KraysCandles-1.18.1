@@ -50,6 +50,7 @@ public class BlockEntityCandleSoyMount extends BlockEntityCandleBase {
 
     @Override
     public void saveAdditional(CompoundTag tag) {
+        super.saveAdditional(tag);
         CompoundTag stackTag = new CompoundTag();
         candleStack.save(stackTag);
         tag.put("Stack", stackTag);

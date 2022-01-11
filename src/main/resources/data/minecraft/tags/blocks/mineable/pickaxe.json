@@ -1,0 +1,9 @@
+{
+  "replace" : false,
+  "values" : [
+    "krayscandles:stone_altar_tile",
+    "krayscandles:statue",
+    "krayscandles:lantern_soul_trapped",
+    "krayscandles:candle_soy_mount"
+  ]
+}

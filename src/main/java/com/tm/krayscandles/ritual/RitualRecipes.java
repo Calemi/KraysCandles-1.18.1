@@ -1,5 +1,6 @@
 package com.tm.krayscandles.ritual;
 
+import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.init.InitItems;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -49,7 +50,7 @@ public class RitualRecipes {
     public static final RitualRecipe WAND_LEVITATE = new RitualRecipe();
     public static final RitualRecipe WAND_BLESSED = new RitualRecipe();
 
-//    public static final RitualRecipe WRAITH = new RitualRecipe(RitualStructureTypes.WRAITH);
+    public static final RitualRecipe WRAITH = new RitualRecipe(RitualStructureTypes.WRAITH);
 
     public static void init() {
 
@@ -191,12 +192,12 @@ public class RitualRecipes {
 
 
 
-//        WRAITH.setHandItem(Items.NETHER_STAR);
-//        WRAITH.addIngredient(InitEntityTypes.WRAITH_FIRE.get());
-//        WRAITH.addIngredient(InitEntityTypes.WRAITH_WATER.get());
-//        WRAITH.addIngredient(InitEntityTypes.WRAITH_AIR.get());
-//        WRAITH.addIngredient(InitEntityTypes.WRAITH_EXPLOSION.get());
-//        WRAITH.addIngredient(InitEntityTypes.WRAITH_MAGIC.get());
-//        WRAITH.addIngredient(InitEntityTypes.WRAITH_MOB.get());
+        WRAITH.setHandItem(Items.NETHER_STAR);
+        WRAITH.addIngredient(InitEntityTypes.WRAITH_FIRE.get());
+        WRAITH.addIngredient(InitEntityTypes.WRAITH_WATER.get());
+        WRAITH.addIngredient(InitEntityTypes.WRAITH_AIR.get());
+        WRAITH.addIngredient(InitEntityTypes.WRAITH_EXPLOSION.get());
+        WRAITH.addIngredient(InitEntityTypes.WRAITH_MAGIC.get());
+        WRAITH.addIngredient(InitEntityTypes.WRAITH_MOB.get());
     }
 }

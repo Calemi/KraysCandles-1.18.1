@@ -2,7 +2,7 @@ package com.tm.krayscandles.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
-import com.tm.calemicore.util.FloatingItemStack;
+import com.tm.calemicore.util.RenderedItemStack;
 import com.tm.calemicore.util.helper.RenderHelper;
 import com.tm.krayscandles.block.BlockCandleSoyMount;
 import com.tm.krayscandles.blockentity.BlockEntityCandleSoyMount;
@@ -16,14 +16,14 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class RenderCandleMount implements BlockEntityRenderer<BlockEntityCandleSoyMount> {
 
-    private final FloatingItemStack floatingStack = new FloatingItemStack();
+    private final RenderedItemStack renderedItemStack = new RenderedItemStack();
 
     public RenderCandleMount(BlockEntityRendererProvider.Context pContext) {}
 
     @Override
     public void render(BlockEntityCandleSoyMount mount, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
 
-        floatingStack.setStack(mount.getCandleStack());
+        renderedItemStack.setStack(mount.getCandleStack());
 
         poseStack.pushPose();
 
@@ -53,7 +53,7 @@ public class RenderCandleMount implements BlockEntityRenderer<BlockEntityCandleS
 
         poseStack.scale(3F, 3F, 3F);
 
-        RenderHelper.renderFloatingItem(floatingStack, poseStack, buffer, packedLight, packedOverlay, 0, 0, 0);
+        RenderHelper.renderItem(renderedItemStack, poseStack, buffer, packedLight, packedOverlay, 0, 0, 0);
 
         poseStack.popPose();
     }

@@ -1,7 +1,7 @@
 package com.tm.krayscandles.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.tm.calemicore.util.FloatingItemStack;
+import com.tm.calemicore.util.RenderedItemStack;
 import com.tm.calemicore.util.helper.RenderHelper;
 import com.tm.krayscandles.blockentity.BlockEntityStoneAltarTile;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -13,14 +13,14 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class RenderStoneAltarTile implements BlockEntityRenderer<BlockEntityStoneAltarTile> {
 
-    private final FloatingItemStack floatingStack = new FloatingItemStack();
+    private final RenderedItemStack renderedItemStack = new RenderedItemStack();
 
     public RenderStoneAltarTile(BlockEntityRendererProvider.Context pContext) {}
 
     @Override
     public void render(BlockEntityStoneAltarTile blockEntity, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
 
-        floatingStack.setStack(blockEntity.getRitualStack());
-        RenderHelper.renderFloatingItem(floatingStack, poseStack, buffer, packedLight, packedOverlay, 0, 0, 0);
+        renderedItemStack.setStack(blockEntity.getRitualStack());
+        RenderHelper.renderBobbingItem(renderedItemStack, poseStack, buffer, packedLight, packedOverlay, 0, 0, 0);
     }
 }

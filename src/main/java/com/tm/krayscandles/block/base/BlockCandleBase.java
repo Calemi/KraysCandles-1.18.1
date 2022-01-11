@@ -125,7 +125,7 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
         if (isLit(location.getBlockState())) {
             setLit(location, false);
             SoulHelper.removeSoulBlock(location);
-            SoundHelper.playAtLocation(location, SoundEvents.FIRE_EXTINGUISH, SoundSource.PLAYERS, 1, 2);
+            SoundHelper.playAtLocation(location, SoundEvents.CANDLE_EXTINGUISH, SoundSource.PLAYERS, 1, 2);
         }
     }
 
@@ -190,8 +190,14 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState state, Level level, BlockPos pos, Random rand) {
 
+        Location location = new Location(level, pos);
+
         if (isLit(state)) {
             renderFlame(level, pos, state, new Vector3d(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D));
+
+            if (rand.nextFloat() < 0.17F) {
+                SoundHelper.playAtLocationLocal(location, SoundEvents.CANDLE_AMBIENT, SoundSource.BLOCKS, 1.0F + rand.nextFloat(), rand.nextFloat() * 0.7F + 0.3F);
+            }
         }
     }
 

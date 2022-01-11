@@ -45,7 +45,7 @@ public class BlockCandleSoyMount extends BlockCandleBase {
 
     public BlockCandleSoyMount() {
         super(Block.Properties.copy(Blocks.LANTERN).lightLevel(LIGHT_EMISSION));
-        registerDefaultState(getStateDefinition().any().setValue(FACING, Direction.NORTH));
+        registerDefaultState(getStateDefinition().any().setValue(LIT, false).setValue(FACING, Direction.NORTH));
     }
 
     @Override

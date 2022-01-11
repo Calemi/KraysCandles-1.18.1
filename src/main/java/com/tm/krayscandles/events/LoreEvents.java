@@ -69,7 +69,7 @@ public class LoreEvents {
                 }
 
                 else {
-                    event.getToolTip().add(LoreHelper.getPlateText("lore.key.ctrl", ChatFormatting.AQUA).append(" ").append(new TranslatableComponent("lore.recipes").withStyle(ChatFormatting.GRAY)));
+                    event.getToolTip().add(LoreHelper.getPlateText("lore.key.shift", ChatFormatting.AQUA).append(" ").append(new TranslatableComponent("lore.recipes").withStyle(ChatFormatting.GRAY)));
                 }
             }
         }

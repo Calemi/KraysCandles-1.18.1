@@ -1,13 +1,13 @@
 package com.tm.krayscandles.init;
 
 import com.tm.calemicore.util.helper.LogHelper;
-import com.tm.krayscandles.client.render.RenderCandleMount;
-import com.tm.krayscandles.client.render.RenderStoneAltarTile;
+import com.tm.krayscandles.client.render.*;
 import com.tm.krayscandles.main.DispenserLightBehavior;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.ritual.RitualRecipes;
 import com.tm.krayscandles.ritual.RitualStructureTypes;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -46,10 +46,19 @@ public class InitSetup {
         InitEvents.initClient();
         InitRenderLayers.init();
 
-        ItemProperties.register(InitItems.CANDLE_SOY_COLORED_ITEM.get(), new ResourceLocation("color"), (stack, level, player, damage) -> stack.getDamageValue());
-
         BlockEntityRenderers.register(InitBlockEntityTypes.STONE_ALTAR_TILE.get(), RenderStoneAltarTile::new);
         BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_SOY_MOUNT.get(), RenderCandleMount::new);
+
+        ItemProperties.register(InitItems.CANDLE_SOY_COLORED_ITEM.get(), new ResourceLocation("color"), (stack, level, player, damage) -> stack.getDamageValue());
+
+        EntityRenderers.register(InitEntityTypes.WRAITH_FIRE.get(), RenderWraith::new);
+        EntityRenderers.register(InitEntityTypes.WRAITH_WATER.get(), RenderWraith::new);
+        EntityRenderers.register(InitEntityTypes.WRAITH_AIR.get(), RenderWraith::new);
+        EntityRenderers.register(InitEntityTypes.WRAITH_EXPLOSION.get(), RenderWraith::new);
+        EntityRenderers.register(InitEntityTypes.WRAITH_MAGIC.get(), RenderWraith::new);
+        EntityRenderers.register(InitEntityTypes.WRAITH_MOB.get(), RenderWraith::new);
+        EntityRenderers.register(InitEntityTypes.WRAITH_DAMNED.get(), RenderWraithDamned::new);
+        EntityRenderers.register(InitEntityTypes.VAMPIRE.get(), RenderVampire::new);
     }
 }
 

@@ -153,6 +153,7 @@
   "entity.krayscandles.wraith_mob": "Wraith of Monsters",
   "entity.krayscandles.wraith_damned": "Wraith of the Damned",
   "entity.krayscandles.vampire": "Vampire",
+  "entity.krayscandles.wraith_name": "Wraith of",
 
 
 
@@ -199,5 +200,10 @@
   "ritual.wraith.name": "Wraith Ritual",
   "ritual.made_in": "Made in the",
   "ritual.use_item": "Use item in center:",
-  "ritual.place_in_altars": "Place in altars:"
+  "ritual.place_in_altars": "Place in altars:",
+
+
+
+
+  "chat.vampire": "A Vampire is hunting at"
 }

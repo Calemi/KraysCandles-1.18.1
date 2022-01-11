@@ -10,33 +10,33 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 
 /**
- * Simulates a floating Item.
+ * Used to render an Item Stack in the Level.
  */
-public class FloatingItemStack {
+public class RenderedItemStack {
 
     private ItemStack stack;
 
-    private final float rotationSpeed;
+    private final float spinSpeed;
     private final float hoverSpeed;
     private final float hoverHeight;
 
     private long lastTime;
-    private float rotation;
+    private float spin;
     private float hover;
 
     /**
-     * @param rotationSpeed The speed of rotation. 0 will stop rotation.
-     * @param hoverSpeed The speed of hovering. 0 will stop hovering.
+     * @param spinSpeed The spinning speed.
+     * @param hoverSpeed The speed of hovering.
      * @param hoverHeight The apex of the hover height.
      */
-    public FloatingItemStack(float rotationSpeed, float hoverSpeed, float hoverHeight) {
+    public RenderedItemStack(float spinSpeed, float hoverSpeed, float hoverHeight) {
         this.stack = ItemStack.EMPTY;
-        this.rotationSpeed = rotationSpeed;
+        this.spinSpeed = spinSpeed;
         this.hoverSpeed = hoverSpeed;
         this.hoverHeight = hoverHeight;
     }
 
-    public FloatingItemStack() {
+    public RenderedItemStack() {
         this(1, 1, 1);
     }
 
@@ -45,16 +45,16 @@ public class FloatingItemStack {
     }
 
     /**
-     * Call this method every tick to keep item rotating.
+     * Call this method every tick to keep item rotating and floating.
      */
-    public void update() {
+    public void updateSpinningAndFloating() {
 
         long targetTime = 10;
 
         if (System.currentTimeMillis() - lastTime >= targetTime) {
             lastTime = System.currentTimeMillis();
-            rotation += rotationSpeed;
-            rotation %= 360;
+            spin += spinSpeed;
+            spin %= 360;
             hover += (0.025F * hoverSpeed);
             hover %= 2 * Math.PI;
         }
@@ -77,9 +77,7 @@ public class FloatingItemStack {
                 scale = 1.5F;
             }
 
-            poseStack.translate(0.5D, 0.5D + offset + ((Mth.sin(hover) * hoverHeight) / 10), 0.5D);
-            poseStack.mulPose(Vector3f.YP.rotationDegrees(rotation));
-            poseStack.scale(scale, scale, scale);
+            poseStack.mulPose(Vector3f.YP.rotationDegrees(spin));
 
             Minecraft.getInstance().getItemRenderer().renderStatic(stack, ItemTransforms.TransformType.GROUND, packedLight, packedOverlay, poseStack, buffer, 0);
 

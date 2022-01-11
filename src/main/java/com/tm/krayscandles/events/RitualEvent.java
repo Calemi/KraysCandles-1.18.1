@@ -4,6 +4,7 @@ import com.tm.calemicore.util.Location;
 import com.tm.calemicore.util.helper.ItemHelper;
 import com.tm.calemicore.util.helper.LevelEffectHelper;
 import com.tm.calemicore.util.helper.SoundHelper;
+import com.tm.krayscandles.entity.wraith.WraithDamnedBoss;
 import com.tm.krayscandles.ritual.RitualRecipe;
 import com.tm.krayscandles.ritual.RitualRecipes;
 import com.tm.krayscandles.ritual.RitualStructureTypes;
@@ -50,9 +51,9 @@ public class RitualEvent {
                             LevelEffectHelper.spawnLightning(location, true);
                         }
 
-                        /*else if (recipe == RitualRecipes.WRAITH) {
-                            world.addEntity(new EntityWraithDamned(world, pos));
-                        }*/
+                        else if (recipe == RitualRecipes.WRAITH) {
+                            level.addFreshEntity(new WraithDamnedBoss(location));
+                        }
 
                         if (!handAir) player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
                         player.swing(InteractionHand.MAIN_HAND);
