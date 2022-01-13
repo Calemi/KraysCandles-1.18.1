@@ -27,7 +27,7 @@ public class EntityDropEvents {
             }
 
             if (MathHelper.rollChance(20 + lootingMultiplier)) {
-                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.FLYING_BAT_EYEBALL.get().asItem())));
+                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.BAT_EYEBALL.get().asItem())));
             }
 
             if (MathHelper.rollChance(10 + lootingMultiplier)) {

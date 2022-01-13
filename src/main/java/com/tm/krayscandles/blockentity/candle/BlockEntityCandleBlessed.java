@@ -5,7 +5,6 @@ import com.tm.krayscandles.init.InitBlockEntityTypes;
 import com.tm.krayscandles.init.InitMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockEntityCandleBlessed extends BlockEntityCandleBase {

@@ -1,8 +1,8 @@
 package com.tm.krayscandles.events;
 
 import com.tm.calemicore.util.helper.LoreHelper;
-import com.tm.krayscandles.ritual.RitualResultItem;
 import com.tm.krayscandles.ritual.RitualRecipe;
+import com.tm.krayscandles.ritual.RitualResultItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.TextComponent;
@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+
 import java.util.ArrayList;
 import java.util.List;
 

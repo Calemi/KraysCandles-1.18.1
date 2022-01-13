@@ -6,7 +6,6 @@ import com.tm.calemicore.util.helper.RayTraceHelper;
 import com.tm.krayscandles.item.base.ItemWandBase;
 import com.tm.krayscandles.ritual.RitualRecipe;
 import com.tm.krayscandles.ritual.RitualRecipes;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 

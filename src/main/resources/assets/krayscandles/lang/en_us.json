@@ -45,7 +45,7 @@
 
   "item.krayscandles.zombie_ear": "Zombie Ear",
   "lore.zombie_ear": "Drops from Zombies hit by a Scalpel.",
-  "item.krayscandles.flying_bat_eyeball": "Drops from Bats hit by a Scalpel.",
+  "item.krayscandles.bat_eyeball": "Bat Eyeball.",
   "lore.flying_bat_eyeball": "A rare drop from mobs.",
   "item.krayscandles.q_tip": "Cotton Swab",
   "item.krayscandles.cloth_cursed": "Cursed Cloth",
@@ -68,7 +68,8 @@
   "item.krayscandles.rune_great_mining": "Rune of The Great Mines",
   "item.krayscandles.rune_null": "Rune of Nullification",
 
-  "item.krayscandles.helmet_blessed_night": "Helm of The Blessed Night",
+  "item.krayscandles.blessed_night_mask": "Mask of The Blessed Night",
+  "item.krayscandles.blessed_night_robes": "Robes of The Blessed Night",
 
   "item.krayscandles.wand_fire": "Greater Wand of Fire",
   "item.krayscandles.wand_energy": "Greater Wand of Energy",

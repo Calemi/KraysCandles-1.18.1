@@ -1,25 +1,19 @@
 package com.tm.krayscandles.block.candle;
 
 import com.mojang.math.Vector3d;
-import com.tm.calemicore.util.Location;
-import com.tm.calemicore.util.helper.SoundHelper;
 import com.tm.krayscandles.block.base.BlockCandleBase;
 import com.tm.krayscandles.blockentity.base.BlockEntityCandleBase;
 import com.tm.krayscandles.init.InitBlockEntityTypes;
 import com.tm.krayscandles.ritual.RitualRecipe;
+import com.tm.krayscandles.ritual.RitualRecipes;
 import com.tm.krayscandles.util.helper.CandleParticleHelper;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jetbrains.annotations.Nullable;
 
 public class BlockCandleLuck extends BlockCandleBase {
 
@@ -35,7 +29,7 @@ public class BlockCandleLuck extends BlockCandleBase {
 
     @Override
     public RitualRecipe getRitualRecipe() {
-        return null;
+        return RitualRecipes.CANDLE_LUCK;
     }
 
     @Override

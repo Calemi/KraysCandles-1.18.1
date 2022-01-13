@@ -1,7 +1,5 @@
 package com.tm.krayscandles.soul;
 
-import com.tm.calemicore.util.helper.LogHelper;
-import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;

@@ -74,7 +74,7 @@ public class RitualRecipes {
         RUNE_BLESSED.setDropResult(InitItems.RUNE_BLESSED_FLIGHT.get());
 
         RUNE_CURSED.addBaseRecipe(RUNE_BASE_GREATER);
-        RUNE_CURSED.addIngredient(InitItems.FLYING_BAT_EYEBALL.get());
+        RUNE_CURSED.addIngredient(InitItems.BAT_EYEBALL.get());
         RUNE_CURSED.setDropResult(InitItems.RUNE_CURSED_NIGHT.get());
 
         RUNE_PURGED.addBaseRecipe(RUNE_BASE_GREATER);
@@ -188,7 +188,7 @@ public class RitualRecipes {
 
         WAND_BLESSED.addBaseRecipe(WAND_BASE);
         WAND_BLESSED.addIngredient(InitItems.CANDLE_BLESSED.get().asItem());
-        //WAND_BLESSED.setDropResult(InitItems.WAND_BLESSED_LIGHT.get());
+        WAND_BLESSED.setDropResult(InitItems.WAND_BLESSED_LIGHT.get());
 
 
 

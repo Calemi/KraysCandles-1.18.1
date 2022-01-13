@@ -1,8 +1,8 @@
 package com.tm.krayscandles.item;
 
 import com.tm.krayscandles.item.base.ItemBase;
-import com.tm.krayscandles.ritual.RitualResultItem;
 import com.tm.krayscandles.ritual.RitualRecipe;
+import com.tm.krayscandles.ritual.RitualResultItem;
 
 /**
  * Items with Ritual Recipes to craft them.

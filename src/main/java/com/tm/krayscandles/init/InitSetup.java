@@ -8,6 +8,7 @@ import com.tm.krayscandles.ritual.RitualRecipes;
 import com.tm.krayscandles.ritual.RitualStructureTypes;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -59,6 +60,7 @@ public class InitSetup {
         EntityRenderers.register(InitEntityTypes.WRAITH_MOB.get(), RenderWraith::new);
         EntityRenderers.register(InitEntityTypes.WRAITH_DAMNED.get(), RenderWraithDamned::new);
         EntityRenderers.register(InitEntityTypes.VAMPIRE.get(), RenderVampire::new);
+        EntityRenderers.register(InitEntityTypes.CLOUD.get(), NoopRenderer::new);
     }
 }
 

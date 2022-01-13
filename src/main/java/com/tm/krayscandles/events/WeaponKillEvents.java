@@ -45,7 +45,7 @@ public class WeaponKillEvents {
 
                 if (!bat.isSilent()) {
 
-                    bat.spawnAtLocation(InitItems.FLYING_BAT_EYEBALL.get());
+                    bat.spawnAtLocation(InitItems.BAT_EYEBALL.get());
                     bat.setSilent(true);
                 }
             }

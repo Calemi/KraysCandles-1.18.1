@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "krayscandles:items/flying_bat_eyeball"
+    "layer0": "krayscandles:items/bat_eyeball"
   }
 }

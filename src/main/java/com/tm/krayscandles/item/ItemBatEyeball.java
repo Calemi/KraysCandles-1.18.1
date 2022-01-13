@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class ItemFlyingBatEyeball extends ItemBase {
+public class ItemBatEyeball extends ItemBase {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {

@@ -7,6 +7,7 @@ import com.tm.krayscandles.block.base.BlockCandleBase;
 import com.tm.krayscandles.blockentity.base.BlockEntityCandleBase;
 import com.tm.krayscandles.init.InitBlockEntityTypes;
 import com.tm.krayscandles.ritual.RitualRecipe;
+import com.tm.krayscandles.ritual.RitualRecipes;
 import com.tm.krayscandles.util.helper.CandleParticleHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -34,7 +35,7 @@ public class BlockCandlePurged extends BlockCandleBase {
 
     @Override
     public RitualRecipe getRitualRecipe() {
-        return null;
+        return RitualRecipes.CANDLE_PURGED;
     }
 
     @Override

@@ -1,9 +1,7 @@
 package com.tm.krayscandles.blockentity;
 
-import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.blockentity.base.BlockEntityBase;
 import com.tm.krayscandles.init.InitBlockEntityTypes;
-import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;

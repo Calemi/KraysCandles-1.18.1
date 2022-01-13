@@ -2,16 +2,13 @@ package com.tm.krayscandles.block;
 
 import com.tm.calemicore.util.Location;
 import com.tm.calemicore.util.helper.ItemHelper;
-import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.blockentity.BlockEntityLanternSoulTrapped;
 import com.tm.krayscandles.init.InitBlockEntityTypes;
-import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.soul.Soul;
 import com.tm.krayscandles.util.helper.CandleParticleHelper;
 import com.tm.krayscandles.util.helper.SoulHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;

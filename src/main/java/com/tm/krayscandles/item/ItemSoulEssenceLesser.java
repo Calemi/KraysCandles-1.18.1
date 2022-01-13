@@ -7,6 +7,7 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+
 import java.util.List;
 
 public class ItemSoulEssenceLesser extends ItemBase {

@@ -2,7 +2,6 @@ package com.tm.krayscandles.client.model;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-import com.tm.krayscandles.entity.wraith.Wraith;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

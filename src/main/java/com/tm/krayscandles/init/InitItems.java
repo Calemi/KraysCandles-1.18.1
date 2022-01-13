@@ -1,8 +1,8 @@
 package com.tm.krayscandles.init;
 
 import com.tm.krayscandles.block.*;
-import com.tm.krayscandles.block.candle.*;
 import com.tm.krayscandles.block.base.BlockItemBase;
+import com.tm.krayscandles.block.candle.*;
 import com.tm.krayscandles.item.*;
 import com.tm.krayscandles.item.base.ItemBase;
 import com.tm.krayscandles.item.base.ItemFoodBase;
@@ -12,6 +12,7 @@ import com.tm.krayscandles.item.wand.*;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.main.KraysCandles;
 import com.tm.krayscandles.ritual.RitualRecipes;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -84,7 +85,7 @@ public class InitItems {
     public static final RegistryObject<Item> STONE_STATUE_CARVED =           regItem("stone_statue_carved", ItemBase::new);
 
     public static final RegistryObject<Item> ZOMBIE_EAR =                    regItem("zombie_ear", ItemZombieEar::new);
-    public static final RegistryObject<Item> FLYING_BAT_EYEBALL =            regItem("flying_bat_eyeball", ItemFlyingBatEyeball::new);
+    public static final RegistryObject<Item> BAT_EYEBALL =                   regItem("bat_eyeball", ItemBatEyeball::new);
     public static final RegistryObject<Item> Q_TIP =                         regItem("q_tip", ItemBase::new);
     public static final RegistryObject<Item> CLOTH_CURSED =                  regItem("cloth_cursed", ItemBase::new);
     public static final RegistryObject<Item> WINGS_WRAITH =                  regItem("wings_wraith", ItemBase::new);
@@ -115,25 +116,25 @@ public class InitItems {
     public static final RegistryObject<Item> WAND_MINING =                   regItem("wand_mining", ItemWandMining::new);
     public static final RegistryObject<Item> WAND_MAGICIAN =                 regItem("wand_magician", ItemWandMagician::new);
     public static final RegistryObject<Item> WAND_LEVITATION =               regItem("wand_levitation", ItemWandLevitation::new);
-    //public static final RegistryObject<Item> WAND_BLESSED_LIGHT =            regItem("wand_blessed_light", ItemWandBlessedLight::new);
+    public static final RegistryObject<Item> WAND_BLESSED_LIGHT =            regItem("wand_blessed_light", ItemWandBlessedLight::new);
 
     //WEAPONS
-    public static final RegistryObject<Item> SCALPEL =                  regItem("scalpel", () -> new ItemSwordBase(KCSwordTiers.SCALPEL));
-    public static final RegistryObject<Item> WAX_SWORD =                regItem("wax_sword", () -> new ItemSwordBase(KCSwordTiers.WAX));
-    public static final RegistryObject<Item> BLADE_NIGHT =              regItem("blade_night", ItemBladeNight::new);
+    public static final RegistryObject<Item> SCALPEL =                       regItem("scalpel", () -> new ItemSwordBase(KCSwordTiers.SCALPEL));
+    public static final RegistryObject<Item> WAX_SWORD =                     regItem("wax_sword", () -> new ItemSwordBase(KCSwordTiers.WAX));
+    public static final RegistryObject<Item> BLADE_NIGHT =                   regItem("blade_night", ItemBladeNight::new);
 
     //ARMOR
-    public static final RegistryObject<Item> HELMET_BLESSED_NIGHT =     regItem("helmet_blessed_night", ItemHelmetBlessedNight::new);
+    public static final RegistryObject<Item> BLESSED_NIGHT_MASK =            regItem("blessed_night_mask", () -> new ItemArmorBlessedNight(EquipmentSlot.HEAD));
 
     //RITUAL NOTES
-    public static final RegistryObject<Item> RITUAL_NOTE_ESSENCE =      regItem("ritual_note_essence", ItemBase::new);
-    public static final RegistryObject<Item> RITUAL_NOTE_RUNE =         regItem("ritual_note_rune", ItemBase::new);
-    public static final RegistryObject<Item> RITUAL_NOTE_CANDLE =       regItem("ritual_note_candle", ItemBase::new);
-    public static final RegistryObject<Item> RITUAL_NOTE_WAND =         regItem("ritual_note_wand", ItemBase::new);
-    public static final RegistryObject<Item> RITUAL_NOTE_WRAITH =       regItem("ritual_note_wraith", ItemBase::new);
+    public static final RegistryObject<Item> RITUAL_NOTE_ESSENCE =           regItem("ritual_note_essence", ItemBase::new);
+    public static final RegistryObject<Item> RITUAL_NOTE_RUNE =              regItem("ritual_note_rune", ItemBase::new);
+    public static final RegistryObject<Item> RITUAL_NOTE_CANDLE =            regItem("ritual_note_candle", ItemBase::new);
+    public static final RegistryObject<Item> RITUAL_NOTE_WAND =              regItem("ritual_note_wand", ItemBase::new);
+    public static final RegistryObject<Item> RITUAL_NOTE_WRAITH =            regItem("ritual_note_wraith", ItemBase::new);
 
     //MUSIC DISCS
-    public static final RegistryObject<Item> MUSIC_DISC_CHUNK =         regItem("music_disc_chunk", () -> new ItemDiscChunk(InitSounds.MUSIC_DISC_CHUNK));
+    public static final RegistryObject<Item> MUSIC_DISC_CHUNK =              regItem("music_disc_chunk", () -> new ItemDiscChunk(InitSounds.MUSIC_DISC_CHUNK));
 
 
 
