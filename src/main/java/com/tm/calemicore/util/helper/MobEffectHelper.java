@@ -23,9 +23,12 @@ public class MobEffectHelper {
 
             if (!(player instanceof Player) || !((Player)player).isCreative()) {
 
-                if (!player.hasEffect(effect) || player.getEffect(effect).getAmplifier() <= amplifier) {
-                    player.removeEffect(effect);
+                if (!player.hasEffect(effect)) {
                     player.addEffect(new MobEffectInstance(effect, durationTicks, amplifier, true, false));
+                }
+
+                else if (player.getEffect(effect).getAmplifier() <= amplifier) {
+                    player.forceAddEffect(new MobEffectInstance(effect, durationTicks, amplifier, true, false), player);
                 }
             }
         }

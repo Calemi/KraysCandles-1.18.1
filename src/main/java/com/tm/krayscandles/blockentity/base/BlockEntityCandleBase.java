@@ -2,6 +2,7 @@ package com.tm.krayscandles.blockentity.base;
 
 import com.tm.calemicore.util.helper.MobEffectHelper;
 import com.tm.krayscandles.block.base.BlockCandleBase;
+import com.tm.krayscandles.config.KCConfig;
 import com.tm.krayscandles.item.ItemCrystal;
 import com.tm.krayscandles.soul.BlockEntitySoulHolder;
 import com.tm.krayscandles.soul.Soul;
@@ -27,7 +28,7 @@ public abstract class BlockEntityCandleBase extends BlockEntityBase implements B
     /**
      * The range of the Candle's effects.
      */
-    private int effectRange = 8;
+    private final int startingEffectRange = KCConfig.candles.candleEffectRangeStart.get();
 
     /**
      * The Crystals attached to the Candle.
@@ -48,7 +49,7 @@ public abstract class BlockEntityCandleBase extends BlockEntityBase implements B
      * The range of the Candle's effects.
      */
     public int getEffectRange() {
-        return effectRange + (getCrystalCountOfType(ItemCrystal.CrystalType.AMPLIFYING) * 2);
+        return startingEffectRange + (getCrystalCountOfType(ItemCrystal.CrystalType.AMPLIFYING) * KCConfig.candles.candleEffectRangeAdd.get());
     }
 
     /**

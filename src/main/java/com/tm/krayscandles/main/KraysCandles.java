@@ -1,5 +1,6 @@
 package com.tm.krayscandles.main;
 
+import com.tm.krayscandles.config.KCConfig;
 import com.tm.krayscandles.init.*;
 import com.tm.krayscandles.tab.KCCandleTab;
 import com.tm.krayscandles.tab.KCMainTab;
@@ -49,5 +50,6 @@ public class KraysCandles {
         InitRecipes.RECIPES.register(MOD_EVENT_BUS);
         InitEntityTypes.ENTITY_TYPES.register(MOD_EVENT_BUS);
         InitParticles.PARTICLES.register(MOD_EVENT_BUS);
+        KCConfig.init();
     }
 }

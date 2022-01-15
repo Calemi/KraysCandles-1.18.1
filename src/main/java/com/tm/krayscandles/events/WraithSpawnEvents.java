@@ -1,6 +1,7 @@
 package com.tm.krayscandles.events;
 
 import com.tm.calemicore.util.Location;
+import com.tm.krayscandles.config.KCConfig;
 import com.tm.krayscandles.entity.wraith.*;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,7 +19,7 @@ public class WraithSpawnEvents {
 
         LivingEntity entity = event.getEntityLiving();
 
-        if (entity instanceof Player || entity instanceof Villager) {
+        if ((KCConfig.wraiths.spawnWraithOnPlayerDeath.get() && entity instanceof Player) || (KCConfig.wraiths.spawnWraithOnVillagerDeath.get() && entity instanceof Villager)) {
 
             Level level = entity.getLevel();
             Location location = new Location(entity);
