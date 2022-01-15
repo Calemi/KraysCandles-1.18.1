@@ -40,7 +40,7 @@ public class BlockCandleNull extends BlockCandleBase {
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return createTickerHelper(blockEntityType, getBlockEntityType(), BlockEntityCandleNull::tick);
+        return createTickerHelper(blockEntityType, InitBlockEntityTypes.CANDLE_NULL.get(), BlockEntityCandleNull::tick);
     }
 
     @Override

@@ -18,6 +18,7 @@ public class InitEvents {
         MinecraftForge.EVENT_BUS.register(new WraithSpawnEvents());
         MinecraftForge.EVENT_BUS.register(new EntityDropEvents());
         MinecraftForge.EVENT_BUS.register(new VampireEvents());
+        MinecraftForge.EVENT_BUS.register(new BlockDropEvents());
     }
 
     /**

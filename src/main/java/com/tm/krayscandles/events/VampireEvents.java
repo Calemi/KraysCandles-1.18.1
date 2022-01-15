@@ -49,7 +49,7 @@ public class VampireEvents {
                             Vampire vampire = new Vampire(level);
                             level.addFreshEntity(vampire);
                             vampire.setPos(randX, 251, randZ);
-                            ChatHelper.broadcastMessage(level, new TranslatableComponent("chat.vampire").withStyle(ChatFormatting.DARK_RED, ChatFormatting.ITALIC).append("[" + randX + ", " + randZ + "]!"));
+                            ChatHelper.broadcastMessage(level, new TranslatableComponent("chat.vampire").withStyle(ChatFormatting.DARK_RED, ChatFormatting.ITALIC).append(" [" + randX + ", " + randZ + "]!"));
                             SoundHelper.playGlobal(level, SoundEvents.WITHER_SPAWN, SoundSource.HOSTILE, 1, 1);
                         }
                     }

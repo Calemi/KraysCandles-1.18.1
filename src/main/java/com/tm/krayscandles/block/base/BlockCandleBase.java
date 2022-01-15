@@ -2,12 +2,17 @@ package com.tm.krayscandles.block.base;
 
 import com.mojang.math.Vector3d;
 import com.tm.calemicore.util.Location;
+import com.tm.calemicore.util.helper.ItemHelper;
 import com.tm.calemicore.util.helper.SoundHelper;
 import com.tm.krayscandles.blockentity.base.BlockEntityCandleBase;
 import com.tm.krayscandles.init.InitItems;
+import com.tm.krayscandles.item.ItemCrystal;
 import com.tm.krayscandles.ritual.RitualResultItem;
 import com.tm.krayscandles.soul.BlockEntitySoulHolder;
+import com.tm.krayscandles.util.helper.CandleParticleHelper;
 import com.tm.krayscandles.util.helper.SoulHelper;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -36,6 +41,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+import java.util.List;
 import java.util.Random;
 import java.util.function.ToIntFunction;
 
@@ -64,11 +70,18 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
         registerDefaultState(getStateDefinition().any().setValue(LIT, false));
     }
 
+
+    // ABSTRACT METHODS \\
+
+
     /**
      * @return The collision and selection shape of the Candle.
      */
     public abstract VoxelShape getCandleShape(BlockState state);
 
+    /**
+     * @return The Block Entity Type of te Candle.
+     */
     public abstract BlockEntityType<? extends BlockEntityCandleBase> getBlockEntityType();
 
     /**
@@ -76,13 +89,34 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
      */
     public abstract void renderFlame(Level level, BlockPos pos, BlockState state, Vector3d particlePos);
 
+
+    // STATE HELPER METHODS \\
+
+
+    /**
+     * @param state The BlockState of the Candle.
+     * @return true, if the Candle is lit.
+     */
+    public static boolean isLit(BlockState state) {
+        return state.getValue(LIT);
+    }
+
+    /**
+     * Sets the Candles LIT value.
+     * @param location The Location of the Candle.
+     * @param value The new LIT value.
+     */
+    public static void setLit(Location location, boolean value) {
+        location.setBlock(location.getBlockState().setValue(LIT, value));
+    }
+
     /**
      * Called to light the Candle at set the Soul if needed.
      * @param location The Location of the Candle being lit.
      * @param player The Player that is lighting the candle. Can be null.
      * @param lighter The Item used to light the Candle.
      */
-    public static void lightCandle(Location location, Player player, ItemStack lighter) {
+    public static InteractionResult lightCandle(Location location, Player player, ItemStack lighter) {
 
         boolean flintAndSteel = lighter.getItem() == Items.FLINT_AND_STEEL;
         boolean lantern = lighter.getItem() == Items.LANTERN;
@@ -111,8 +145,12 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
 
                     SoundHelper.playAtLocation(location, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1, 1);
                 }
+
+                return InteractionResult.SUCCESS;
             }
         }
+
+        return InteractionResult.PASS;
     }
 
     /**
@@ -130,21 +168,69 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
     }
 
     /**
-     * @param state The BlockState of the Candle.
-     * @return true, if the Candle is lit.
+     * @param location The Location of the Candle.
+     * @return the number of attached Crystals.
      */
-    public static boolean isLit(BlockState state) {
-        return state.getValue(LIT);
+    public static List<ItemCrystal.CrystalType> getCrystals(Location location) {
+
+        if (location.getBlockEntity() != null && location.getBlockEntity() instanceof BlockEntityCandleBase candle) {
+            return candle.getCrystals();
+        }
+
+        return null;
     }
 
     /**
-     * Sets the Candles LIT value.
+     * Adds an Amplifying Crystal to the Candle.
      * @param location The Location of the Candle.
-     * @param value The new LIT value.
      */
-    public static void setLit(Location location, boolean value) {
-        location.setBlock(location.getBlockState().setValue(LIT, value));
+    public static InteractionResult insertCrystal(Location location, ItemStack crystal) {
+
+        ItemCrystal.CrystalType crystalType = ItemCrystal.CrystalType.getCrystalTypeFromItem(crystal.getItem());
+
+        if (crystalType != null) {
+
+            if (location.getBlockEntity() != null && location.getBlockEntity() instanceof BlockEntityCandleBase candle) {
+
+                if (candle.getCrystals().size() < candle.getMaxCrystalCount()) {
+
+                    if (candle.getCrystalCountOfType(crystalType) < candle.getMaxCrystalCountOfType(crystalType)) {
+                        candle.getCrystals().add(crystalType);
+                        crystal.shrink(1);
+                        SoundHelper.playAtLocation(location, SoundEvents.RESPAWN_ANCHOR_CHARGE, SoundSource.PLAYERS, 1, 1);
+                        return InteractionResult.SUCCESS;
+                    }
+                }
+            }
+        }
+
+        return InteractionResult.PASS;
     }
+
+    /**
+     * Removes a Crystal from the Candle.
+     * @param location The Location of the Candle.
+     */
+    public static InteractionResult removeCrystal(Location location) {
+
+        if (location.getBlockEntity() != null && location.getBlockEntity() instanceof BlockEntityCandleBase candle) {
+
+            ItemCrystal.CrystalType crystalType = candle.getLastCrystalPlaced();
+
+            if (crystalType != null) {
+                candle.getCrystals().remove(candle.getCrystals().size() - 1);
+                ItemHelper.spawnStackAtLocation(location.level, location, new ItemStack(crystalType.getItem()));
+                SoundHelper.playAtLocation(location, SoundEvents.RESPAWN_ANCHOR_DEPLETE, SoundSource.PLAYERS, 1, 1);
+                return InteractionResult.SUCCESS;
+            }
+        }
+
+        return InteractionResult.PASS;
+    }
+
+
+    // BLOCK ACTION METHODS \\
+
 
     /**
      * Used to light the Candle when a Player right clicks it.
@@ -153,19 +239,35 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
 
         Location location = new Location(level, pos);
-        ItemStack stack = player.getItemInHand(hand);
+        ItemStack heldStack = player.getItemInHand(hand);
+
+        if (heldStack.isEmpty() && player.isCrouching()) {
+            return removeCrystal(location);
+        }
+
+        if (heldStack.getItem() instanceof ItemCrystal) {
+            return insertCrystal(location, heldStack);
+        }
 
         //Checks if the Candle is lit. If so, attempt to trap a Soul.
         if (isLit(state)) {
-            if (stack.getItem() == InitItems.LANTERN_SOUL_TRAPPED.get().asItem() || stack.getItem() == Items.SOUL_LANTERN) {
-                SoulHelper.setSoulStack(stack, ((BlockEntitySoulHolder)location.getBlockEntity()).getSoul());
+
+            if (!SoulHelper.getSoulBlock(location).isNull()) {
+
+                if (heldStack.getItem() == InitItems.LANTERN_SOUL_TRAPPED.get().asItem() || heldStack.getItem() == Items.SOUL_LANTERN.asItem()) {
+                    ItemStack soulTrappedLantern = new ItemStack(InitItems.LANTERN_SOUL_TRAPPED.get());
+                    SoulHelper.setSoulStack(soulTrappedLantern, ((BlockEntitySoulHolder)location.getBlockEntity()).getSoul());
+                    heldStack.shrink(1);
+                    ItemHelper.spawnStackAtEntity(level, player, soulTrappedLantern);
+                    return InteractionResult.SUCCESS;
+                }
             }
+
+            return InteractionResult.PASS;
         }
 
         //If not, attempt to light the Candle.
-        else lightCandle(location, player, stack);
-
-        return InteractionResult.SUCCESS;
+        else return lightCandle(location, player, heldStack);
     }
 
     /**
@@ -175,6 +277,25 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
     public void attack(BlockState state, Level level, BlockPos pos, Player player) {
         extinguishCandle(new Location(level, pos));
     }
+
+    @Override
+    public void playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+
+        Location location = new Location(level, pos);
+
+        if (location.getBlockEntity() != null && location.getBlockEntity() instanceof BlockEntityCandleBase candle) {
+
+            for (ItemCrystal.CrystalType crystalType : candle.getCrystals()) {
+                ItemHelper.spawnStack(level, pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, new ItemStack(crystalType.getItem()));
+            }
+        }
+
+        super.playerWillDestroy(level, pos, state, player);
+    }
+
+
+    // BLOCK BASE METHODS \\
+
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
@@ -190,6 +311,7 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
     @OnlyIn(Dist.CLIENT)
     public void animateTick(BlockState state, Level level, BlockPos pos, Random rand) {
 
+        LocalPlayer player = Minecraft.getInstance().player;
         Location location = new Location(level, pos);
 
         if (isLit(state)) {
@@ -197,6 +319,16 @@ public abstract class BlockCandleBase extends BaseEntityBlock implements EntityB
 
             if (rand.nextFloat() < 0.17F) {
                 SoundHelper.playAtLocationLocal(location, SoundEvents.CANDLE_AMBIENT, SoundSource.BLOCKS, 1.0F + rand.nextFloat(), rand.nextFloat() * 0.7F + 0.3F);
+            }
+
+            if (player.getInventory().getArmor(3).getItem() == InitItems.BLESSED_NIGHT_MASK.get()) {
+
+                if (location.getBlockEntity() != null && location.getBlockEntity() instanceof BlockEntityCandleBase candle) {
+
+                    if (candle.getMaxCrystalCountOfType(ItemCrystal.CrystalType.AMPLIFYING) != 0) {
+                        CandleParticleHelper.renderCandleAura(location);
+                    }
+                }
             }
         }
     }

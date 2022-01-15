@@ -92,6 +92,10 @@ public class InitItems {
     public static final RegistryObject<Item> WINGS_DIVINE =                  regItem("wings_divine", ItemBase::new);
     public static final RegistryObject<Item> GARLIC =                        regItem("garlic", ItemBase::new);
 
+    public static final RegistryObject<Item> CRYSTAL_AMPLIFYING =            regItem("crystal_amplifying", () -> new ItemCrystal(RitualRecipes.CRYSTAL_AMPLIFYING));
+    public static final RegistryObject<Item> CRYSTAL_POTENCY =               regItem("crystal_potency", () -> new ItemCrystal(RitualRecipes.CRYSTAL_POTENCY));
+    public static final RegistryObject<Item> CRYSTAL_INVERTING =             regItem("crystal_inverting", () -> new ItemCrystal(RitualRecipes.CRYSTAL_INVERTING));
+
     //CROPS
     public static final RegistryObject<Item> SOYBEAN =                       regItem("soybean", () -> new ItemFoodBase(3, 1.2F));
 
@@ -130,6 +134,7 @@ public class InitItems {
     public static final RegistryObject<Item> RITUAL_NOTE_ESSENCE =           regItem("ritual_note_essence", ItemBase::new);
     public static final RegistryObject<Item> RITUAL_NOTE_RUNE =              regItem("ritual_note_rune", ItemBase::new);
     public static final RegistryObject<Item> RITUAL_NOTE_CANDLE =            regItem("ritual_note_candle", ItemBase::new);
+    public static final RegistryObject<Item> RITUAL_NOTE_CRYSTAL =           regItem("ritual_note_crystal", ItemBase::new);
     public static final RegistryObject<Item> RITUAL_NOTE_WAND =              regItem("ritual_note_wand", ItemBase::new);
     public static final RegistryObject<Item> RITUAL_NOTE_WRAITH =            regItem("ritual_note_wraith", ItemBase::new);
 

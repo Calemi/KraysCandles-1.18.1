@@ -3,6 +3,7 @@ package com.tm.krayscandles.blockentity;
 import com.tm.krayscandles.blockentity.base.BlockEntityCandleBase;
 import com.tm.krayscandles.init.InitBlockEntityTypes;
 import com.tm.krayscandles.init.InitItems;
+import com.tm.krayscandles.item.ItemCrystal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -39,6 +40,11 @@ public class BlockEntityCandleSoyMount extends BlockEntityCandleBase {
 
     public void takeCandle() {
         candleStack = ItemStack.EMPTY;
+    }
+
+    @Override
+    public int getMaxCrystalCountOfType(ItemCrystal.CrystalType type) {
+        return 0;
     }
 
     @Override

@@ -61,9 +61,10 @@ public abstract class ColoredRecipe extends CustomRecipe {
             }
         }
 
-        getResultItem().setDamageValue(colorID);
+        ItemStack stack = getResultItem();
+        stack.setDamageValue(colorID);
 
-        return getResultItem();
+        return stack;
     }
 
     @Override

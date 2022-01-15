@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+      {"item": "minecraft:emerald"},
+      {"item": "minecraft:paper"}
+  ],
+  "result":
+  {
+    "item": "krayscandles:ritual_note_crystal",
+    "count": 1
+  }
+}

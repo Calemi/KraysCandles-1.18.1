@@ -209,7 +209,7 @@ public abstract class Wraith extends Monster {
         FIRE ("fire", InitParticles.SOUL_FLAME_FIRE.get()),
         WATER ( "water", InitParticles.SOUL_FLAME_WATER.get()),
         AIR ("air", InitParticles.SOUL_FLAME_AIR.get()),
-        EXPLOSION ("combustion", InitParticles.SOUL_FLAME_EXPLOSION.get()),
+        EXPLOSION ("explosion", InitParticles.SOUL_FLAME_EXPLOSION.get()),
         MAGIC ("magic", InitParticles.SOUL_FLAME_MAGIC.get()),
         MOB ("monsters", InitParticles.SOUL_FLAME_MOB.get());
 

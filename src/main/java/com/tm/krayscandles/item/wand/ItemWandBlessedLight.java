@@ -5,7 +5,9 @@ import com.tm.krayscandles.item.base.ItemWandBase;
 import com.tm.krayscandles.ritual.RitualRecipe;
 import com.tm.krayscandles.ritual.RitualRecipes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 
 public class ItemWandBlessedLight extends ItemWandBase {
 
@@ -16,9 +18,6 @@ public class ItemWandBlessedLight extends ItemWandBase {
 
     @Override
     public boolean castWand(Level level, Player player) {
-
-        Cloud cloud = new Cloud(player);
-        level.addFreshEntity(cloud);
 
         return true;
     }

@@ -42,6 +42,11 @@ public class RitualRecipes {
     public static final RitualRecipe CANDLE_MINING = new RitualRecipe();
     public static final RitualRecipe CANDLE_NULL = new RitualRecipe();
 
+    public static final RitualRecipe CRYSTAL_BASE = new RitualRecipe(RitualStructureTypes.CRYSTAL, true);
+    public static final RitualRecipe CRYSTAL_AMPLIFYING = new RitualRecipe();
+    public static final RitualRecipe CRYSTAL_POTENCY = new RitualRecipe();
+    public static final RitualRecipe CRYSTAL_INVERTING = new RitualRecipe();
+
     public static final RitualRecipe WAND_BASE = new RitualRecipe(RitualStructureTypes.WAND, true);
     public static final RitualRecipe WAND_FIRE = new RitualRecipe();
     public static final RitualRecipe WAND_ENERGY = new RitualRecipe();
@@ -160,6 +165,25 @@ public class RitualRecipes {
         CANDLE_NULL.addBaseRecipe(CANDLE_BASE);
         CANDLE_NULL.setHandItem(InitItems.RUNE_NULL.get());
         CANDLE_NULL.setBlockResult(InitItems.CANDLE_NULL.get());
+
+
+
+        CRYSTAL_BASE.addIngredient(InitItems.WAX_CHUNK_BLESSED_SMALL.get());
+        CRYSTAL_BASE.addIngredient(InitItems.WAX_CHUNK_CURSED_SMALL.get());
+        CRYSTAL_BASE.addIngredient(InitItems.WAX_CHUNK_PURGED_SMALL.get());
+        CRYSTAL_BASE.setHandItem(Items.EMERALD);
+
+        CRYSTAL_AMPLIFYING.addBaseRecipe(CRYSTAL_BASE);
+        CRYSTAL_AMPLIFYING.addIngredient(InitItems.RUNE_GREAT_ENERGY.get());
+        CRYSTAL_AMPLIFYING.setDropResult(InitItems.CRYSTAL_AMPLIFYING.get());
+
+        CRYSTAL_POTENCY.addBaseRecipe(CRYSTAL_BASE);
+        CRYSTAL_POTENCY.addIngredient(InitItems.RUNE_GREAT_FIRE.get());
+        CRYSTAL_POTENCY.setDropResult(InitItems.CRYSTAL_POTENCY.get());
+
+        CRYSTAL_INVERTING.addBaseRecipe(CRYSTAL_BASE);
+        CRYSTAL_INVERTING.addIngredient(InitItems.RUNE_NULL.get());
+        CRYSTAL_INVERTING.setDropResult(InitItems.CRYSTAL_INVERTING.get());
 
 
 

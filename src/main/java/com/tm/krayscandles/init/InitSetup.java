@@ -49,6 +49,19 @@ public class InitSetup {
 
         BlockEntityRenderers.register(InitBlockEntityTypes.STONE_ALTAR_TILE.get(), RenderStoneAltarTile::new);
         BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_SOY_MOUNT.get(), RenderCandleMount::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_BLESSED.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_CURSED.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_PURGED.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_FIRE.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_LEVITATE.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_ZEN.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_INVIS.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_LUCK.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_ENERGY.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_CAVERN.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_NULL.get(), RenderCandle::new);
+        BlockEntityRenderers.register(InitBlockEntityTypes.CANDLE_CURSED.get(), RenderCandle::new);
+
 
         ItemProperties.register(InitItems.CANDLE_SOY_COLORED_ITEM.get(), new ResourceLocation("color"), (stack, level, player, damage) -> stack.getDamageValue());
 

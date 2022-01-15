@@ -44,7 +44,7 @@ public class ItemHelper {
      * @return The Item Entity that spawned.
      */
     public static ItemEntity spawnStackAtEntity(Level level, Entity entity, ItemStack stack) {
-        return spawnStack(level, (float) entity.getX() + 0.5F, (float) entity.getY() + 0.5F, (float) entity.getZ() + 0.5F, stack);
+        return spawnStack(level, (float) entity.getX(), (float) entity.getY() + 0.5F, (float) entity.getZ(), stack);
     }
 
     /**

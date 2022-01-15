@@ -22,8 +22,11 @@ public class MobEffectHelper {
         for (LivingEntity player : entities) {
 
             if (!(player instanceof Player) || !((Player)player).isCreative()) {
-                player.removeEffect(effect);
-                player.addEffect(new MobEffectInstance(effect, durationTicks, amplifier, true, false));
+
+                if (!player.hasEffect(effect) || player.getEffect(effect).getAmplifier() <= amplifier) {
+                    player.removeEffect(effect);
+                    player.addEffect(new MobEffectInstance(effect, durationTicks, amplifier, true, false));
+                }
             }
         }
     }

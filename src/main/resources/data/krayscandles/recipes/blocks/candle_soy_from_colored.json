@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "krayscandles:candle_soy_colored"
+    }
+  ],
+  "result":
+  {
+    "item": "krayscandles:candle_soy",
+    "count": 1
+  }
+}
