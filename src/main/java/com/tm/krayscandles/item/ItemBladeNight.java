@@ -19,6 +19,6 @@ public class ItemBladeNight extends ItemSwordBase {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        LoreHelper.addInformationLore(tooltip, new TranslatableComponent("lore.blade_night"), true);
+        LoreHelper.addInformationLoreFirst(tooltip, new TranslatableComponent("lore.blade_night"));
     }
 }

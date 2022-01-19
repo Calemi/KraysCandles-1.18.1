@@ -36,7 +36,7 @@ public class MobEffectEvents {
 
         if (entity instanceof Player player) {
 
-            SoundHelper.playAtPlayer(player, SoundEvents.BEACON_DEACTIVATE, SoundSource.PLAYERS, 1, 10);
+            SoundHelper.playAtPlayer(player, SoundEvents.BEACON_DEACTIVATE, 1, 10);
 
             player.getAbilities().mayfly = false;
             player.getAbilities().flying = false;

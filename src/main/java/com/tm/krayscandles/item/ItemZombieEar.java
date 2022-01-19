@@ -14,6 +14,6 @@ public class ItemZombieEar extends ItemBase {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        LoreHelper.addInformationLore(tooltip, new TranslatableComponent("lore.zombie_ear"), true);
+        LoreHelper.addInformationLoreFirst(tooltip, new TranslatableComponent("lore.zombie_ear"));
     }
 }

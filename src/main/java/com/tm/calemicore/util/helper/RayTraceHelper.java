@@ -49,7 +49,7 @@ public class RayTraceHelper {
             Location locationReal = locationOffset.copy();
             locationReal.translate(blockSide.getOpposite(), 1);
 
-            return new BlockTrace(locationOffset, blockSide);
+            return new BlockTrace(locationReal, blockSide);
         }
 
         return null;

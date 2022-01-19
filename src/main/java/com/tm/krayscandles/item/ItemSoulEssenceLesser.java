@@ -14,7 +14,7 @@ public class ItemSoulEssenceLesser extends ItemBase {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        LoreHelper.addInformationLore(tooltip, new TranslatableComponent("lore.soul_essence_lesser.1"), true);
+        LoreHelper.addInformationLoreFirst(tooltip, new TranslatableComponent("lore.soul_essence_lesser.1"));
         LoreHelper.addInformationLore(tooltip, new TranslatableComponent("lore.soul_essence_lesser.2"));
     }
 }

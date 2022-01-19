@@ -14,6 +14,6 @@ public class ItemBatEyeball extends ItemBase {
 
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag) {
-        LoreHelper.addInformationLore(tooltip, new TranslatableComponent("lore.flying_bat_eyeball"), true);
+        LoreHelper.addInformationLoreFirst(tooltip, new TranslatableComponent("lore.flying_bat_eyeball"));
     }
 }
