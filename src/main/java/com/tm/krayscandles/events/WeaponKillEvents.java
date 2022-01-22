@@ -3,6 +3,7 @@ package com.tm.krayscandles.events;
 import com.tm.calemicore.util.helper.ItemHelper;
 import com.tm.calemicore.util.helper.MathHelper;
 import com.tm.calemicore.util.helper.MobEffectHelper;
+import com.tm.calemicore.util.helper.SoundHelper;
 import com.tm.krayscandles.init.InitItems;
 import com.tm.krayscandles.soul.Soul;
 import com.tm.krayscandles.util.helper.SoulHelper;
@@ -77,7 +78,6 @@ public class WeaponKillEvents {
 
                     MobEffectHelper.addMobEffect(MobEffects.BLINDNESS, 300, 0);
                     killedEntity.playSound(SoundEvents.AMBIENT_CAVE, 1, 1);
-                    killedEntity.playSound(SoundEvents.GHAST_DEATH, 1, -7);
 
                     if (offItem.getItem() == Items.SOUL_LANTERN) {
 
@@ -85,6 +85,9 @@ public class WeaponKillEvents {
                         SoulHelper.setSoulStack(lanternSoulTrapped, new Soul(killedEntity.getType()));
                         offItem.shrink(1);
                         ItemHelper.spawnStackAtEntity(player.level, player, lanternSoulTrapped);
+
+                        SoundHelper.playAtPlayer(player, SoundEvents.AMBIENT_CAVE, 1, 1);
+                        SoundHelper.playAtPlayer(player, SoundEvents.GHAST_DEATH, 1, -7);
                     }
                 }
 

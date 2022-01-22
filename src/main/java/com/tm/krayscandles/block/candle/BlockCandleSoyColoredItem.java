@@ -17,7 +17,7 @@ public class BlockCandleSoyColoredItem extends BlockItem {
 
     @Override
     public Component getName(ItemStack stack) {
-        CompoundTag nbt = ItemHelper.getNBT(stack);
+        CompoundTag nbt = stack.getOrCreateTag();
         return new TranslatableComponent(this.getDescriptionId(stack) + "_" + DyeColor.byId(stack.getDamageValue()).getName());
     }
 

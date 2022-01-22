@@ -24,7 +24,7 @@ public class SoundHelper {
     public static void playGlobal(Level level, SoundEvent sound, SoundSource source, float volume, float pitch) {
 
         for (Player player : level.players()) {
-            playAtLocationLocal(new Location(player), sound, source, volume, pitch);
+            playAtLocation(new Location(player), sound, source, volume, pitch);
         }
     }
 

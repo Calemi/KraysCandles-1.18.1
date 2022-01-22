@@ -182,6 +182,8 @@ public class InitItems {
     public static final RegistryObject<Block> WAXED_SAND =                    regBlock("waxed_sand", KraysCandles.TAB_MAIN, BlockWaxed::new);
     public static final RegistryObject<Block> WAXED_GRAVEL =                  regBlock("waxed_gravel", KraysCandles.TAB_MAIN, BlockWaxed::new);
 
+    public static final RegistryObject<Block> CLOUD =                         regBlock("cloud", KraysCandles.TAB_MAIN, BlockCloud::new);
+
 
     /**
      * Used to register an Item.

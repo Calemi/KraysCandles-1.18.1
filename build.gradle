@@ -1,16 +1,19 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = "https://repo.spongepowered.org/maven" }
         maven { url = 'https://maven.parchmentmc.org' }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
         classpath 'org.parchmentmc:librarian:1.+'
     }
 }
 
 apply plugin: 'net.minecraftforge.gradle'
+apply plugin: "org.spongepowered.mixin"
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
@@ -32,6 +35,18 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
+            taskName "Client"
+
+            arg "-mixin.config=${mod_id}.mixins.json"
+
+            property "mixin.env.disableRefMap", "true"
+            property "mixin.debug.export", "true"
+            property "mixin.debug.export.decompile", "false"
+            property "mixin.debug.verbose", "true"
+            property "mixin.debug.dumpTargetOnFailure", "true"
+            property "mixin.checks", "true"
+            property "mixin.hotSwap", "true"
+
             mods {
                 krayscandles {
                     source sourceSets.main
@@ -44,6 +59,18 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
+            taskName "Server"
+
+            arg "-mixin.config=${mod_id}.mixins.json"
+
+            property "mixin.env.disableRefMap", "true"
+            property "mixin.debug.export", "true"
+            property "mixin.debug.export.decompile", "false"
+            property "mixin.debug.verbose", "true"
+            property "mixin.debug.dumpTargetOnFailure", "true"
+            property "mixin.checks", "true"
+            property "mixin.hotSwap", "true"
+
             mods {
                 krayscandles {
                     source sourceSets.main
@@ -53,9 +80,21 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
+
+            taskName "Data"
+
             property 'forge.logging.console.level', 'debug'
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), "-mixin.config=${mod_id}.mixins.json"
+
+            property "mixin.env.disableRefMap", "true"
+            property "mixin.debug.export", "true"
+            property "mixin.debug.export.decompile", "false"
+            property "mixin.debug.verbose", "true"
+            property "mixin.debug.dumpTargetOnFailure", "true"
+            property "mixin.checks", "true"
+            property "mixin.hotSwap", "true"
 
             mods {
                 krayscandles {

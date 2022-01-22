@@ -1,46 +1,59 @@
 package com.tm.krayscandles.events;
 
-import com.tm.calemicore.util.helper.SoundHelper;
+import com.tm.calemicore.util.Location;
+import com.tm.krayscandles.init.InitItems;
 import com.tm.krayscandles.init.InitMobEffects;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.event.entity.living.PotionEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MobEffectEvents {
 
     @SubscribeEvent
-    public void onEffectAdded(PotionEvent.PotionAddedEvent event) {
+    public void onEffectAdded(LivingEvent event) {
 
-        if (event.getPotionEffect().getEffect() == InitMobEffects.FLIGHT.get()) {
+        /*LivingEntity entity = event.getEntityLiving();
 
-            event.getEntityLiving().removeEffect(MobEffects.SLOW_FALLING);
+        if (entity.getEffect(InitMobEffects.FLIGHT.get()) != null) {
 
-            if (event.getEntityLiving() instanceof Player player) {
-                player.getAbilities().mayfly = true;
-                player.onUpdateAbilities();
+            List<Location> locations = new ArrayList<>();
+
+            for (int x = -1; x <= 1; x++) {
+                for (int z = -1; z <= 1; z++) {
+                    locations.add(new Location(entity.getLevel(), entity.getBlockX() + x, entity.getBlockY() - 1, entity.getBlockZ() + z));
+                }
             }
-        }
-    }
 
-    @SubscribeEvent
-    public void onEffectDropped(PotionEvent.PotionExpiryEvent event) {
-        if (event.getPotionEffect() != null && event.getPotionEffect().getEffect() == InitMobEffects.FLIGHT.get()) removeFlight(event.getPotionEffect().getEffect(), event.getEntityLiving());
-    }
+            boolean canPlace = true;
 
-    private void removeFlight(MobEffect effect, LivingEntity entity) {
+            if (entity instanceof Player player) {
 
-        if (entity instanceof Player player) {
+                if (player.isCrouching()) {
+                    canPlace = false;
 
-            SoundHelper.playAtPlayer(player, SoundEvents.BEACON_DEACTIVATE, 1, 10);
+                    for (Location location : locations) {
 
-            player.getAbilities().mayfly = false;
-            player.getAbilities().flying = false;
-            player.onUpdateAbilities();
-        }
+                        if (location.getBlock() == InitItems.CLOUD.get()) {
+                            location.setBlockToAir();
+                        }
+                    }
+                }
+            }
+
+            if (canPlace && entity.getLevel().getGameTime() % 5 == 0) {
+
+                for (Location location : locations) {
+
+                    if (location.isBlockValidForPlacing() || location.getBlock() == InitItems.CLOUD.get()) {
+                        location.setBlock(InitItems.CLOUD.get().defaultBlockState());
+                        location.level.scheduleTick(location.getBlockPos(), InitItems.CLOUD.get(), 20);
+                    }
+                }
+            }
+        }*/
     }
 }

@@ -36,27 +36,23 @@ public class VampireEvents {
 
             if (level.getDayTime() == 18000) {
 
-                if (!level.isClientSide()) {
+                if (canSpawnToday) {
 
-                    if (canSpawnToday) {
+                    if (level.random.nextInt(5) == 0) {
 
-                        if (level.random.nextInt(5) == 0) {
+                        canSpawnToday = false;
+                        int randX = randomPlayer.getBlockX() + (SPAWN_RANGE - level.random.nextInt(SPAWN_RANGE * 2));
+                        int randZ = randomPlayer.getBlockZ() + (SPAWN_RANGE - level.random.nextInt(SPAWN_RANGE * 2));
 
-                            canSpawnToday = false;
-                            int randX = randomPlayer.getBlockX() + (SPAWN_RANGE - level.random.nextInt(SPAWN_RANGE * 2));
-                            int randZ = randomPlayer.getBlockZ() + (SPAWN_RANGE - level.random.nextInt(SPAWN_RANGE * 2));
-
-                            Vampire vampire = new Vampire(level);
-                            level.addFreshEntity(vampire);
-                            vampire.setPos(randX, 251, randZ);
-                            ChatHelper.broadcastMessage(level, new TranslatableComponent("chat.vampire").withStyle(ChatFormatting.DARK_RED, ChatFormatting.ITALIC).append(" [" + randX + ", " + randZ + "]!"));
-                            SoundHelper.playGlobal(level, SoundEvents.WITHER_SPAWN, SoundSource.HOSTILE, 1, 1);
-                        }
+                        Vampire vampire = new Vampire(level);
+                        level.addFreshEntity(vampire);
+                        vampire.setPos(randX, 251, randZ);
+                        ChatHelper.broadcastMessage(level, new TranslatableComponent("chat.vampire").withStyle(ChatFormatting.DARK_RED, ChatFormatting.ITALIC).append(" [" + randX + ", " + randZ + "]!"));
+                        SoundHelper.playGlobal(level, SoundEvents.WITHER_SPAWN, SoundSource.HOSTILE, 1, 1);
                     }
                 }
             }
-        }
-        else canSpawnToday = true;
+        } else canSpawnToday = true;
     }
 
     @SubscribeEvent

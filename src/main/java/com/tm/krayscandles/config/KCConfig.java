@@ -8,13 +8,16 @@ public class KCConfig {
 
     private static final ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
     private static final ForgeConfigSpec.Builder SERVER_BUILDER = new ForgeConfigSpec.Builder();
+    private static final ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
 
     public static final CategoryWraiths wraiths = new CategoryWraiths(SERVER_BUILDER);
     public static final CategoryCandles candles = new CategoryCandles(SERVER_BUILDER);
+    public static final CategoryVillages villages = new CategoryVillages(COMMON_BUILDER);
 
     public static void init() {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_BUILDER.build());
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SERVER_BUILDER.build());
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_BUILDER.build());
     }
 
     public static class CategoryCandles {
@@ -54,6 +57,22 @@ public class KCConfig {
             spawnWraithOnVillagerDeath = builder
                     .comment("Spawn Wraith on Villager Death", "Disabled to stop Wraiths from spawning when a Villager dies.")
                     .define("spawnWraithOnVillagerDeath", true);
+
+            builder.pop();
+        }
+    }
+
+    public static class CategoryVillages {
+
+        public final ForgeConfigSpec.ConfigValue<Integer> villageRitualsWeight;
+
+        public CategoryVillages (ForgeConfigSpec.Builder builder) {
+
+            builder.push("Villages");
+
+            villageRitualsWeight = builder
+                    .comment("Village Rituals Weight", "The higher the weight, the more they will spawn", "Set to 0 to disable.")
+                    .defineInRange("villageRitualsWeight", 2, 0, 32);
 
             builder.pop();
         }

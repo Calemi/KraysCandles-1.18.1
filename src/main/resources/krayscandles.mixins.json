@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tm.krayscandles.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "StructureTemplatePoolAccessor"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

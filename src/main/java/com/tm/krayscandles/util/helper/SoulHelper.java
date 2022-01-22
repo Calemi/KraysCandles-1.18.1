@@ -31,7 +31,7 @@ public class SoulHelper {
      */
     public static Soul getSoulStack(ItemStack stack) {
 
-        CompoundTag tag = ItemHelper.getNBT(stack);
+        CompoundTag tag = stack.getOrCreateTag();
         return Soul.load(tag);
     }
 
@@ -54,7 +54,7 @@ public class SoulHelper {
      */
     public static void setSoulStack(ItemStack stack, Soul soul) {
 
-        CompoundTag tag = ItemHelper.getNBT(stack);
+        CompoundTag tag = stack.getOrCreateTag();
         soul.save(tag);
         stack.setTag(tag);
     }
