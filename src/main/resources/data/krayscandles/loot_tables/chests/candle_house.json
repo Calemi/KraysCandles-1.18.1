@@ -1,0 +1,139 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 3.0,
+        "max": 8.0
+      },
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+		  "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 5.0
+              },
+              "add": false
+            }
+          ],
+          "name": "krayscandles:soul_essence_lesser"
+        },
+		{
+          "type": "minecraft:item",
+		  "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 5.0
+              },
+              "add": false
+            }
+          ],
+          "name": "krayscandles:soybean_crop"
+        },
+		{
+          "type": "minecraft:item",
+		  "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 5.0
+              },
+              "add": false
+            }
+          ],
+          "name": "krayscandles:wax_chunk_soy_raw"
+        },
+		{
+          "type": "minecraft:item",
+		  "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 5.0
+              },
+              "add": false
+            }
+          ],
+          "name": "krayscandles:wax_chunk_soy"
+        },
+		{
+          "type": "minecraft:item",
+		  "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ],
+          "name": "krayscandles:wax_ear"
+        },
+		{
+          "type": "minecraft:item",
+		  "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 3.0
+              },
+              "add": false
+            }
+          ],
+          "name": "krayscandles:wax_chunk_bee"
+        },
+		{	
+          "type": "minecraft:item",
+		  "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 5.0
+              },
+              "add": false
+            }
+          ],
+          "name": "krayscandles:candle_wick"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "krayscandles:rune_great_fire"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "krayscandles:rune_great_energy"
+        },
+		{
+          "type": "minecraft:item",
+          "name": "krayscandles:rune_zen_healing"
+        }
+      ]
+    }
+  ]
+}

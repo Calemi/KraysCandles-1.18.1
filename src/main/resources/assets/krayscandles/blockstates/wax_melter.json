@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "wax_melter_level=0": {
+      "model": "krayscandles:block/wax_melter_0"
+    },
+    "wax_melter_level=1": {
+      "model": "krayscandles:block/wax_melter_1"
+    },
+    "wax_melter_level=2": {
+      "model": "krayscandles:block/wax_melter_2"
+    },
+    "wax_melter_level=3": {
+      "model": "krayscandles:block/wax_melter_3"
+    },
+    "wax_melter_level=4": {
+      "model": "krayscandles:block/wax_melter_4"
+    },
+    "wax_melter_level=5": {
+      "model": "krayscandles:block/wax_melter_4"
+    },
+    "wax_melter_level=6": {
+      "model": "krayscandles:block/wax_melter_4"
+    },
+    "wax_melter_level=7": {
+      "model": "krayscandles:block/wax_melter_4"
+    },
+    "wax_melter_level=8": {
+      "model": "krayscandles:block/wax_melter_4"
+    }
+  }
+}

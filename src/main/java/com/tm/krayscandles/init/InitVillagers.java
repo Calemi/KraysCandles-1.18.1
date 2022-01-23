@@ -2,6 +2,7 @@ package com.tm.krayscandles.init;
 
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
+import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.mixin.StructureTemplatePoolAccessor;
 import net.minecraft.core.Registry;
@@ -24,7 +25,7 @@ public class InitVillagers {
 
     public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES, KCReference.MOD_ID);
 
-    public static final RegistryObject<PoiType> POI_CANDLE = POI_TYPES.register("candle", () -> new PoiType("candle", ImmutableSet.copyOf(InitItems.STONE_ALTAR_TILE.get().getStateDefinition().getPossibleStates()), 1, 1));
+    public static final RegistryObject<PoiType> POI_CANDLE = POI_TYPES.register("candle", () -> new PoiType("candle", ImmutableSet.copyOf(InitItems.WAX_MELTER.get().getStateDefinition().getPossibleStates()), 1, 1));
 
     public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSIONS = DeferredRegister.create(ForgeRegistries.PROFESSIONS, KCReference.MOD_ID);
 
@@ -46,6 +47,7 @@ public class InitVillagers {
 
             for (int i = 0; i < weight; i++) {
                 listOfPieces.add(piece);
+                LogHelper.log(KCReference.MOD_NAME, "Added weight for " + structure);
             }
             poolAccessor.setTemplates(listOfPieces);
 

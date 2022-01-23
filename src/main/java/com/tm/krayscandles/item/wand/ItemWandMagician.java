@@ -29,7 +29,7 @@ public class ItemWandMagician extends ItemWandBase {
         MobEffectHelper.addMobEffect(MobEffects.INVISIBILITY, 120*20, 1, player);
         MobEffectHelper.addMobEffect(MobEffects.LUCK, 120*20, 1, player);
 
-        return false;
+        return true;
     }
 
     @Override

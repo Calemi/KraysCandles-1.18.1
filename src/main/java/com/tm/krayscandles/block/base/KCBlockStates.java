@@ -12,4 +12,5 @@ public class KCBlockStates {
     public static final EnumProperty<DyeColor> COLOR = EnumProperty.create("color", DyeColor.class);
 
     public static final IntegerProperty CRYSTALS = IntegerProperty.create("crystals", 0, 4);
+    public static final IntegerProperty WAX_MELTER_LEVEL = IntegerProperty.create("wax_melter_level", 0, 8);
 }

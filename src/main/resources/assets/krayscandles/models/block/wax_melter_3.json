@@ -1,0 +1,11 @@
+{
+	"parent": "minecraft:block/template_cauldron_full",
+	"textures": {
+		"content": "krayscandles:blocks/wax_still",
+        "inside": "krayscandles:blocks/wax_melter_inner",
+        "particle": "krayscandles:blocks/wax_melter_side",
+        "top": "krayscandles:blocks/wax_melter_top",
+        "bottom": "krayscandles:blocks/wax_melter_bottom",
+        "side": "krayscandles:blocks/wax_melter_side"
+	}
+}

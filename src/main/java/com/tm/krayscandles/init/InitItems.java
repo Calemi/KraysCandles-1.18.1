@@ -145,6 +145,9 @@ public class InitItems {
 
     //------BLOCKS------\\
 
+    //WORK STATIONS
+    public static final RegistryObject<Block> WAX_MELTER =                    regBlock("wax_melter", KraysCandles.TAB_CANDLE, BlockWaxMelter::new);
+
     //CANDLES
     public static final RegistryObject<Block> CANDLE_SOY =                    regBlock("candle_soy", KraysCandles.TAB_CANDLE, BlockCandleSoy::new);
     public static final RegistryObject<Block> CANDLE_SOY_COLORED =     BLOCKS.register("candle_soy_colored", BlockCandleSoyColored::new);

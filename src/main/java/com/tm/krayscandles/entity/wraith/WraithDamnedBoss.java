@@ -1,9 +1,11 @@
 package com.tm.krayscandles.entity.wraith;
 
 import com.tm.calemicore.util.Location;
+import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.init.InitParticles;
 import com.tm.krayscandles.init.InitSounds;
+import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -53,6 +55,7 @@ public class WraithDamnedBoss extends Monster {
      */
     public WraithDamnedBoss(Location location) {
         super(InitEntityTypes.WRAITH_DAMNED.get(), location.level);
+        setPos(location.x, location.y, location.z);
     }
 
     /**
@@ -102,17 +105,17 @@ public class WraithDamnedBoss extends Monster {
             }
 
             getLevel().addParticle(ParticleTypes.LARGE_SMOKE, getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+        }
 
-            if (tickCount % 20 == 0) {
+        if (tickCount % 20 == 0) {
 
-                currentColorID++;
+            currentColorID++;
 
-                if (currentColorID == BossEvent.BossBarColor.values().length) {
-                    currentColorID = 0;
-                }
-
-                bossInfo.setColor(BossEvent.BossBarColor.values()[currentColorID]);
+            if (currentColorID == BossEvent.BossBarColor.values().length) {
+                currentColorID = 0;
             }
+
+            bossInfo.setColor(BossEvent.BossBarColor.values()[currentColorID]);
         }
 
         super.tick();
@@ -133,7 +136,7 @@ public class WraithDamnedBoss extends Monster {
     @Override
     public void stopSeenByPlayer(ServerPlayer player) {
         super.stopSeenByPlayer(player);
-        bossInfo.addPlayer(player);
+        bossInfo.removePlayer(player);
     }
 
     @Override

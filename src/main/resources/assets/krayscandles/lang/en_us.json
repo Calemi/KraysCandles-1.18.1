@@ -45,7 +45,7 @@
 
   "item.krayscandles.zombie_ear": "Zombie Ear",
   "lore.zombie_ear": "Drops from Zombies hit by a Scalpel.",
-  "item.krayscandles.bat_eyeball": "Bat Eyeball.",
+  "item.krayscandles.bat_eyeball": "Bat Eyeball",
   "lore.flying_bat_eyeball": "A rare drop from mobs.",
   "item.krayscandles.q_tip": "Cotton Swab",
   "item.krayscandles.cloth_cursed": "Cursed Cloth",
@@ -99,6 +99,7 @@
 
 
 
+  "block.krayscandles.wax_melter": "Wax Melter",
 
   "block.krayscandles.candle_soy": "Soy Candle",
 

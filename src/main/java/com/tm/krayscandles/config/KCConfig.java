@@ -65,14 +65,19 @@ public class KCConfig {
     public static class CategoryVillages {
 
         public final ForgeConfigSpec.ConfigValue<Integer> villageRitualsWeight;
+        public final ForgeConfigSpec.ConfigValue<Integer> villageCandleHouseWeight;
 
         public CategoryVillages (ForgeConfigSpec.Builder builder) {
 
             builder.push("Villages");
 
             villageRitualsWeight = builder
-                    .comment("Village Rituals Weight", "The higher the weight, the more they will spawn", "Set to 0 to disable.")
+                    .comment("Village Rituals Weight", "The higher the weight, the more frequent they will spawn", "Set to 0 to disable.")
                     .defineInRange("villageRitualsWeight", 2, 0, 32);
+
+            villageCandleHouseWeight = builder
+                    .comment("Village Candle House Weight", "The higher the weight, the more frequent they will spawn", "Set to 0 to disable.")
+                    .defineInRange("villageCandleHouseWeight", 4, 0, 32);
 
             builder.pop();
         }
