@@ -21,6 +21,7 @@ public class InitEvents {
         MinecraftForge.EVENT_BUS.register(new BlockDropEvents());
         MinecraftForge.EVENT_BUS.register(new MobEffectEvents());
         MinecraftForge.EVENT_BUS.register(new AddTradesEvent());
+        MinecraftForge.EVENT_BUS.register(new AddVillageStructuresEvent());
     }
 
     /**

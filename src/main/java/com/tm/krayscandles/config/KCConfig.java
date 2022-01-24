@@ -77,7 +77,7 @@ public class KCConfig {
 
             villageCandleHouseWeight = builder
                     .comment("Village Candle House Weight", "The higher the weight, the more frequent they will spawn", "Set to 0 to disable.")
-                    .defineInRange("villageCandleHouseWeight", 4, 0, 32);
+                    .defineInRange("villageCandleHouseWeight", 6, 0, 32);
 
             builder.pop();
         }

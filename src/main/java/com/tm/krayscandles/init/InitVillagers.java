@@ -8,12 +8,14 @@ import com.tm.krayscandles.mixin.StructureTemplatePoolAccessor;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.level.levelgen.feature.structures.LegacySinglePoolElement;
 import net.minecraft.world.level.levelgen.feature.structures.StructurePoolElement;
 import net.minecraft.world.level.levelgen.feature.structures.StructureTemplatePool;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -35,10 +37,12 @@ public class InitVillagers {
      * All of the credit for this method goes to the creators of the Waystones mod.
      * https://github.com/ModdingForBlockheads/Waystones/blob/1.18.x/shared/src/main/java/net/blay09/mods/waystones/worldgen/ModWorldGen.java
      */
-    public static void addVillageStructure(RegistryAccess registryAccess, String villagePiece, ResourceLocation structure, int weight) {
+    public static void addVillageStructure(ServerStartingEvent event, String villagePiece, String structureName, int weight) {
+
+        ResourceLocation structure = new ResourceLocation(KCReference.MOD_ID, structureName);
 
         LegacySinglePoolElement piece = StructurePoolElement.legacy(structure.toString()).apply(StructureTemplatePool.Projection.RIGID);
-        StructureTemplatePool pool = registryAccess.registryOrThrow(Registry.TEMPLATE_POOL_REGISTRY).getOptional(new ResourceLocation(villagePiece)).orElse(null);
+        StructureTemplatePool pool = event.getServer().registryAccess().registryOrThrow(Registry.TEMPLATE_POOL_REGISTRY).getOptional(new ResourceLocation(villagePiece)).orElse(null);
 
         if (pool != null) {
             var poolAccessor = (StructureTemplatePoolAccessor) pool;

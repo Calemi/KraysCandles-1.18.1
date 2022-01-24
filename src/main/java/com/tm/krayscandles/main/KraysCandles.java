@@ -5,12 +5,9 @@ import com.tm.krayscandles.init.*;
 import com.tm.krayscandles.tab.KCCandleTab;
 import com.tm.krayscandles.tab.KCMainTab;
 import com.tm.krayscandles.tab.KCToolTab;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -59,28 +56,5 @@ public class KraysCandles {
         KCConfig.init();
 
         MinecraftForge.EVENT_BUS.register(this);
-    }
-
-    @SubscribeEvent
-    public void onServerStarting (ServerStartingEvent event) {
-
-        if (KCConfig.villages.villageRitualsWeight.get() > 0) {
-
-            //Rituals
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/plains/houses", new ResourceLocation(KCReference.MOD_ID, "village/plains/essence_ritual"), KCConfig.villages.villageRitualsWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/desert/houses", new ResourceLocation(KCReference.MOD_ID, "village/desert/rune_ritual"), KCConfig.villages.villageRitualsWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/taiga/houses", new ResourceLocation(KCReference.MOD_ID, "village/taiga/candle_ritual"), KCConfig.villages.villageRitualsWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/savanna/houses", new ResourceLocation(KCReference.MOD_ID, "village/savanna/crystal_ritual"), KCConfig.villages.villageRitualsWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/snowy/houses", new ResourceLocation(KCReference.MOD_ID, "village/snowy/wand_ritual"), KCConfig.villages.villageRitualsWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/plains/zombie/houses", new ResourceLocation(KCReference.MOD_ID, "village/zombie/wraith_ritual"), KCConfig.villages.villageRitualsWeight.get());
-
-            //Candle Houses
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/plains/houses", new ResourceLocation(KCReference.MOD_ID, "village/plains/plains_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/desert/houses", new ResourceLocation(KCReference.MOD_ID, "village/desert/desert_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/taiga/houses", new ResourceLocation(KCReference.MOD_ID, "village/taiga/taiga_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/savanna/houses", new ResourceLocation(KCReference.MOD_ID, "village/savanna/savanna_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/snowy/houses", new ResourceLocation(KCReference.MOD_ID, "village/desert/plains_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/plains/zombie/houses", new ResourceLocation(KCReference.MOD_ID, "village/desert/plains_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
-        }
     }
 }
