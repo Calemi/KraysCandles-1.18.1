@@ -78,7 +78,7 @@ public class KraysCandles {
             InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/plains/houses", new ResourceLocation(KCReference.MOD_ID, "village/plains/plains_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
             InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/desert/houses", new ResourceLocation(KCReference.MOD_ID, "village/desert/desert_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
             InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/taiga/houses", new ResourceLocation(KCReference.MOD_ID, "village/taiga/taiga_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
-            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/savanna/houses", new ResourceLocation(KCReference.MOD_ID, "village/desert/plains_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
+            InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/savanna/houses", new ResourceLocation(KCReference.MOD_ID, "village/savanna/savanna_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
             InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/snowy/houses", new ResourceLocation(KCReference.MOD_ID, "village/desert/plains_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
             InitVillagers.addVillageStructure(event.getServer().registryAccess(), "village/plains/zombie/houses", new ResourceLocation(KCReference.MOD_ID, "village/desert/plains_candle_house"), KCConfig.villages.villageCandleHouseWeight.get());
         }
