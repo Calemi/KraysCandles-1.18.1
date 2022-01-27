@@ -2,7 +2,7 @@ package com.tm.krayscandles.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
-import com.tm.calemicore.util.RenderedItemStack;
+import com.tm.calemicore.util.render.RenderedItemStack;
 import com.tm.krayscandles.block.BlockCandleSoyMount;
 import com.tm.krayscandles.blockentity.BlockEntityCandleSoyMount;
 import net.minecraft.client.renderer.MultiBufferSource;

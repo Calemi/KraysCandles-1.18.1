@@ -1,7 +1,7 @@
 package com.tm.krayscandles.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.tm.calemicore.util.RenderedFloatingItemStack;
+import com.tm.calemicore.util.render.RenderedFloatingItemStack;
 import com.tm.krayscandles.blockentity.BlockEntityStoneAltarTile;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
