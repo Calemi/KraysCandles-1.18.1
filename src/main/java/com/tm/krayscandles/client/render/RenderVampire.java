@@ -1,7 +1,7 @@
 package com.tm.krayscandles.client.render;
 
 import com.tm.krayscandles.client.model.ModelVampire;
-import com.tm.krayscandles.entity.Vampire;
+import com.tm.krayscandles.entity.vampire.Vampire;
 import com.tm.krayscandles.main.KCReference;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

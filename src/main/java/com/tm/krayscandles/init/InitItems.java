@@ -87,7 +87,7 @@ public class InitItems {
     public static final RegistryObject<Item> ZOMBIE_EAR =                    regItem("zombie_ear", ItemZombieEar::new);
     public static final RegistryObject<Item> BAT_EYEBALL =                   regItem("bat_eyeball", ItemBatEyeball::new);
     public static final RegistryObject<Item> Q_TIP =                         regItem("q_tip", ItemBase::new);
-    public static final RegistryObject<Item> CLOTH_CURSED =                  regItem("cloth_cursed", ItemBase::new);
+    public static final RegistryObject<Item> CLOTH_BLOODY =                  regItem("cloth_bloody", ItemBase::new);
     public static final RegistryObject<Item> WINGS_WRAITH =                  regItem("wings_wraith", ItemBase::new);
     public static final RegistryObject<Item> WINGS_DIVINE =                  regItem("wings_divine", ItemBase::new);
     public static final RegistryObject<Item> GARLIC =                        regItem("garlic", ItemBase::new);

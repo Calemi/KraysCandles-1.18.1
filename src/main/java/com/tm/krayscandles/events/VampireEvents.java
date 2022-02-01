@@ -3,7 +3,7 @@ package com.tm.krayscandles.events;
 import com.tm.calemicore.util.helper.ChatHelper;
 import com.tm.calemicore.util.helper.MobEffectHelper;
 import com.tm.calemicore.util.helper.SoundHelper;
-import com.tm.krayscandles.entity.Vampire;
+import com.tm.krayscandles.entity.vampire.Vampire;
 import com.tm.krayscandles.init.InitItems;
 import com.tm.krayscandles.init.InitSounds;
 import net.minecraft.ChatFormatting;

@@ -69,12 +69,42 @@
       }
     ]
   },
+  "entity.vampire_baron_ambient": {
+    "category": "entity",
+    "subtitle": "entity.vampire_baron_ambient.sub",
+    "sounds": [
+      {
+        "name": "krayscandles:entity/vampire_baron_ambient",
+        "stream": true
+      }
+    ]
+  },
   "entity.vampire_hurt": {
     "category": "entity",
     "subtitle": "entity.vampire_hurt.sub",
     "sounds": [
       {
         "name": "krayscandles:entity/vampire_hurt",
+        "stream": true
+      }
+    ]
+  },
+  "entity.vampire_baron_hurt": {
+    "category": "entity",
+    "subtitle": "entity.vampire_baron_hurt.sub",
+    "sounds": [
+      {
+        "name": "krayscandles:entity/vampire_baron_hurt",
+        "stream": true
+      }
+    ]
+  },
+  "entity.vampire_baron_death": {
+    "category": "entity",
+    "subtitle": "entity.vampire_baron_death.sub",
+    "sounds": [
+      {
+        "name": "krayscandles:entity/vampire_baron_death",
         "stream": true
       }
     ]

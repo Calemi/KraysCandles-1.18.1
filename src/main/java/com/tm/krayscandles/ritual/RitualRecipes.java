@@ -115,7 +115,7 @@ public class RitualRecipes {
         RUNE_MINING.setDropResult(InitItems.RUNE_GREAT_MINING.get());
 
         RUNE_NULL.addBaseRecipe(RUNE_BASE_GREATER);
-        RUNE_NULL.addIngredient(InitItems.CLOTH_CURSED.get());
+        RUNE_NULL.addIngredient(InitItems.CLOTH_BLOODY.get());
         RUNE_NULL.setDropResult(InitItems.RUNE_NULL.get());
 
 

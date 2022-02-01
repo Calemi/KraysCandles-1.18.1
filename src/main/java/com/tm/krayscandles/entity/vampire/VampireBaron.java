@@ -1,11 +1,20 @@
-package com.tm.krayscandles.entity;
+package com.tm.krayscandles.entity.vampire;
 
 import com.tm.calemicore.util.helper.MobEffectHelper;
+import com.tm.krayscandles.entity.wraith.Wraith;
 import com.tm.krayscandles.init.InitEntityTypes;
+import com.tm.krayscandles.init.InitParticles;
 import com.tm.krayscandles.init.InitSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffects;
@@ -15,30 +24,38 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import static com.tm.krayscandles.init.InitEntityTypes.VAMPIRE_BARON;
 
-public class Vampire extends Monster {
+public class VampireBaron extends Monster {
+
+    private static final EntityDataAccessor<String> PLAYER_NAME = SynchedEntityData.defineId(VampireBaron.class, EntityDataSerializers.STRING);
 
     /**
      * Constructs a Vampire
-     * @param type The type of entity.
+     *
+     * @param type  The type of entity.
      * @param level The level of the entity.
      */
-    public Vampire(EntityType<? extends Monster> type, Level level) {
+    public VampireBaron(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+        getEntityData().set(PLAYER_NAME, randName());
     }
 
     /**
      * Constructs a Vampire
+     *
      * @param level The level of the entity.
      */
-    public Vampire(Level level) {
-        super(InitEntityTypes.VAMPIRE.get(), level);
+    public VampireBaron(Level level) {
+        super(VAMPIRE_BARON.get(), level);
     }
 
     /**
@@ -49,6 +66,14 @@ public class Vampire extends Monster {
                 .add(Attributes.MAX_HEALTH, 20D)
                 .add(Attributes.MOVEMENT_SPEED, 0.4D)
                 .add(Attributes.ATTACK_DAMAGE, 4);
+    }
+
+    /**
+     * @return The Entity's displayed name with a random name from the list.
+     */
+    @Override
+    public Component getDisplayName() {
+            return new TextComponent("Baron" + " " + getEntityData().get(PLAYER_NAME));
     }
 
     /**
@@ -75,33 +100,21 @@ public class Vampire extends Monster {
         if (!onGround && getDeltaMovement().y < 0.0D) {
             setDeltaMovement(getDeltaMovement().multiply(1.0D, 1.0D, 1.0D));
         }
-
-        if (getLevel().isClientSide()) {
-            getLevel().addParticle(ParticleTypes.LARGE_SMOKE, getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
-        }
-
-        else {
-
-            if (getLevel().isDay()){
-
-                if (!getDisplayName().getString().equalsIgnoreCase("The Count")) {
-
-                    playSound(InitSounds.VAMPIRE_VANISH.get(), 1,1);
-
-                    MobEffectHelper.addMobEffect(MobEffects.INVISIBILITY, 20, 4);
-                    Bat bat = new Bat(EntityType.BAT, getLevel());
-                    bat.setPos(getX(), getY(), getZ());
-                    getLevel().addFreshEntity(bat);
-                    kill();
-                }
-            }
-
-            else {
-                MobEffectHelper.addMobEffect(MobEffects.MOVEMENT_SPEED, 20, 0);
-            }
-        }
+            getLevel().addParticle(InitParticles.SOUL_FLAME_MOB.get(), getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+            getLevel().addParticle(ParticleTypes.LARGE_SMOKE, getRandomX(0.5D), getRandomY(), getRandomZ(0.1D), 0.0D, 0.0D, 0.0D);
 
         super.tick();
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        getEntityData().define(PLAYER_NAME, "");
+    }
+
+    @Override
+    public boolean shouldShowName() {
+        return true;
     }
 
     @Override
@@ -141,24 +154,66 @@ public class Vampire extends Monster {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return InitSounds.VAMPIRE_AMBIENT.get();
+        return InitSounds.VAMPIRE_BARON_AMBIENT.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return InitSounds.VAMPIRE_HURT.get();
+        return InitSounds.VAMPIRE_BARON_HURT.get();
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return InitSounds.VAMPIRE_DEATH.get();
+        return InitSounds.VAMPIRE_BARON_DEATH.get();
     }
 
     @Override
-    protected void playStepSound(BlockPos pos, BlockState state) {}
+    protected void playStepSound(BlockPos pos, BlockState state) {
+    }
 
     @Override
     public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
+
+    public String randName() {
+        List<String> list = new ArrayList<>();
+        list.add("Anderson");
+        list.add("Edward");
+        list.add("Von");
+        list.add("Richard");
+        list.add("Geralt");
+        list.add("Bannon");
+        list.add("Von Griddle");
+        list.add("Bruce");
+        list.add("Geddon");
+        list.add("Elijah");
+        list.add("Valentine");
+        list.add("Lance");
+        list.add("Brandyn");
+        list.add("Alec");
+        list.add("Jorin");
+        list.add("Jorah");
+        list.add("Daire");
+        list.add("Nicodemus");
+        list.add("Malik");
+        list.add("Harold");
+        list.add("Duncan");
+        list.add("Godfrey");
+        list.add("Lothaire");
+        list.add("Auberon");
+        list.add("Lucian");
+        list.add("Mathias");
+        list.add("Orion");
+        list.add("Norrix");
+        list.add("Arthur");
+        list.add("Lawrence");
+
+        int index = new Random().nextInt(list.size());
+        final String name = list.get(index);
+        return name;
+    }
+
+
 }
+

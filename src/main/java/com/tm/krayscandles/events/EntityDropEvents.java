@@ -1,7 +1,7 @@
 package com.tm.krayscandles.events;
 
 import com.tm.calemicore.util.helper.MathHelper;
-import com.tm.krayscandles.entity.wraith.Wraith;
+import com.tm.krayscandles.entity.vampire.Vampire;
 import com.tm.krayscandles.entity.wraith.WraithDamnedBoss;
 import com.tm.krayscandles.init.InitItems;
 import net.minecraft.world.entity.LivingEntity;
@@ -41,10 +41,10 @@ public class EntityDropEvents {
             }
         }
 
-        if (entity instanceof Wraith) {
+        if (entity instanceof Vampire) {
 
             if (MathHelper.rollChance(20 + lootingMultiplier)) {
-                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.CLOTH_CURSED.get().asItem())));
+                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.CLOTH_BLOODY.get().asItem())));
             }
         }
 

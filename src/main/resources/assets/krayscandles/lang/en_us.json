@@ -48,7 +48,7 @@
   "item.krayscandles.bat_eyeball": "Bat Eyeball",
   "lore.flying_bat_eyeball": "A rare drop from mobs.",
   "item.krayscandles.q_tip": "Cotton Swab",
-  "item.krayscandles.cloth_cursed": "Cursed Cloth",
+  "item.krayscandles.cloth_bloody": "Bloody Cloth",
   "item.krayscandles.wings_wraith": "Wings of the Damned",
   "item.krayscandles.wings_divine": "Divine Wings",
   "item.krayscandles.crystal_amplifying": "Amplifying Crystal",
@@ -159,6 +159,7 @@
   "entity.krayscandles.wraith_monsters": "Wraith of Monsters",
   "entity.krayscandles.wraith_damned": "Wraith of the Damned",
   "entity.krayscandles.vampire": "Vampire",
+  "entity.krayscandles.vampire_baron": "Vampire Baron",
   "entity.krayscandles.wraith_name": "Wraith of",
   "entity.minecraft.villager.krayscandles.candle": "Candle Maker",
 
