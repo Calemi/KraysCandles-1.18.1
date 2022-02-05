@@ -33,5 +33,12 @@ public class InitSounds {
     public static final RegistryObject<SoundEvent> VAMPIRE_BARON_HURT = SOUNDS.register("entity.vampire_baron_hurt", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "entity.vampire_baron_hurt")));
     public static final RegistryObject<SoundEvent> VAMPIRE_BARON_DEATH = SOUNDS.register("entity.vampire_baron_death", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "entity.vampire_baron_death")));
     public static final RegistryObject<SoundEvent> VAMPIRE_BARON_AMBIENT = SOUNDS.register("entity.vampire_baron_ambient", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "entity.vampire_baron_ambient")));
+    public static final RegistryObject<SoundEvent> VAMPIRE_BARONESS_HURT = SOUNDS.register("entity.vampire_baroness_hurt", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "entity.vampire_baroness_hurt")));
+    public static final RegistryObject<SoundEvent> VAMPIRE_BARONESS_DEATH = SOUNDS.register("entity.vampire_baroness_death", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "entity.vampire_baroness_death")));
+    public static final RegistryObject<SoundEvent> VAMPIRE_BARONESS_AMBIENT = SOUNDS.register("entity.vampire_baroness_ambient", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "entity.vampire_baroness_ambient")));
+
+
+
+
 }
 

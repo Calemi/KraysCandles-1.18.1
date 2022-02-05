@@ -27,11 +27,11 @@ import net.minecraftforge.network.NetworkHooks;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import static com.tm.krayscandles.init.InitEntityTypes.VAMPIRE_BARON;
+import static com.tm.krayscandles.init.InitEntityTypes.VAMPIRE_BARONESS;
 
-public class VampireBaron extends Monster {
+public class VampireBaroness extends Monster {
 
-    private static final EntityDataAccessor<String> PLAYER_NAME = SynchedEntityData.defineId(VampireBaron.class, EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<String> PLAYER_NAME = SynchedEntityData.defineId(VampireBaroness.class, EntityDataSerializers.STRING);
 
     /**
      * Constructs a Vampire
@@ -39,7 +39,7 @@ public class VampireBaron extends Monster {
      * @param type  The type of entity.
      * @param level The level of the entity.
      */
-    public VampireBaron(EntityType<? extends Monster> type, Level level) {
+    public VampireBaroness(EntityType<? extends Monster> type, Level level) {
         super(type, level);
         getEntityData().set(PLAYER_NAME, randName());
     }
@@ -49,8 +49,8 @@ public class VampireBaron extends Monster {
      *
      * @param level The level of the entity.
      */
-    public VampireBaron(Level level) {
-        super(VAMPIRE_BARON.get(), level);
+    public VampireBaroness(Level level) {
+        super(VAMPIRE_BARONESS.get(), level);
     }
 
     /**
@@ -68,7 +68,7 @@ public class VampireBaron extends Monster {
      */
     @Override
     public Component getDisplayName() {
-            return new TextComponent("Baron" + " " + getEntityData().get(PLAYER_NAME));
+        return new TextComponent("Baroness" + " " + getEntityData().get(PLAYER_NAME));
     }
 
     /**
@@ -95,8 +95,8 @@ public class VampireBaron extends Monster {
         if (!onGround && getDeltaMovement().y < 0.0D) {
             setDeltaMovement(getDeltaMovement().multiply(1.0D, 1.0D, 1.0D));
         }
-            getLevel().addParticle(InitParticles.SOUL_FLAME_MOB.get(), getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
-            getLevel().addParticle(ParticleTypes.LARGE_SMOKE, getRandomX(0.5D), getRandomY(), getRandomZ(0.1D), 0.0D, 0.0D, 0.0D);
+        getLevel().addParticle(InitParticles.SOUL_FLAME_MAGIC.get(), getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+        getLevel().addParticle(ParticleTypes.LARGE_SMOKE, getRandomX(0.5D), getRandomY(), getRandomZ(0.1D), 0.0D, 0.0D, 0.0D);
 
         super.tick();
     }
@@ -149,17 +149,17 @@ public class VampireBaron extends Monster {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return InitSounds.VAMPIRE_BARON_AMBIENT.get();
+        return InitSounds.VAMPIRE_BARONESS_AMBIENT.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return InitSounds.VAMPIRE_BARON_HURT.get();
+        return InitSounds.VAMPIRE_BARONESS_HURT.get();
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return InitSounds.VAMPIRE_BARON_DEATH.get();
+        return InitSounds.VAMPIRE_BARONESS_DEATH.get();
     }
 
     @Override
@@ -173,36 +173,36 @@ public class VampireBaron extends Monster {
 
     public String randName() {
         List<String> list = new ArrayList<>();
-        list.add("Anderson");
-        list.add("Edward");
-        list.add("Von");
-        list.add("Richard");
-        list.add("Geralt");
-        list.add("Bannon");
-        list.add("Von Griddle");
-        list.add("Bruce");
-        list.add("Geddon");
-        list.add("Elijah");
+        list.add("Silvana");
+        list.add("Jillian");
+        list.add("Elizabeth");
+        list.add("Gertrude");
+        list.add("Judy");
+        list.add("Elizabeth");
+        list.add("Lexie");
+        list.add("Betsy");
+        list.add("Eryn");
+        list.add("Emily");
+        list.add("Stephanie");
+        list.add("Stephania");
+        list.add("Rochelle");
+        list.add("Richelle");
+        list.add("Margaret");
+        list.add("Jane");
+        list.add("Rowena");
+        list.add("Hestia");
+        list.add("Charity");
+        list.add("Feronia");
+        list.add("Valenthia");
         list.add("Valentine");
-        list.add("Lance");
-        list.add("Brandyn");
-        list.add("Alec");
-        list.add("Jorin");
-        list.add("Jorah");
-        list.add("Daire");
-        list.add("Nicodemus");
-        list.add("Malik");
-        list.add("Harold");
-        list.add("Duncan");
-        list.add("Godfrey");
-        list.add("Lothaire");
-        list.add("Auberon");
-        list.add("Lucian");
-        list.add("Mathias");
-        list.add("Orion");
-        list.add("Norrix");
-        list.add("Arthur");
-        list.add("Lawrence");
+        list.add("Petra");
+        list.add("Ravette");
+        list.add("Minerva");
+        list.add("Gretchen");
+        list.add("Silvia");
+        list.add("Nora");
+        list.add("Lorraine");
+        list.add("Ursula");
 
         int index = new Random().nextInt(list.size());
         final String name = list.get(index);
@@ -211,4 +211,5 @@ public class VampireBaron extends Monster {
 
 
 }
+
 

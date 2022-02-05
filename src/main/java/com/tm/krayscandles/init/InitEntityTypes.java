@@ -3,6 +3,7 @@ package com.tm.krayscandles.init;
 import com.tm.krayscandles.entity.Cloud;
 import com.tm.krayscandles.entity.vampire.Vampire;
 import com.tm.krayscandles.entity.vampire.VampireBaron;
+import com.tm.krayscandles.entity.vampire.VampireBaroness;
 import com.tm.krayscandles.entity.wraith.*;
 import com.tm.krayscandles.main.KCReference;
 import net.minecraft.resources.ResourceLocation;
@@ -30,6 +31,9 @@ public class InitEntityTypes {
 
     public static final RegistryObject<EntityType<VampireBaron>> VAMPIRE_BARON = ENTITY_TYPES.register("vampire_baron", () -> EntityType.Builder.<VampireBaron>of
             (VampireBaron::new, MobCategory.MONSTER).sized(0.8F, 1.8F).clientTrackingRange(10).build(new ResourceLocation(KCReference.MOD_ID, "vampire_baron").toString()));
+
+    public static final RegistryObject<EntityType<VampireBaroness>> VAMPIRE_BARONESS = ENTITY_TYPES.register("vampire_baroness", () -> EntityType.Builder.<VampireBaroness>of
+            (VampireBaroness::new, MobCategory.MONSTER).sized(0.8F, 1.8F).clientTrackingRange(10).build(new ResourceLocation(KCReference.MOD_ID, "vampire_baroness").toString()));
 
     public static final RegistryObject<EntityType<Cloud>> CLOUD = ENTITY_TYPES.register("cloud", () -> EntityType.Builder.<Cloud>of
             (Cloud::new, MobCategory.MISC).sized(3F, 0.5F).clientTrackingRange(10).build(new ResourceLocation(KCReference.MOD_ID, "cloud").toString()));

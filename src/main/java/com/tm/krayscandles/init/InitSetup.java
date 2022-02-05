@@ -74,6 +74,7 @@ public class InitSetup {
         EntityRenderers.register(InitEntityTypes.WRAITH_DAMNED.get(), RenderWraithDamned::new);
         EntityRenderers.register(InitEntityTypes.VAMPIRE.get(), RenderVampire::new);
         EntityRenderers.register(InitEntityTypes.VAMPIRE_BARON.get(), RenderVampireBaron::new);
+        EntityRenderers.register(InitEntityTypes.VAMPIRE_BARONESS.get(), RenderVampireBaroness::new);
         EntityRenderers.register(InitEntityTypes.CLOUD.get(), NoopRenderer::new);
     }
 }

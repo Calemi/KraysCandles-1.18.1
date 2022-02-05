@@ -3,6 +3,7 @@ package com.tm.krayscandles.events;
 import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.entity.vampire.Vampire;
 import com.tm.krayscandles.entity.vampire.VampireBaron;
+import com.tm.krayscandles.entity.vampire.VampireBaroness;
 import com.tm.krayscandles.entity.wraith.*;
 import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.main.KCReference;
@@ -27,5 +28,6 @@ public class EntityAttributeEvent {
         event.put(InitEntityTypes.WRAITH_DAMNED.get(), WraithDamnedBoss.createAttributes().build());
         event.put(InitEntityTypes.VAMPIRE.get(), Vampire.createAttributes().build());
         event.put(InitEntityTypes.VAMPIRE_BARON.get(), VampireBaron.createAttributes().build());
+        event.put(InitEntityTypes.VAMPIRE_BARONESS.get(), VampireBaroness.createAttributes().build());
     }
 }
