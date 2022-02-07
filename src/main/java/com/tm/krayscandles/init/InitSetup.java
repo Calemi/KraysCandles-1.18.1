@@ -4,6 +4,7 @@ import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.client.render.*;
 import com.tm.krayscandles.main.DispenserLightBehavior;
 import com.tm.krayscandles.main.KCReference;
+import com.tm.krayscandles.packet.KCPacketHandler;
 import com.tm.krayscandles.ritual.RitualRecipes;
 import com.tm.krayscandles.ritual.RitualStructureTypes;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -26,6 +27,8 @@ public class InitSetup {
      */
     public static void initCommon(final FMLCommonSetupEvent event) {
         LogHelper.log(KCReference.MOD_NAME, "Initializing Common-Side for " + KCReference.MOD_NAME);
+
+        KCPacketHandler.init();
 
         InitEvents.initCommon();
 
