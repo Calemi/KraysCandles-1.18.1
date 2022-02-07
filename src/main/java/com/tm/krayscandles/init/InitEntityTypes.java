@@ -36,7 +36,7 @@ public class InitEntityTypes {
             (VampireBaroness::new, MobCategory.MONSTER).sized(0.8F, 1.8F).clientTrackingRange(10).build(new ResourceLocation(KCReference.MOD_ID, "vampire_baroness").toString()));
 
     public static final RegistryObject<EntityType<Cloud>> CLOUD = ENTITY_TYPES.register("cloud", () -> EntityType.Builder.<Cloud>of
-            (Cloud::new, MobCategory.MISC).sized(3F, 0.5F).clientTrackingRange(10).build(new ResourceLocation(KCReference.MOD_ID, "cloud").toString()));
+            (Cloud::new, MobCategory.MISC).sized(0.75F, 2F).clientTrackingRange(10).build(new ResourceLocation(KCReference.MOD_ID, "cloud").toString()));
 
     public static <T extends Wraith> RegistryObject<EntityType<T>> regWraith(String type, EntityType.EntityFactory<T> sup) {
         return ENTITY_TYPES.register("wraith_" + type, () -> EntityType.Builder.of(sup, MobCategory.MONSTER).sized(0.8F, 1.8F).clientTrackingRange(10).build(new ResourceLocation(KCReference.MOD_ID, "wraith_" + type).toString()));

@@ -2,18 +2,23 @@ package com.tm.krayscandles.entity;
 
 import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.init.InitEntityTypes;
+import com.tm.krayscandles.init.InitMobEffects;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.packet.KCPacketHandler;
 import com.tm.krayscandles.packet.PacketCloudControl;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.util.Mth;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -36,15 +41,18 @@ public class Cloud extends Entity {
     public Cloud(Entity entity) {
         super(InitEntityTypes.CLOUD.get(), entity.getLevel());
         setPos(entity.getX(), entity.getY(), entity.getZ());
+        this.xo = entity.getX();
+        this.yo = entity.getY();
+        this.zo = entity.getZ();
     }
 
     @Override
     public void tick() {
         super.tick();
 
-        if (getFirstPassenger() != null && getFirstPassenger() instanceof Player player) {
+        resetFallDistance();
 
-            player.resetFallDistance();
+        if (getFirstPassenger() != null && getFirstPassenger() instanceof Player player) {
 
             if (getLevel().isClientSide() && getFirstPassenger() instanceof LocalPlayer localPlayer) {
 
@@ -52,6 +60,26 @@ public class Cloud extends Entity {
             }
 
             handleMovement(player);
+
+            player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 20, 19, false, false));
+        }
+
+        for (int i = 0; i < 5; i++) {
+            if (getLevel().isClientSide()) {
+
+                double x = getLevel().getRandom().nextDouble() - 0.5F;
+                double z = getLevel().getRandom().nextDouble() - 0.5F;
+                double y = getLevel().getRandom().nextDouble() * 0.5 - (0.5 / 2);
+
+                getLevel().addParticle(ParticleTypes.CLOUD, getX() + x, getY() + y + 0.6D, getZ() + z, 0, 0, 0);
+            }
+        }
+
+        if (tickCount > 60) {
+
+            if (getFirstPassenger() == null) {
+                kill();
+            }
         }
     }
 
@@ -110,51 +138,61 @@ public class Cloud extends Entity {
 
     private void handleMovement(Player player) {
 
+        double speed = 0.5D;
+
+        if (player.isSprinting()) {
+            speed += 0.5D;
+        }
+
         if (getEntityData().get(JUMP_KEY)) {
-            LogHelper.logCommon(KCReference.MOD_NAME, getLevel(), "UP");
-            move(MoverType.SELF, new Vec3(0, 0.5, 0));
+            move(MoverType.SELF, new Vec3(0, speed, 0));
         }
 
         if (getEntityData().get(CROUCH_KEY)) {
-            LogHelper.logCommon(KCReference.MOD_NAME, getLevel(), "DOWN");
-            move(MoverType.SELF, new Vec3(0, -0.5, 0));
+            move(MoverType.SELF, new Vec3(0, -speed, 0));
         }
 
         if (getEntityData().get(FORWARD_KEY)) {
-            LogHelper.logCommon(KCReference.MOD_NAME, getLevel(), "FORWARD");
-            move(MoverType.SELF, player.getForward());
+            move(MoverType.SELF, player.getForward().multiply(speed, speed, speed));
         }
 
         if (getEntityData().get(BACKWARDS_KEY)) {
-            LogHelper.logCommon(KCReference.MOD_NAME, getLevel(), "BACKWARDS");
-            move(MoverType.SELF, player.getForward().reverse());
+            move(MoverType.SELF, player.getForward().multiply(speed, speed, speed).reverse());
         }
 
         if (getEntityData().get(LEFT_KEY)) {
-            LogHelper.logCommon(KCReference.MOD_NAME, getLevel(), "LEFT");
-            move(MoverType.SELF, player.getForward().multiply(1, 0, 1).yRot(Mth.PI / 2));
+            move(MoverType.SELF, player.getForward().multiply(speed, 0, speed).yRot(Mth.PI / 2));
         }
 
         if (getEntityData().get(RIGHT_KEY)) {
-            LogHelper.logCommon(KCReference.MOD_NAME, getLevel(), "RIGHT");
-            move(MoverType.SELF, player.getForward().multiply(1, 0, 1).yRot(-Mth.PI / 2));
+            move(MoverType.SELF, player.getForward().multiply(speed, 0, speed).yRot(-Mth.PI / 2));
         }
+    }
+
+    @Override
+    public void lerpTo(double pX, double pY, double pZ, float pYaw, float pPitch, int pPosRotationIncrements, boolean pTeleport) {
+        this.setDeltaMovement(pX, pY, pZ);
+    }
+
+    @Override
+    public void lerpMotion(double pX, double pY, double pZ) {
+        this.setDeltaMovement(pX, pY, pZ);
+    }
+
+    @Override
+    protected void removePassenger(Entity passenger) {
+        super.removePassenger(passenger);
+        kill();
     }
 
     @Override
     public double getPassengersRidingOffset() {
-        return super.getPassengersRidingOffset() + 0.1D;
+        return super.getPassengersRidingOffset() - 1;
     }
 
     @Override
-    public void ejectPassengers() {}
-
-    @Override
-    public void stopRiding() {}
-
-    @Override
     public boolean canBeCollidedWith() {
-        return false;
+        return true;
     }
 
     @Override

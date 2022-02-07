@@ -13,24 +13,5 @@ public class MobEffectEvents {
     @SubscribeEvent
     public void onEffectAdded(PotionEvent.PotionAddedEvent event) {
 
-        LivingEntity entity = event.getEntityLiving();
-
-        if (event.getPotionEffect().getEffect() == InitMobEffects.FLIGHT.get()) {
-
-            if (entity.getVehicle() == null) {
-
-                LogHelper.log(KCReference.MOD_NAME, "RIDE");
-
-                Cloud cloud = new Cloud(entity);
-                entity.getLevel().addFreshEntity(cloud);
-                entity.startRiding(cloud, true);
-            }
-        }
-
-        else {
-            if (entity.getVehicle() instanceof Cloud cloud) {
-                cloud.kill();
-            }
-        }
     }
 }
