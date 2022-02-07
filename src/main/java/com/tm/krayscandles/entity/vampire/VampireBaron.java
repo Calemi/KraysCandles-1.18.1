@@ -31,7 +31,7 @@ import static com.tm.krayscandles.init.InitEntityTypes.VAMPIRE_BARON;
 
 public class VampireBaron extends Monster {
 
-    private static final EntityDataAccessor<String> PLAYER_NAME = SynchedEntityData.defineId(VampireBaron.class, EntityDataSerializers.STRING);
+    private static final EntityDataAccessor<String> VAMPIRE_NAME = SynchedEntityData.defineId(VampireBaron.class, EntityDataSerializers.STRING);
 
     /**
      * Constructs a Vampire
@@ -41,7 +41,7 @@ public class VampireBaron extends Monster {
      */
     public VampireBaron(EntityType<? extends Monster> type, Level level) {
         super(type, level);
-        getEntityData().set(PLAYER_NAME, randName());
+        getEntityData().set(VAMPIRE_NAME, randName());
     }
 
     /**
@@ -51,6 +51,7 @@ public class VampireBaron extends Monster {
      */
     public VampireBaron(Level level) {
         super(VAMPIRE_BARON.get(), level);
+        getEntityData().set(VAMPIRE_NAME, randName());
     }
 
     /**
@@ -68,7 +69,7 @@ public class VampireBaron extends Monster {
      */
     @Override
     public Component getDisplayName() {
-            return new TextComponent("Baron" + " " + getEntityData().get(PLAYER_NAME));
+            return new TextComponent("Baron" + " " + getEntityData().get(VAMPIRE_NAME));
     }
 
     /**
@@ -104,7 +105,7 @@ public class VampireBaron extends Monster {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        getEntityData().define(PLAYER_NAME, "");
+        getEntityData().define(VAMPIRE_NAME, "");
     }
 
     @Override
