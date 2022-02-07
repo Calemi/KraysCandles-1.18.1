@@ -5,7 +5,12 @@ import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.init.InitSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffects;
@@ -22,7 +27,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Vampire extends Monster {
+
+    private static final EntityDataAccessor<String> VAMPIRE_NAME = SynchedEntityData.defineId(Vampire.class, EntityDataSerializers.STRING);
 
     /**
      * Constructs a Vampire
@@ -31,6 +42,7 @@ public class Vampire extends Monster {
      */
     public Vampire(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+        getEntityData().set(VAMPIRE_NAME, randName());
     }
 
     /**
@@ -39,6 +51,7 @@ public class Vampire extends Monster {
      */
     public Vampire(Level level) {
         super(InitEntityTypes.VAMPIRE.get(), level);
+        getEntityData().set(VAMPIRE_NAME, randName());
     }
 
     /**
@@ -104,6 +117,26 @@ public class Vampire extends Monster {
         super.tick();
     }
 
+
+    /**
+     * @return The Entity's displayed name with a random name from the list.
+     */
+    @Override
+    public Component getDisplayName() {
+        return new TextComponent("Count" + " " + getEntityData().get(VAMPIRE_NAME));
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        getEntityData().define(VAMPIRE_NAME, "");
+    }
+
+    @Override
+    public boolean shouldShowName() {
+        return true;
+    }
+
     @Override
     protected int calculateFallDamage(float distance, float damageMultiplier) {
         return 0;
@@ -160,5 +193,44 @@ public class Vampire extends Monster {
     @Override
     public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
+    }
+
+    public String randName() {
+        List<String> list = new ArrayList<>();
+        list.add("Anderson");
+        list.add("Edward");
+        list.add("Von");
+        list.add("Richard");
+        list.add("Geralt");
+        list.add("Bannon");
+        list.add("Von Griddle");
+        list.add("Bruce");
+        list.add("Geddon");
+        list.add("Elijah");
+        list.add("Valentine");
+        list.add("Lance");
+        list.add("Brandyn");
+        list.add("Alec");
+        list.add("Jorin");
+        list.add("Jorah");
+        list.add("Daire");
+        list.add("Nicodemus");
+        list.add("Malik");
+        list.add("Harold");
+        list.add("Duncan");
+        list.add("Godfrey");
+        list.add("Lothaire");
+        list.add("Auberon");
+        list.add("Lucian");
+        list.add("Mathias");
+        list.add("Orion");
+        list.add("Norrix");
+        list.add("Arthur");
+        list.add("Lawrence");
+        list.add("Dracula");
+
+        int index = new Random().nextInt(list.size());
+        final String name = list.get(index);
+        return name;
     }
 }
