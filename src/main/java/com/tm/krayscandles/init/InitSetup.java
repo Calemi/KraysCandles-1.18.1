@@ -28,6 +28,11 @@ public class InitSetup {
     public static void initCommon(final FMLCommonSetupEvent event) {
         LogHelper.log(KCReference.MOD_NAME, "Initializing Common-Side for " + KCReference.MOD_NAME);
 
+        event.enqueueWork(() -> {
+            InitStructures.init();
+            InitConfiguredStructures.init();
+        });
+
         KCPacketHandler.init();
 
         InitEvents.initCommon();
