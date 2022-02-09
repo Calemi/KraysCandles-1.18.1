@@ -1,18 +1,15 @@
 package com.tm.krayscandles.events;
 
 import com.tm.calemicore.util.Location;
-import com.tm.calemicore.util.helper.ChatHelper;
-import com.tm.calemicore.util.helper.MathHelper;
-import com.tm.calemicore.util.helper.MobEffectHelper;
-import com.tm.calemicore.util.helper.SoundHelper;
-import com.tm.krayscandles.entity.vampire.Vampire;
+import com.tm.calemicore.util.helper.*;
+import com.tm.krayscandles.entity.vampire.VampireBase;
 import com.tm.krayscandles.entity.vampire.VampireBaron;
 import com.tm.krayscandles.entity.vampire.VampireBaroness;
-import com.tm.krayscandles.entity.wraith.WraithFire;
+import com.tm.krayscandles.entity.vampire.VampireCount;
 import com.tm.krayscandles.init.InitItems;
 import com.tm.krayscandles.init.InitSounds;
+import com.tm.krayscandles.main.KCReference;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Direction;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -53,26 +50,26 @@ public class VampireEvents {
                         int randX = randomPlayer.getBlockX() + (SPAWN_RANGE - level.random.nextInt(SPAWN_RANGE * 2));
                         int randZ = randomPlayer.getBlockZ() + (SPAWN_RANGE - level.random.nextInt(SPAWN_RANGE * 2));
 
-                        Vampire vampire = new Vampire(level);
+                        VampireCount vampire = new VampireCount(new Location(level, randX, 251, randZ));
                         level.addFreshEntity(vampire);
-                        vampire.setPos(randX, 251, randZ);
                         ChatHelper.broadcastMessage(level, new TranslatableComponent("chat.vampire").withStyle(ChatFormatting.DARK_RED, ChatFormatting.ITALIC).append(" [" + randX + ", " + randZ + "]!"));
                         SoundHelper.playGlobal(level, SoundEvents.WITHER_SPAWN, SoundSource.HOSTILE, 1, 1);
                     }
                 }
             }
-        } else canSpawnToday = true;
+        }
+
+        else canSpawnToday = true;
     }
 
     @SubscribeEvent
     public void onVampireGarlicHit(LivingDamageEvent event) {
 
-
         if (event.getSource().getDirectEntity() instanceof Player player) {
 
             ItemStack offItem = player.getOffhandItem();
 
-            if (event.getEntity() instanceof Vampire vampire) {
+            if (event.getEntity() instanceof VampireBase vampire) {
 
                 if (offItem.getItem() == InitItems.GARLIC.get()) {
                     vampire.playSound(InitSounds.VAMPIRE_WEAKENED.get(), 2, 1);
@@ -83,105 +80,49 @@ public class VampireEvents {
             }
         }
     }
+
     @SubscribeEvent
-    public void onVampireBaronDeath(LivingDeathEvent event) {
+    public void onVampireDeath(LivingDeathEvent event) {
 
         if (event.getSource().getDirectEntity() instanceof Player player) {
+
             Level level = player.getLevel();
-            if (event.getEntity() instanceof VampireBaron vampireB) {
-                Random rand = new Random();
-                int upperbound = 30;
-                int int_random = rand.nextInt(upperbound);
-                int int_random2 = rand.nextInt(upperbound);
-                int int_random3 = rand.nextInt(upperbound);
-                int randX = vampireB.getBlockX() + int_random;
-                int randZ = vampireB.getBlockZ() + int_random2;
-                int randX2 = vampireB.getBlockX() + int_random2;
-                int randZ2 = vampireB.getBlockZ() + int_random3;
-                int randX3 = vampireB.getBlockX() + int_random2;
-                int randZ3 = vampireB.getBlockZ() + int_random;
-                int attractionBound = 7;
-                int attractionMultiplier = rand.nextInt(attractionBound);
 
-                if(attractionMultiplier == 3){
-                    VampireBaron vampire = new VampireBaron(level);
-                    VampireBaron vampire2 = new VampireBaron(level);
-                    VampireBaron vampire3 = new VampireBaron(level);
-                    level.addFreshEntity(vampire);
-                    vampire.setPos(randX, 251, randZ);
-                    level.addFreshEntity(vampire2);
-                    vampire2.setPos(randX2, 251, randZ2);
-                    level.addFreshEntity(vampire3);
-                    vampire3.setPos(randX3, 251, randZ3);
-                }
-                if(attractionMultiplier == 2){
-                    VampireBaron vampire = new VampireBaron(level);
-                    VampireBaron vampire2 = new VampireBaron(level);
-                    level.addFreshEntity(vampire);
-                    vampire.setPos(randX, 251, randZ);
-                    level.addFreshEntity(vampire2);
-                    vampire2.setPos(randX2, 251, randZ2);
-
-                }
-                if(attractionMultiplier == 1){
-                    VampireBaron vampire = new VampireBaron(level);
-                    level.addFreshEntity(vampire);
-                    vampire.setPos(randX, 251, randZ);
-
-                }
-                }
+            if (event.getEntity() instanceof VampireBaron baron) {
+                checkCallForReinforcements(level, baron, new VampireBaron(new Location(baron)));
             }
-        }
 
-    @SubscribeEvent
-    public void onVampireBaronessDeath(LivingDeathEvent event) {
-
-        if (event.getSource().getDirectEntity() instanceof Player player) {
-            Level level = player.getLevel();
-            if (event.getEntity() instanceof VampireBaroness vampireB) {
-                Random rand = new Random();
-                int upperbound = 30;
-                int int_random = rand.nextInt(upperbound);
-                int int_random2 = rand.nextInt(upperbound);
-                int int_random3 = rand.nextInt(upperbound);
-                int randX = vampireB.getBlockX() + int_random;
-                int randZ = vampireB.getBlockZ() + int_random2;
-                int randX2 = vampireB.getBlockX() + int_random2;
-                int randZ2 = vampireB.getBlockZ() + int_random3;
-                int randX3 = vampireB.getBlockX() + int_random2;
-                int randZ3 = vampireB.getBlockZ() + int_random;
-                int attractionBound = 7;
-                int attractionMultiplier = rand.nextInt(attractionBound);
-
-                if(attractionMultiplier == 3){
-                    VampireBaroness vampire = new VampireBaroness(level);
-                    VampireBaroness vampire2 = new VampireBaroness(level);
-                    VampireBaroness vampire3 = new VampireBaroness(level);
-                    level.addFreshEntity(vampire);
-                    vampire.setPos(randX, 251, randZ);
-                    level.addFreshEntity(vampire2);
-                    vampire2.setPos(randX2, 251, randZ2);
-                    level.addFreshEntity(vampire3);
-                    vampire3.setPos(randX3, 251, randZ3);
-                }
-                if(attractionMultiplier == 2){
-                    VampireBaroness vampire = new VampireBaroness(level);
-                    VampireBaroness vampire2 = new VampireBaroness(level);
-                    level.addFreshEntity(vampire);
-                    vampire.setPos(randX, 251, randZ);
-                    level.addFreshEntity(vampire2);
-                    vampire2.setPos(randX2, 251, randZ2);
-
-                }
-                if(attractionMultiplier == 1){
-                    VampireBaroness vampire = new VampireBaroness(level);
-                    level.addFreshEntity(vampire);
-                    vampire.setPos(randX, 251, randZ);
-
-                }
+            else if (event.getEntity() instanceof VampireBaroness baron) {
+                checkCallForReinforcements(level, baron, new VampireBaroness(new Location(baron)));
             }
         }
     }
 
+    private void checkCallForReinforcements(Level level, VampireBase hurtVampire, VampireBase spawnedVampire) {
+
+        LogHelper.log(KCReference.MOD_NAME, "CHECKING FOR REINFORCEMENTS");
+
+        Random rand = level.getRandom();
+
+        if (MathHelper.rollChance(50)) {
+
+            LogHelper.log(KCReference.MOD_NAME, "ROLLED");
+
+            for (int i = 0; i < 3; i++) {
+
+                int randX = hurtVampire.getBlockX() + rand.nextInt(10) - 5;
+                int randY = hurtVampire.getBlockY();
+                int randZ = hurtVampire.getBlockZ() + rand.nextInt(10) - 5;
+
+                LogHelper.log(KCReference.MOD_NAME, "TRYING " + new Location(level, randX, randY, randZ));
+
+                if (new Location(level, randX, randY, randZ).isAirBlock()) {
+                    level.addFreshEntity(spawnedVampire);
+                    spawnedVampire.setPos(randX, randY, randZ);
+                    LogHelper.log(KCReference.MOD_NAME, "SPAWNED");
+                }
+            }
+        }
+    }
 }
 

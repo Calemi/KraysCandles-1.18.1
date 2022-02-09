@@ -1,7 +1,10 @@
 package com.tm.krayscandles.init;
 
 import com.tm.calemicore.util.helper.LogHelper;
-import com.tm.krayscandles.client.render.*;
+import com.tm.krayscandles.client.render.block.RenderCandle;
+import com.tm.krayscandles.client.render.block.RenderCandleMount;
+import com.tm.krayscandles.client.render.block.RenderStoneAltarTile;
+import com.tm.krayscandles.client.render.entity.*;
 import com.tm.krayscandles.main.DispenserLightBehavior;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.packet.KCPacketHandler;
@@ -80,7 +83,7 @@ public class InitSetup {
         EntityRenderers.register(InitEntityTypes.WRAITH_MAGIC.get(), RenderWraith::new);
         EntityRenderers.register(InitEntityTypes.WRAITH_MOB.get(), RenderWraith::new);
         EntityRenderers.register(InitEntityTypes.WRAITH_DAMNED.get(), RenderWraithDamned::new);
-        EntityRenderers.register(InitEntityTypes.VAMPIRE.get(), RenderVampire::new);
+        EntityRenderers.register(InitEntityTypes.VAMPIRE_COUNT.get(), RenderVampireCount::new);
         EntityRenderers.register(InitEntityTypes.VAMPIRE_BARON.get(), RenderVampireBaron::new);
         EntityRenderers.register(InitEntityTypes.VAMPIRE_BARONESS.get(), RenderVampireBaroness::new);
         EntityRenderers.register(InitEntityTypes.CLOUD.get(), NoopRenderer::new);

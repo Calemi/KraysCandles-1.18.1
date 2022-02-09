@@ -1,4 +1,4 @@
-package com.tm.krayscandles.client.render;
+package com.tm.krayscandles.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.tm.krayscandles.client.model.ModelWraith;

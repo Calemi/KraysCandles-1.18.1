@@ -1,5 +1,4 @@
-package com.tm.krayscandles.client.render;
-
+package com.tm.krayscandles.client.render.entity;
 
 import com.tm.krayscandles.client.model.ModelVampireBaron;
 import com.tm.krayscandles.entity.vampire.VampireBaron;
@@ -11,7 +10,6 @@ import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
 
 @OnlyIn(Dist.CLIENT)
 public class RenderVampireBaron extends HumanoidMobRenderer<VampireBaron, ModelVampireBaron> {

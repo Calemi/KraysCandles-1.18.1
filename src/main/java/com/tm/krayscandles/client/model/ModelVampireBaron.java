@@ -5,7 +5,6 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.RenderType;
 
-
 public class ModelVampireBaron extends HumanoidModel<VampireBaron> {
 
     public ModelVampireBaron(ModelPart root) {

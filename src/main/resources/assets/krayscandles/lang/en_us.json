@@ -158,9 +158,12 @@
   "entity.krayscandles.wraith_magic": "Wraith of Magic",
   "entity.krayscandles.wraith_monsters": "Wraith of Monsters",
   "entity.krayscandles.wraith_damned": "Wraith of the Damned",
-  "entity.krayscandles.vampire": "Vampire",
+  "entity.krayscandles.vampire_count": "Vampire Count",
   "entity.krayscandles.vampire_baron": "Vampire Baron",
   "entity.krayscandles.vampire_baroness": "Vampire Baroness",
+  "entity.krayscandles.vampire_rank_count": "Count",
+  "entity.krayscandles.vampire_rank_baron": "Baron",
+  "entity.krayscandles.vampire_rank_baroness": "Baroness",
   "entity.krayscandles.wraith_name": "Wraith of",
   "entity.minecraft.villager.krayscandles.candle": "Candle Maker",
 

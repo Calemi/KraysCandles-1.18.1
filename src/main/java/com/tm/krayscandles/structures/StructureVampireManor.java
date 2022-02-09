@@ -3,7 +3,6 @@ package com.tm.krayscandles.structures;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.tm.calemicore.util.helper.LogHelper;
-import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.init.InitStructures;
 import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.BlockPos;
@@ -92,7 +91,7 @@ public class StructureVampireManor extends StructureFeature<JigsawConfiguration>
                 JigsawPlacement.addPieces(newContext, PoolElementStructurePiece::new, blockpos, false, true);
 
         if(structurePiecesGenerator.isPresent()) {
-            LogHelper.log(KCReference.MOD_NAME, "Rundown House at " + blockpos);
+            LogHelper.log(KCReference.MOD_NAME, "Vampire House at " + blockpos);
         }
 
         return structurePiecesGenerator;

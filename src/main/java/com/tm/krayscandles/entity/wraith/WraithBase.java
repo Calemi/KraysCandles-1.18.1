@@ -1,57 +1,73 @@
-package com.tm.krayscandles.entity.vampire;
+package com.tm.krayscandles.entity.wraith;
 
-import com.tm.calemicore.util.helper.MobEffectHelper;
-import com.tm.krayscandles.init.InitEntityTypes;
+import com.tm.calemicore.util.Location;
+import com.tm.krayscandles.init.InitParticles;
 import com.tm.krayscandles.init.InitSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ambient.Bat;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-public class Vampire extends Monster {
-
-    private static final EntityDataAccessor<String> VAMPIRE_NAME = SynchedEntityData.defineId(Vampire.class, EntityDataSerializers.STRING);
+/**
+ * The base class for Wraiths.
+ */
+public abstract class WraithBase extends Monster {
 
     /**
-     * Constructs a Vampire
+     * The data holding a Player's name.
+     */
+    private static final EntityDataAccessor<String> PLAYER_NAME = SynchedEntityData.defineId(WraithBase.class, EntityDataSerializers.STRING);
+
+    /**
+     * Constructs a Wraith
      * @param type The type of entity.
      * @param level The level of the entity.
      */
-    public Vampire(EntityType<? extends Monster> type, Level level) {
+    public WraithBase(EntityType<? extends Monster> type, Level level) {
         super(type, level);
-        getEntityData().set(VAMPIRE_NAME, randName());
     }
 
     /**
-     * Constructs a Vampire
-     * @param level The level of the entity.
+     * Constructs a Wraith
+     * @param type The type of entity.
+     * @param location The location of the entity.
+     * @param playerName A Player's name, if one exists.
      */
-    public Vampire(Level level) {
-        super(InitEntityTypes.VAMPIRE.get(), level);
-        getEntityData().set(VAMPIRE_NAME, randName());
+    public WraithBase(EntityType<? extends Monster> type, Location location, String playerName) {
+        super(type, location.level);
+        setPos(location.x, location.y, location.z);
+        getEntityData().set(PLAYER_NAME, playerName);
+    }
+
+    /**
+     * @return The Wraith's type.
+     */
+    public abstract WraithType getWraithType();
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        getEntityData().define(PLAYER_NAME, "");
     }
 
     /**
@@ -60,7 +76,7 @@ public class Vampire extends Monster {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 20D)
-                .add(Attributes.MOVEMENT_SPEED, 0.4D)
+                .add(Attributes.MOVEMENT_SPEED, 0.3D)
                 .add(Attributes.ATTACK_DAMAGE, 4);
     }
 
@@ -86,50 +102,40 @@ public class Vampire extends Monster {
     public void tick() {
 
         if (!onGround && getDeltaMovement().y < 0.0D) {
-            setDeltaMovement(getDeltaMovement().multiply(1.0D, 1.0D, 1.0D));
+            setDeltaMovement(getDeltaMovement().multiply(1.0D, 0.6D, 1.0D));
         }
 
         if (getLevel().isClientSide()) {
+            getLevel().addParticle(getWraithType().getParticle(), getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
             getLevel().addParticle(ParticleTypes.LARGE_SMOKE, getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
-        }
-
-        else {
-
-            if (getLevel().isDay()){
-
-                if (!getDisplayName().getString().equalsIgnoreCase("The Count")) {
-
-                    playSound(InitSounds.VAMPIRE_VANISH.get(), 1,1);
-
-                    MobEffectHelper.addMobEffect(MobEffects.INVISIBILITY, 20, 4);
-                    Bat bat = new Bat(EntityType.BAT, getLevel());
-                    bat.setPos(getX(), getY(), getZ());
-                    getLevel().addFreshEntity(bat);
-                    kill();
-                }
-            }
-
-            else {
-                MobEffectHelper.addMobEffect(MobEffects.MOVEMENT_SPEED, 20, 0);
-            }
         }
 
         super.tick();
     }
 
-
     /**
-     * @return The Entity's displayed name with a random name from the list.
+     * @return The Entity's displayed name.
      */
     @Override
     public Component getDisplayName() {
-        return new TextComponent("Count" + " " + getEntityData().get(VAMPIRE_NAME));
+
+        if (getEntityData().get(PLAYER_NAME).isEmpty()) {
+            return new TranslatableComponent("entity.krayscandles.wraith_" + getWraithType().getNameKey());
+        }
+
+        return new TextComponent(getEntityData().get(PLAYER_NAME) + "'s ").append(new TranslatableComponent("entity.krayscandles.wraith_" + getWraithType().getNameKey()));
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        getEntityData().define(VAMPIRE_NAME, "");
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        getEntityData().set(PLAYER_NAME, tag.getString("player_name"));
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putString("player_name", getEntityData().get(PLAYER_NAME));
     }
 
     @Override
@@ -174,17 +180,17 @@ public class Vampire extends Monster {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return InitSounds.VAMPIRE_AMBIENT.get();
+        return InitSounds.WRAITH_AMBIENT.get();
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return InitSounds.VAMPIRE_HURT.get();
+        return InitSounds.WRAITH_HURT.get();
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return InitSounds.VAMPIRE_DEATH.get();
+        return InitSounds.WRAITH_DEATH.get();
     }
 
     @Override
@@ -195,42 +201,32 @@ public class Vampire extends Monster {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
 
-    public String randName() {
-        List<String> list = new ArrayList<>();
-        list.add("Anderson");
-        list.add("Edward");
-        list.add("Von");
-        list.add("Richard");
-        list.add("Geralt");
-        list.add("Bannon");
-        list.add("Von Griddle");
-        list.add("Bruce");
-        list.add("Geddon");
-        list.add("Elijah");
-        list.add("Valentine");
-        list.add("Lance");
-        list.add("Brandyn");
-        list.add("Alec");
-        list.add("Jorin");
-        list.add("Jorah");
-        list.add("Daire");
-        list.add("Nicodemus");
-        list.add("Malik");
-        list.add("Harold");
-        list.add("Duncan");
-        list.add("Godfrey");
-        list.add("Lothaire");
-        list.add("Auberon");
-        list.add("Lucian");
-        list.add("Mathias");
-        list.add("Orion");
-        list.add("Norrix");
-        list.add("Arthur");
-        list.add("Lawrence");
-        list.add("Dracula");
+    /**
+     * The different types of Wraiths.
+     */
+    public enum WraithType {
 
-        int index = new Random().nextInt(list.size());
-        final String name = list.get(index);
-        return name;
+        FIRE ("fire", InitParticles.SOUL_FLAME_FIRE.get()),
+        WATER ( "water", InitParticles.SOUL_FLAME_WATER.get()),
+        AIR ("air", InitParticles.SOUL_FLAME_AIR.get()),
+        EXPLOSION ("explosion", InitParticles.SOUL_FLAME_EXPLOSION.get()),
+        MAGIC ("magic", InitParticles.SOUL_FLAME_MAGIC.get()),
+        MOB ("monsters", InitParticles.SOUL_FLAME_MOB.get());
+
+        private final String nameKey;
+        private final SimpleParticleType particle;
+
+        WraithType(String nameKey, SimpleParticleType particle) {
+            this.nameKey = nameKey;
+            this.particle = particle;
+        }
+
+        public String getNameKey() {
+            return nameKey;
+        }
+
+        public SimpleParticleType getParticle() {
+            return particle;
+        }
     }
 }

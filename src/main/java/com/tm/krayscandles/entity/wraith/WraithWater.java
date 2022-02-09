@@ -6,7 +6,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 
-public class WraithWater extends Wraith {
+public class WraithWater extends WraithBase {
 
     public WraithWater(EntityType<? extends Monster> type, Level level) {
         super(type, level);

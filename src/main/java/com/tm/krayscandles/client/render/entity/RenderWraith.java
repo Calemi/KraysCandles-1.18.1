@@ -1,7 +1,7 @@
-package com.tm.krayscandles.client.render;
+package com.tm.krayscandles.client.render.entity;
 
 import com.tm.krayscandles.client.model.ModelWraith;
-import com.tm.krayscandles.entity.wraith.Wraith;
+import com.tm.krayscandles.entity.wraith.WraithBase;
 import com.tm.krayscandles.main.KCReference;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -12,7 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class RenderWraith extends HumanoidMobRenderer<Wraith, ModelWraith<Wraith>> {
+public class RenderWraith extends HumanoidMobRenderer<WraithBase, ModelWraith<WraithBase>> {
 
     protected static final ResourceLocation TEXTURE = new ResourceLocation(KCReference.MOD_ID, "textures/entity/wraith.png");
 
@@ -21,12 +21,12 @@ public class RenderWraith extends HumanoidMobRenderer<Wraith, ModelWraith<Wraith
     }
 
     @Override
-    protected int getBlockLightLevel(Wraith entity, BlockPos partialTicks) {
+    protected int getBlockLightLevel(WraithBase entity, BlockPos partialTicks) {
         return 15;
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Wraith entity) {
+    public ResourceLocation getTextureLocation(WraithBase entity) {
         return TEXTURE;
     }
 }

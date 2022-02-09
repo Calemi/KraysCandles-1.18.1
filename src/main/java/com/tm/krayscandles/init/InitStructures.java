@@ -27,7 +27,7 @@ public class InitStructures {
 
         LogHelper.log(KCReference.MOD_NAME, "Initializing Structures");
 
-        setupMapSpacingAndLand(VAMPIRE_MANOR.get(), new StructureFeatureConfiguration(50, 35, 1234567890), true);
+        setupMapSpacingAndLand(VAMPIRE_MANOR.get(), new StructureFeatureConfiguration(20, 15, 548495843), true);
     }
 
     /**

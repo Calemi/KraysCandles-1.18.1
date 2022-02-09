@@ -60,7 +60,7 @@ public class WraithSpawnEvents {
                 level.addFreshEntity(new WraithMob(location, killedName));
             }
 
-            else if (event.getSource().getDirectEntity() instanceof Monster && !(event.getSource().getDirectEntity() instanceof Wraith)) {
+            else if (event.getSource().getDirectEntity() instanceof Monster && !(event.getSource().getDirectEntity() instanceof WraithBase)) {
                 level.addFreshEntity(new WraithMob(location, killedName));
             }
         }
