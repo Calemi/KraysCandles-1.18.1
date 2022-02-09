@@ -3,6 +3,7 @@ package com.tm.krayscandles.structures;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.tm.calemicore.util.helper.LogHelper;
+import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.init.InitStructures;
 import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.BlockPos;
@@ -40,12 +41,12 @@ public class StructureVampireManor extends StructureFeature<JigsawConfiguration>
     }
 
     private static final Lazy<List<MobSpawnSettings.SpawnerData>> STRUCTURE_MONSTERS = Lazy.of(() -> ImmutableList.of(
-            new MobSpawnSettings.SpawnerData(EntityType.ILLUSIONER, 100, 4, 9),
-            new MobSpawnSettings.SpawnerData(EntityType.VINDICATOR, 100, 4, 9)
+            new MobSpawnSettings.SpawnerData(EntityType.WITCH, 100, 4, 9),
+            new MobSpawnSettings.SpawnerData(EntityType.PILLAGER, 100, 4, 9)
     ));
     private static final Lazy<List<MobSpawnSettings.SpawnerData>> STRUCTURE_CREATURES = Lazy.of(() -> ImmutableList.of(
-            new MobSpawnSettings.SpawnerData(EntityType.SHEEP, 30, 10, 15),
-            new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 100, 1, 2)
+            new MobSpawnSettings.SpawnerData(EntityType.BAT, 30, 10, 15),
+            new MobSpawnSettings.SpawnerData(EntityType.ZOMBIE_VILLAGER, 100, 1, 2)
     ));
 
     public static void setupStructureSpawns(final StructureSpawnListGatherEvent event) {

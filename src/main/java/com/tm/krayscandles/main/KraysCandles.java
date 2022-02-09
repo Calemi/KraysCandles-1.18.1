@@ -107,7 +107,9 @@ public class KraysCandles {
 
                 Biome.BiomeCategory biomeCategory = biomeEntry.getValue().getBiomeCategory();
 
-                if (biomeCategory != Biome.BiomeCategory.OCEAN && biomeCategory != Biome.BiomeCategory.THEEND && biomeCategory != Biome.BiomeCategory.NETHER && biomeCategory != Biome.BiomeCategory.NONE) {
+                if (biomeCategory != Biome.BiomeCategory.OCEAN && biomeCategory != Biome.BiomeCategory.THEEND && biomeCategory != Biome.BiomeCategory.NETHER && biomeCategory != Biome.BiomeCategory.NONE && biomeCategory != Biome.BiomeCategory.BEACH && biomeCategory != Biome.BiomeCategory.DESERT
+                        && biomeCategory != Biome.BiomeCategory.EXTREME_HILLS && biomeCategory != Biome.BiomeCategory.ICY && biomeCategory != Biome.BiomeCategory.JUNGLE && biomeCategory != Biome.BiomeCategory.MESA && biomeCategory != Biome.BiomeCategory.MOUNTAIN
+                        && biomeCategory != Biome.BiomeCategory.MUSHROOM && biomeCategory != Biome.BiomeCategory.PLAINS && biomeCategory != Biome.BiomeCategory.RIVER && biomeCategory != Biome.BiomeCategory.SAVANNA && biomeCategory != Biome.BiomeCategory.SWAMP && biomeCategory != Biome.BiomeCategory.TAIGA) {
                     associateBiomeToConfiguredStructure(KCStructureToMultiMap, InitConfiguredStructures.CONFIGURED_VAMPIRE_HOUSE, biomeEntry.getKey());
                 }
             }
