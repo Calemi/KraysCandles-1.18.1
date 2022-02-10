@@ -2,6 +2,7 @@ package com.tm.krayscandles.events;
 
 import com.tm.calemicore.util.Location;
 import com.tm.calemicore.util.helper.*;
+import com.tm.krayscandles.config.KCConfig;
 import com.tm.krayscandles.entity.vampire.VampireBase;
 import com.tm.krayscandles.entity.vampire.VampireBaron;
 import com.tm.krayscandles.entity.vampire.VampireBaroness;
@@ -88,23 +89,38 @@ public class VampireEvents {
 
             Level level = player.getLevel();
 
-            if (event.getEntity() instanceof VampireBaron baron) {
-                checkCallForReinforcements(level, baron, new VampireBaron(new Location(baron)));
+            if (event.getEntity() instanceof VampireBaroness baroness) {
+
+                if (!baroness.isReinforcement()) {
+
+                    checkCallForReinforcements(level, baroness, (location) -> {
+                        VampireBaroness newBaroness = new VampireBaroness(location);
+                        location.level.addFreshEntity(newBaroness);
+                        return newBaroness;
+                    });
+                }
             }
 
-            else if (event.getEntity() instanceof VampireBaroness baron) {
-                checkCallForReinforcements(level, baron, new VampireBaroness(new Location(baron)));
+            else if (event.getEntity() instanceof VampireBaron baron) {
+
+                if (!baron.isReinforcement()) {
+                    checkCallForReinforcements(level, baron, (location) -> {
+                        VampireBaron newBaron = new VampireBaron(location);
+                        location.level.addFreshEntity(newBaron);
+                        return newBaron;
+                    });
+                }
             }
         }
     }
 
-    private void checkCallForReinforcements(Level level, VampireBase hurtVampire, VampireBase spawnedVampire) {
+    private void checkCallForReinforcements(Level level, VampireBase hurtVampire, VampireSpawnListener spawnedVampire) {
 
         LogHelper.log(KCReference.MOD_NAME, "CHECKING FOR REINFORCEMENTS");
 
         Random rand = level.getRandom();
 
-        if (MathHelper.rollChance(50)) {
+        if (MathHelper.rollChance(KCConfig.vampires.vampireReinforcementChance.get())) {
 
             LogHelper.log(KCReference.MOD_NAME, "ROLLED");
 
@@ -114,15 +130,22 @@ public class VampireEvents {
                 int randY = hurtVampire.getBlockY();
                 int randZ = hurtVampire.getBlockZ() + rand.nextInt(10) - 5;
 
-                LogHelper.log(KCReference.MOD_NAME, "TRYING " + new Location(level, randX, randY, randZ));
+                Location location = new Location(level, randX, randY, randZ);
 
-                if (new Location(level, randX, randY, randZ).isAirBlock()) {
-                    level.addFreshEntity(spawnedVampire);
-                    spawnedVampire.setPos(randX, randY, randZ);
+                if (location.isAirBlock()) {
+
+                    VampireBaron vampire = spawnedVampire.spawnVampire(location);
+                    vampire.setPos(randX, randY, randZ);
+                    vampire.setReinforcement();
+
                     LogHelper.log(KCReference.MOD_NAME, "SPAWNED");
                 }
             }
         }
+    }
+
+    interface VampireSpawnListener {
+        VampireBaron spawnVampire(Location location);
     }
 }
 

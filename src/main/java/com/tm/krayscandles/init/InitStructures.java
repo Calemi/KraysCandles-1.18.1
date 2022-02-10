@@ -3,6 +3,7 @@ package com.tm.krayscandles.init;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.tm.calemicore.util.helper.LogHelper;
+import com.tm.krayscandles.config.KCConfig;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.structures.StructureVampireManor;
 import net.minecraft.data.BuiltinRegistries;
@@ -27,7 +28,7 @@ public class InitStructures {
 
         LogHelper.log(KCReference.MOD_NAME, "Initializing Structures");
 
-        setupMapSpacingAndLand(VAMPIRE_MANOR.get(), new StructureFeatureConfiguration(20, 15, 548495843), true);
+        setupMapSpacingAndLand(VAMPIRE_MANOR.get(), new StructureFeatureConfiguration(KCConfig.worldgen.vampireManorAverageSpread.get(), KCConfig.worldgen.vampireManorMinSpread.get(), 548495843), true);
     }
 
     /**

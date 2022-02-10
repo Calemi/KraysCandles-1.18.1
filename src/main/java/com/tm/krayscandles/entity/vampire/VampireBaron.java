@@ -8,6 +8,10 @@ import com.tm.krayscandles.init.InitParticles;
 import com.tm.krayscandles.init.InitSounds;
 import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -18,8 +22,14 @@ import net.minecraft.world.level.Level;
 
 public class VampireBaron extends VampireBase {
 
+    public static final EntityDataAccessor<Boolean> REINFORCEMENT = SynchedEntityData.defineId(VampireBaron.class, EntityDataSerializers.BOOLEAN);
+
     public VampireBaron(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+    }
+
+    public VampireBaron(EntityType<? extends Monster> type, Location location) {
+        super(type, location);
     }
 
     public VampireBaron(Location location) {
@@ -29,6 +39,20 @@ public class VampireBaron extends VampireBase {
     @Override
     public String getRankPrefix() {
         return "baron";
+    }
+
+    public boolean isReinforcement() {
+        return getEntityData().get(REINFORCEMENT);
+    }
+
+    public void setReinforcement() {
+        getEntityData().set(REINFORCEMENT, true);
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        getEntityData().define(REINFORCEMENT, false);
     }
 
     /**
@@ -47,8 +71,6 @@ public class VampireBaron extends VampireBase {
      */
     @Override
     public void tick() {
-
-        LogHelper.log(KCReference.MOD_NAME, getEntityData().get(VAMPIRE_NAME));
 
         if (getLevel().isClientSide()) {
             getLevel().addParticle(InitParticles.SOUL_FLAME_MOB.get(), getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
@@ -71,6 +93,18 @@ public class VampireBaron extends VampireBase {
     @Override
     protected SoundEvent getDeathSound() {
         return InitSounds.VAMPIRE_BARON_DEATH.get();
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        getEntityData().set(REINFORCEMENT, tag.getBoolean("IsReinforcement"));
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putBoolean("IsReinforcement", getEntityData().get(REINFORCEMENT));
     }
 }
 

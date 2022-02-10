@@ -16,7 +16,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.Random;
 
-public class VampireBaroness extends VampireBase {
+public class VampireBaroness extends VampireBaron {
 
     public VampireBaroness(EntityType<? extends Monster> type, Level level) {
         super(type, level);
@@ -29,16 +29,6 @@ public class VampireBaroness extends VampireBase {
     @Override
     public String getRankPrefix() {
         return "baroness";
-    }
-
-    /**
-     * Called to register the Entity's attributes (like health, damage, etc.)
-     */
-    public static AttributeSupplier.Builder createAttributes() {
-        return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 20D)
-                .add(Attributes.MOVEMENT_SPEED, 0.4D)
-                .add(Attributes.ATTACK_DAMAGE, 4);
     }
 
     /**

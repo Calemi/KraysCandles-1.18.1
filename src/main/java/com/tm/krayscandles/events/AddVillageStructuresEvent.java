@@ -10,8 +10,8 @@ public class AddVillageStructuresEvent {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 
-        int ritualWeight = KCConfig.villages.villageRitualsWeight.get();
-        int houseWeight = KCConfig.villages.villageCandleHouseWeight.get();
+        int ritualWeight = KCConfig.worldgen.villageRitualsWeight.get();
+        int houseWeight = KCConfig.worldgen.villageCandleHouseWeight.get();
 
         if (ritualWeight > 0) {
 
