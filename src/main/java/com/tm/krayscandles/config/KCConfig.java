@@ -90,7 +90,7 @@ public class KCConfig {
 
         public CategoryWorldGen(ForgeConfigSpec.Builder builder) {
 
-            builder.push("Villages");
+            builder.push("World Generation");
 
             villageRitualsWeight = builder
                     .comment("Village Rituals Weight", "The higher the weight, the more frequent they will spawn", "Set to 0 to disable.")
