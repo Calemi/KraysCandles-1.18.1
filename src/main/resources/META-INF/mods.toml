@@ -16,7 +16,7 @@ description='''
 [[dependencies.krayscandles]]
 modId="calemicore"
 mandatory=true
-versionRange="1.0.10"
+versionRange="1.0.12"
 ordering="NONE"
 side="BOTH"
 
