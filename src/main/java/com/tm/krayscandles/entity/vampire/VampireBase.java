@@ -34,6 +34,7 @@ public abstract class VampireBase extends Monster {
      */
     public VampireBase(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+        getEntityData().set(VAMPIRE_NAME, getRandomName());
     }
 
     /**

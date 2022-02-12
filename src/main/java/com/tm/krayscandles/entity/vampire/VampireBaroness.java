@@ -9,8 +9,6 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.Level;
 
@@ -65,38 +63,7 @@ public class VampireBaroness extends VampireBaron {
     public String getRandomName() {
 
         String[] names = new String[]{
-                "Silvana",
-                "Jillian",
-                "Elizabeth",
-                "Gertrude",
-                "Judy",
-                "Elizabeth",
-                "Lexie",
-                "Betsy",
-                "Eryn",
-                "Emily",
-                "Stephanie",
-                "Stephania",
-                "Richelle",
-                "Margaret",
-                "Jane",
-                "Rowena",
-                "Hestia",
-                "Charity",
-                "Feronia",
-                "Petra",
-                "Ravette",
-                "Minerva",
-                "Gretchen",
-                "Silvia",
-                "Nora",
-                "Lorraine",
-                "Ursula",
-                "Tabatha",
-                "Sophia",
-                "Persephone",
-        };
-
+"Silvana","Jillian","Elizabeth","Gertrude","Judy","Elizabeth","Lexie","Betsy","Eryn","Emily","Stephanie","Stephania","Richelle","Margaret","Jane","Rowena","Hestia","Charity","Feronia","Petra","Ravette","Minerva","Gretchen","Silvia","Nora", "Lorraine","Ursula","Tabatha","Sophia","Persephone","Hannah","Madison","Ashley","Sarah","Alexis","Samantha"};
         return names[new Random().nextInt(names.length)];
     }
 }

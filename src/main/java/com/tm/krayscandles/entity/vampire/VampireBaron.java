@@ -2,11 +2,9 @@ package com.tm.krayscandles.entity.vampire;
 
 
 import com.tm.calemicore.util.Location;
-import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.init.InitParticles;
 import com.tm.krayscandles.init.InitSounds;
-import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -73,7 +71,9 @@ public class VampireBaron extends VampireBase {
     public void tick() {
 
         if (getLevel().isClientSide()) {
+            if (getDeathSound() == InitSounds.VAMPIRE_BARON_DEATH.get() ){
             getLevel().addParticle(InitParticles.SOUL_FLAME_MOB.get(), getRandomX(0.5D), getRandomY(), getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+            }
             getLevel().addParticle(ParticleTypes.LARGE_SMOKE, getRandomX(0.5D), getRandomY(), getRandomZ(0.1D), 0.0D, 0.0D, 0.0D);
         }
 

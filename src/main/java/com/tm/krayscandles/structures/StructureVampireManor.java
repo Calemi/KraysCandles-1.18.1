@@ -3,6 +3,7 @@ package com.tm.krayscandles.structures;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.tm.calemicore.util.helper.LogHelper;
+import com.tm.krayscandles.init.InitEntityTypes;
 import com.tm.krayscandles.init.InitStructures;
 import com.tm.krayscandles.main.KCReference;
 import net.minecraft.core.BlockPos;
@@ -40,8 +41,10 @@ public class StructureVampireManor extends StructureFeature<JigsawConfiguration>
     }
 
     private static final Lazy<List<MobSpawnSettings.SpawnerData>> STRUCTURE_MONSTERS = Lazy.of(() -> ImmutableList.of(
-            new MobSpawnSettings.SpawnerData(EntityType.WITCH, 100, 4, 9),
-            new MobSpawnSettings.SpawnerData(EntityType.PILLAGER, 100, 4, 9)
+            new MobSpawnSettings.SpawnerData(InitEntityTypes.VAMPIRE_BARON.get(), 50, 1, 3),
+            new MobSpawnSettings.SpawnerData(EntityType.PILLAGER, 100, 4, 6),
+            new MobSpawnSettings.SpawnerData(InitEntityTypes.VAMPIRE_BARONESS.get(), 50, 1, 3)
+
     ));
     private static final Lazy<List<MobSpawnSettings.SpawnerData>> STRUCTURE_CREATURES = Lazy.of(() -> ImmutableList.of(
             new MobSpawnSettings.SpawnerData(EntityType.BAT, 30, 10, 15),
