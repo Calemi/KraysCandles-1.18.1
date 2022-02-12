@@ -93,6 +93,16 @@ public abstract class VampireBase extends Monster {
     }
 
     @Override
+    public boolean isMaxGroupSizeReached(int size) {
+        return size >= 1;
+    }
+
+    @Override
+    public int getMaxSpawnClusterSize() {
+        return 1;
+    }
+
+    @Override
     public boolean shouldShowName() {
         return true;
     }
