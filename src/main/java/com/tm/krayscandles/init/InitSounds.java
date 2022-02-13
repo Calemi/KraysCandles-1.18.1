@@ -36,6 +36,8 @@ public class InitSounds {
     public static final RegistryObject<SoundEvent> VAMPIRE_BARONESS_DEATH = SOUNDS.register("entity.vampire_baroness_death", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "entity.vampire_baroness_death")));
     public static final RegistryObject<SoundEvent> VAMPIRE_BARONESS_AMBIENT = SOUNDS.register("entity.vampire_baroness_ambient", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "entity.vampire_baroness_ambient")));
 
+    public static final RegistryObject<SoundEvent> MANTLE_EQUIP = SOUNDS.register("misc.mantle_equip", () -> new SoundEvent(new ResourceLocation(KCReference.MOD_ID, "misc.mantle_equip")));
+
 
 
 

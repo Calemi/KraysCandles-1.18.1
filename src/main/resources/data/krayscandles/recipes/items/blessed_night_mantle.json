@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "c c",
+    "coc",
+    "ccc"
+  ],
+  "key":
+  {
+    "c":
+    {
+      "item": "krayscandles:cloth_purified"
+    },
+    "o":
+    {
+      "item": "krayscandles:orb_cursed"
+    }
+  },
+  "result":
+  {
+    "item": "krayscandles:blessed_night_mantle",
+    "count": 1
+  }
+}

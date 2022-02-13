@@ -57,6 +57,8 @@ public class RitualRecipes {
 
     public static final RitualRecipe WRAITH = new RitualRecipe(RitualStructureTypes.WRAITH);
 
+    public static final RitualRecipe ORB = new RitualRecipe(RitualStructureTypes.ORB);
+
     public static void init() {
 
         ESSENCE_GREATER.setHandItem(InitItems.SOUL_ESSENCE_GREATER_DEPLETED.get());
@@ -64,7 +66,8 @@ public class RitualRecipes {
         ESSENCE_BLESSED.setHandItem(InitItems.SOUL_ESSENCE_BLESSED_DEPLETED.get());
         ESSENCE_BLESSED.setDropResult(InitItems.SOUL_ESSENCE_BLESSED.get());
 
-
+        ORB.setHandItem(InitItems.ORB_DEPLETED.get());
+        ORB.setDropResult(InitItems.ORB_CURSED.get());
 
         RUNE_BASE_GREATER.setHandItem(InitItems.RUNE_CATALYST.get());
         RUNE_BASE_GREATER.addIngredient(Items.DIAMOND);

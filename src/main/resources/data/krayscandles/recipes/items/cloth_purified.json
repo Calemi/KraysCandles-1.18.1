@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "krayscandles:soul_essence_blessed"},
+    {"item": "krayscandles:cloth_bloody"}
+  ],
+  "result":
+  {
+    "item": "krayscandles:cloth_purified",
+    "count": 1
+  }
+}

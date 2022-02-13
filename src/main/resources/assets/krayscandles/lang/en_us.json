@@ -49,8 +49,12 @@
   "lore.flying_bat_eyeball": "A rare drop from mobs.",
   "item.krayscandles.q_tip": "Cotton Swab",
   "item.krayscandles.cloth_bloody": "Bloody Cloth",
+  "item.krayscandles.cloth_purified": "Purified Cloth",
   "item.krayscandles.wings_wraith": "Wings of the Damned",
   "item.krayscandles.wings_divine": "Divine Wings",
+  "item.krayscandles.orb_depleted": "Blood Orb (Depleted)",
+  "item.krayscandles.orb_cursed": "Blood Orb",
+  "lore.orb_depleted": "Use on a Cursed Candle of The Night.",
   "item.krayscandles.crystal_amplifying": "Amplifying Crystal",
   "item.krayscandles.crystal_potency": "Potent Crystal",
   "item.krayscandles.crystal_inverting": "Inverting Crystal",
@@ -72,7 +76,7 @@
   "item.krayscandles.rune_null": "Rune of Nullification",
 
   "item.krayscandles.blessed_night_mask": "Mask of The Blessed Night",
-  "item.krayscandles.blessed_night_robes": "Robes of The Blessed Night",
+  "item.krayscandles.blessed_night_mantle": "Mantle of The Blessed Night",
 
   "item.krayscandles.wand_fire": "Greater Wand of Fire",
   "item.krayscandles.wand_energy": "Greater Wand of Energy",

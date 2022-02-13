@@ -88,9 +88,12 @@ public class InitItems {
     public static final RegistryObject<Item> BAT_EYEBALL =                   regItem("bat_eyeball", ItemBatEyeball::new);
     public static final RegistryObject<Item> Q_TIP =                         regItem("q_tip", ItemBase::new);
     public static final RegistryObject<Item> CLOTH_BLOODY =                  regItem("cloth_bloody", ItemBase::new);
+    public static final RegistryObject<Item> CLOTH_PURIFIED =                regItem("cloth_purified", ItemBase::new);
     public static final RegistryObject<Item> WINGS_WRAITH =                  regItem("wings_wraith", ItemBase::new);
     public static final RegistryObject<Item> WINGS_DIVINE =                  regItem("wings_divine", ItemBase::new);
     public static final RegistryObject<Item> GARLIC =                        regItem("garlic", ItemBase::new);
+    public static final RegistryObject<Item> ORB_DEPLETED =                  regItem("orb_depleted", ItemOrbDepleted::new);
+    public static final RegistryObject<Item> ORB_CURSED =                    regItem("orb_cursed", ItemBase::new);
 
     public static final RegistryObject<Item> CRYSTAL_AMPLIFYING =            regItem("crystal_amplifying", () -> new ItemCrystal(RitualRecipes.CRYSTAL_AMPLIFYING));
     public static final RegistryObject<Item> CRYSTAL_POTENCY =               regItem("crystal_potency", () -> new ItemCrystal(RitualRecipes.CRYSTAL_POTENCY));
@@ -129,6 +132,7 @@ public class InitItems {
 
     //ARMOR
     public static final RegistryObject<Item> BLESSED_NIGHT_MASK =            regItem("blessed_night_mask", () -> new ItemArmorBlessedNight(EquipmentSlot.HEAD));
+    public static final RegistryObject<Item> BLESSED_NIGHT_MANTLE =          regItem("blessed_night_mantle", () -> new ItemArmorBlessedNight(EquipmentSlot.CHEST));
 
     //RITUAL NOTES
     public static final RegistryObject<Item> RITUAL_NOTE_ESSENCE =           regItem("ritual_note_essence", ItemBase::new);

@@ -12,6 +12,7 @@ public class RitualStructureTypes {
     public static final RitualStructureType CRYSTAL = new RitualStructureType("crystal", SoundEvents.CONDUIT_ACTIVATE);
     public static final RitualStructureType WAND = new RitualStructureType("wand", InitSounds.WAND_RITUAL);
     public static final RitualStructureType WRAITH = new RitualStructureType("wraith", InitSounds.WRAITH_RITUAL);
+    public static final RitualStructureType ORB = new RitualStructureType("orb", InitSounds.VAMPIRE_COUNT_VANISH);
 
     public static void init() {
 
@@ -44,5 +45,7 @@ public class RitualStructureTypes {
         WRAITH.addRitualBlock(new RitualBlockCandleSoy(-2, 0, -1));
         WRAITH.addRitualBlock(new RitualBlockCandleSoy(2, 0, 1));
         WRAITH.addRitualBlock(new RitualBlockCandleSoy(-2, 0, 1));
+
+        ORB.addRitualBlock(new RitualBlockCandle(InitItems.CANDLE_CURSED.get()));
     }
 }

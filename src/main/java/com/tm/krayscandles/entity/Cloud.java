@@ -34,6 +34,9 @@ public class Cloud extends Entity {
     public static final EntityDataAccessor<Boolean> LEFT_KEY = SynchedEntityData.defineId(Cloud.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Boolean> RIGHT_KEY = SynchedEntityData.defineId(Cloud.class, EntityDataSerializers.BOOLEAN);
 
+    private static int LIFE_TIME = 60;
+    private int current_life = LIFE_TIME;
+
     public Cloud(EntityType<?> type, Level level) {
         super(type, level);
     }
@@ -64,7 +67,7 @@ public class Cloud extends Entity {
             player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 20, 19, false, false));
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < current_life/10; i++) {
             if (getLevel().isClientSide()) {
 
                 double x = getLevel().getRandom().nextDouble() - 0.5F;
@@ -75,11 +78,14 @@ public class Cloud extends Entity {
             }
         }
 
-        if (tickCount > 60) {
-
-            if (getFirstPassenger() == null) {
-                kill();
-            }
+        if(getFirstPassenger() == null){
+            current_life--;
+        }
+        else{
+            current_life = LIFE_TIME;
+        }
+        if(current_life <= 0){
+            kill();
         }
     }
 
@@ -182,7 +188,7 @@ public class Cloud extends Entity {
     @Override
     protected void removePassenger(Entity passenger) {
         super.removePassenger(passenger);
-        kill();
+
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.tm.krayscandles.events;
 
 import com.tm.calemicore.util.helper.MathHelper;
 import com.tm.krayscandles.entity.vampire.VampireBase;
+import com.tm.krayscandles.entity.vampire.VampireCount;
 import com.tm.krayscandles.entity.wraith.WraithDamnedBoss;
 import com.tm.krayscandles.init.InitItems;
 import net.minecraft.world.entity.LivingEntity;
@@ -45,6 +46,13 @@ public class EntityDropEvents {
 
             if (MathHelper.rollChance(20 + lootingMultiplier)) {
                 event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.CLOTH_BLOODY.get().asItem())));
+            }
+        }
+
+        if (entity instanceof VampireCount) {
+
+            if (MathHelper.rollChance(80 + lootingMultiplier)) {
+                event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(), new ItemStack(InitItems.ORB_DEPLETED.get().asItem())));
             }
         }
 

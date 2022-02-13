@@ -199,6 +199,16 @@
       }
     ]
   },
+  "misc.mantle_equip": {
+    "category": "misc",
+    "subtitle": "misc.mantle_equip.sub",
+    "sounds": [
+      {
+        "name": "krayscandles:misc/mantle_equip",
+        "stream": true
+      }
+    ]
+  },
   "disc.music_disc_chunk": {
     "category": "disc",
     "subtitle": "Kray - chunk",
