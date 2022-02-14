@@ -16,16 +16,18 @@ public class PacketCloudControl {
     private boolean backwardsKey;
     private boolean leftKey;
     private boolean rightKey;
+    private boolean sprint;
 
     public PacketCloudControl() {}
 
-    public PacketCloudControl(boolean jumpKey, boolean crouchKey, boolean forwardKey, boolean backwardsKey, boolean leftKey, boolean rightKey) {
+    public PacketCloudControl(boolean jumpKey, boolean crouchKey, boolean forwardKey, boolean backwardsKey, boolean leftKey, boolean rightKey, boolean sprint) {
         this.jumpKey = jumpKey;
         this.crouchKey = crouchKey;
         this.forwardKey = forwardKey;
         this.backwardsKey = backwardsKey;
         this.leftKey = leftKey;
         this.rightKey = rightKey;
+        this.sprint = sprint;
     }
 
     public PacketCloudControl(FriendlyByteBuf buf) {
@@ -35,6 +37,7 @@ public class PacketCloudControl {
         backwardsKey = buf.readBoolean();
         leftKey = buf.readBoolean();
         rightKey = buf.readBoolean();
+        sprint = buf.readBoolean();
     }
 
     public void toBytes (FriendlyByteBuf buf) {
@@ -44,6 +47,7 @@ public class PacketCloudControl {
         buf.writeBoolean(backwardsKey);
         buf.writeBoolean(leftKey);
         buf.writeBoolean(rightKey);
+        buf.writeBoolean(sprint);
     }
 
     public void handle (Supplier<NetworkEvent.Context> ctx) {
@@ -60,6 +64,7 @@ public class PacketCloudControl {
                 cloud.getEntityData().set(Cloud.BACKWARDS_KEY, backwardsKey);
                 cloud.getEntityData().set(Cloud.LEFT_KEY, leftKey);
                 cloud.getEntityData().set(Cloud.RIGHT_KEY, rightKey);
+                cloud.getEntityData().set(Cloud.SPRINT, sprint);
             }
         });
 

@@ -1,9 +1,8 @@
 package com.tm.krayscandles.entity;
 
-import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.init.InitEntityTypes;
-import com.tm.krayscandles.init.InitMobEffects;
-import com.tm.krayscandles.main.KCReference;
+import com.tm.krayscandles.init.InitItems;
+import com.tm.krayscandles.init.InitParticles;
 import com.tm.krayscandles.packet.KCPacketHandler;
 import com.tm.krayscandles.packet.PacketCloudControl;
 import net.minecraft.client.player.LocalPlayer;
@@ -14,11 +13,11 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -33,6 +32,7 @@ public class Cloud extends Entity {
     public static final EntityDataAccessor<Boolean> BACKWARDS_KEY = SynchedEntityData.defineId(Cloud.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Boolean> LEFT_KEY = SynchedEntityData.defineId(Cloud.class, EntityDataSerializers.BOOLEAN);
     public static final EntityDataAccessor<Boolean> RIGHT_KEY = SynchedEntityData.defineId(Cloud.class, EntityDataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<Boolean> SPRINT = SynchedEntityData.defineId(Cloud.class, EntityDataSerializers.BOOLEAN);
 
     private static int LIFE_TIME = 60;
     private int current_life = LIFE_TIME;
@@ -67,7 +67,8 @@ public class Cloud extends Entity {
             player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 20, 19, false, false));
         }
 
-        for (int i = 0; i < current_life/10; i++) {
+        for (int i = 0; i < current_life / 10; i++) {
+
             if (getLevel().isClientSide()) {
 
                 double x = getLevel().getRandom().nextDouble() - 0.5F;
@@ -75,18 +76,17 @@ public class Cloud extends Entity {
                 double y = getLevel().getRandom().nextDouble() * 0.5 - (0.5 / 2);
 
                 getLevel().addParticle(ParticleTypes.CLOUD, getX() + x, getY() + y + 0.6D, getZ() + z, 0, 0, 0);
+
+                if (getFirstPassenger() instanceof Player player && player.getInventory().getArmor(2).getItem() == InitItems.BLESSED_NIGHT_MANTLE.get()) {
+                    getLevel().addParticle(InitParticles.SOUL_FLAME_MAGIC.get(), getX() + x, getY() + y + 0.6D, getZ() + z, 0, -0.1D, 0);
+                }
             }
         }
 
-        if(getFirstPassenger() == null){
-            current_life--;
-        }
-        else{
-            current_life = LIFE_TIME;
-        }
-        if(current_life <= 0){
-            kill();
-        }
+        if (getFirstPassenger() == null) current_life--;
+        else current_life = LIFE_TIME;
+
+        if(current_life <= 0) kill();
     }
 
     private void handleInput(LocalPlayer player) {
@@ -139,14 +139,22 @@ public class Cloud extends Entity {
             getEntityData().set(RIGHT_KEY, false);
         }
 
-        KCPacketHandler.INSTANCE.sendToServer(new PacketCloudControl(getEntityData().get(JUMP_KEY), getEntityData().get(CROUCH_KEY), getEntityData().get(FORWARD_KEY), getEntityData().get(BACKWARDS_KEY), getEntityData().get(LEFT_KEY), getEntityData().get(RIGHT_KEY)));
+        if (player.isSprinting() && !getEntityData().get(SPRINT)) {
+            getEntityData().set(SPRINT, true);
+        }
+
+        else if (!player.isSprinting() && getEntityData().get(SPRINT)) {
+            getEntityData().set(SPRINT, false);
+        }
+
+        KCPacketHandler.INSTANCE.sendToServer(new PacketCloudControl(getEntityData().get(JUMP_KEY), getEntityData().get(CROUCH_KEY), getEntityData().get(FORWARD_KEY), getEntityData().get(BACKWARDS_KEY), getEntityData().get(LEFT_KEY), getEntityData().get(RIGHT_KEY), getEntityData().get(SPRINT)));
     }
 
     private void handleMovement(Player player) {
 
         double speed = 0.5D;
 
-        if (player.isSprinting()) {
+        if (getEntityData().get(SPRINT)) {
             speed += 0.5D;
         }
 
@@ -202,6 +210,12 @@ public class Cloud extends Entity {
     }
 
     @Override
+    public boolean hurt(DamageSource source, float amount) {
+        kill();
+        return super.hurt(source, amount);
+    }
+
+    @Override
     protected void readAdditionalSaveData(CompoundTag tag) {
         getEntityData().set(JUMP_KEY, tag.getBoolean("JumpKey"));
         getEntityData().set(CROUCH_KEY, tag.getBoolean("CrouchKey"));
@@ -209,6 +223,7 @@ public class Cloud extends Entity {
         getEntityData().set(BACKWARDS_KEY, tag.getBoolean("BackwardsKey"));
         getEntityData().set(LEFT_KEY, tag.getBoolean("LeftKey"));
         getEntityData().set(RIGHT_KEY, tag.getBoolean("RightKey"));
+        getEntityData().set(SPRINT, tag.getBoolean("Sprint"));
     }
 
     @Override
@@ -219,6 +234,7 @@ public class Cloud extends Entity {
         tag.putBoolean("BackwardsKey", getEntityData().get(BACKWARDS_KEY));
         tag.putBoolean("LeftKey", getEntityData().get(LEFT_KEY));
         tag.putBoolean("RightKey", getEntityData().get(RIGHT_KEY));
+        tag.putBoolean("Sprint", getEntityData().get(SPRINT));
     }
 
     @Override
@@ -229,6 +245,7 @@ public class Cloud extends Entity {
         getEntityData().define(BACKWARDS_KEY, false);
         getEntityData().define(LEFT_KEY, false);
         getEntityData().define(RIGHT_KEY, false);
+        getEntityData().define(SPRINT, false);
 
     }
 

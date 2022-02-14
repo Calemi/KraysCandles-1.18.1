@@ -22,19 +22,22 @@ public class ItemArmorBlessedNight extends ItemArmorBase {
 
     @Override
     public void onArmorTick(ItemStack stack, Level world, Player player) {
+
         Cloud cloud = new Cloud(player);
+
         if (player.getInventory().getArmor(3).getItem() == InitItems.BLESSED_NIGHT_MASK.get()) {
             MobEffectHelper.addMobEffect(MobEffects.NIGHT_VISION, 600, 0, player);
             MobEffectHelper.addMobEffect(MobEffects.GLOWING, 20, 0, player);
         }
+
         if (player.getInventory().getArmor(2).getItem() == InitItems.BLESSED_NIGHT_MANTLE.get()) {
+
             if (player.getVehicle() == null) {
                 world.addFreshEntity(cloud);
                 player.startRiding(cloud);
                 SoundHelper.playAtPlayer(player, InitSounds.MANTLE_EQUIP.get(), 1, 1);
             }
         }
-
     }
 }
 

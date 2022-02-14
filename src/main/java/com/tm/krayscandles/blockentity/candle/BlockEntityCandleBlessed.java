@@ -7,7 +7,6 @@ import com.tm.krayscandles.item.ItemCrystal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockEntityCandleBlessed extends BlockEntityCandleBase {
@@ -25,12 +24,10 @@ public class BlockEntityCandleBlessed extends BlockEntityCandleBase {
     public void onEntityEffect(LivingEntity entity) {
         super.onEntityEffect(entity);
 
-        if (entity instanceof Player) {
-            if (entity.getVehicle() == null) {
-                Cloud cloud = new Cloud(entity);
-                entity.getLevel().addFreshEntity(cloud);
-                entity.startRiding(cloud);
-            }
+        if (entity.getVehicle() == null) {
+            Cloud cloud = new Cloud(entity);
+            entity.getLevel().addFreshEntity(cloud);
+            entity.startRiding(cloud);
         }
     }
 
