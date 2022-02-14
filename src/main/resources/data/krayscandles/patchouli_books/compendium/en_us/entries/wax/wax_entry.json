@@ -1,0 +1,11 @@
+{
+  "name": "Wax",
+  "icon": "krayscandles:wax_chunk_soy",
+  "category": "krayscandles:waxes",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This is a test entry, but it should show up!"
+    }
+  ]
+}
