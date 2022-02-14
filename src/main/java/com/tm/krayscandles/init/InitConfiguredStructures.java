@@ -12,6 +12,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.JigsawConfigura
 public class InitConfiguredStructures {
 
     public static ConfiguredStructureFeature<?, ?> CONFIGURED_VAMPIRE_HOUSE = InitStructures.VAMPIRE_MANOR.get().configured(new JigsawConfiguration(() -> PlainVillagePools.START, 0));
+    public static ConfiguredStructureFeature<?, ?> CONFIGURED_CANDLE_HUT = InitStructures.CANDLE_HUT.get().configured(new JigsawConfiguration(() -> PlainVillagePools.START, 0));
 
     public static void init() {
 
@@ -19,5 +20,6 @@ public class InitConfiguredStructures {
 
         Registry<ConfiguredStructureFeature<?, ?>> registry = BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE;
         Registry.register(registry, new ResourceLocation(KCReference.MOD_ID, "configured_vampire_manor"), CONFIGURED_VAMPIRE_HOUSE);
+        Registry.register(registry, new ResourceLocation(KCReference.MOD_ID, "configured_vampire_manor"), CONFIGURED_CANDLE_HUT);
     }
 }

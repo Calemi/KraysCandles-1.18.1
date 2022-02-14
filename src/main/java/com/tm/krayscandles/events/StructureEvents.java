@@ -51,6 +51,9 @@ public class StructureEvents {
                 if (biomeEntry.getKey() == Biomes.DARK_FOREST) {
                     associateBiomeToConfiguredStructure(KCStructureToMultiMap, InitConfiguredStructures.CONFIGURED_VAMPIRE_HOUSE, biomeEntry.getKey());
                 }
+                if (biomeEntry.getKey() == Biomes.MEADOW) {
+                    associateBiomeToConfiguredStructure(KCStructureToMultiMap, InitConfiguredStructures.CONFIGURED_CANDLE_HUT, biomeEntry.getKey());
+                }
             }
 
             ImmutableMap.Builder<StructureFeature<?>, ImmutableMultimap<ConfiguredStructureFeature<?, ?>, ResourceKey<Biome>>> tempStructureToMultiMap = ImmutableMap.builder();

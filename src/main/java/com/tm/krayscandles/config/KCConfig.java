@@ -88,6 +88,9 @@ public class KCConfig {
         public final ForgeConfigSpec.ConfigValue<Integer> vampireManorAverageSpread;
         public final ForgeConfigSpec.ConfigValue<Integer> vampireManorMinSpread;
 
+        public final ForgeConfigSpec.ConfigValue<Integer> candleHutAverageSpread;
+        public final ForgeConfigSpec.ConfigValue<Integer> candleHutMinSpread;
+
         public CategoryWorldGen(ForgeConfigSpec.Builder builder) {
 
             builder.push("World Generation");
@@ -111,6 +114,14 @@ public class KCConfig {
             vampireManorMinSpread = builder
                     .comment("Vampire Manor Minimum Spread", "The minimum amount of chunks on to space the manor", "Note: this value must be smaller than the average!")
                     .defineInRange("vampireManorMinSpread", 15, 1, 100);
+
+            candleHutAverageSpread = builder
+                    .comment("Candle Maker Hut Average Spread", "The amount of chunks on average to space the candle maker huts")
+                    .defineInRange("candleHutAverageSpread", 20, 1, 100);
+
+            candleHutMinSpread = builder
+                    .comment("Candle Maker Hut Minimum Spread", "The minimum amount of chunks to space the candle maker huts", "Note: this value must be smaller than the average!")
+                    .defineInRange("candleHutMinSpread", 10, 1, 100);
 
             builder.pop();
         }

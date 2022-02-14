@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableMap;
 import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.config.KCConfig;
 import com.tm.krayscandles.main.KCReference;
+import com.tm.krayscandles.structures.StructureCandleHut;
 import com.tm.krayscandles.structures.StructureVampireManor;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.world.level.levelgen.StructureSettings;
@@ -23,12 +24,14 @@ public class InitStructures {
     public static final DeferredRegister<StructureFeature<?>> STRUCTURES = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, KCReference.MOD_ID);
 
     public static final RegistryObject<StructureFeature<JigsawConfiguration>> VAMPIRE_MANOR = STRUCTURES.register("vampire_manor", () -> (new StructureVampireManor(JigsawConfiguration.CODEC)));
+    public static final RegistryObject<StructureFeature<JigsawConfiguration>> CANDLE_HUT = STRUCTURES.register("candle_hut", () -> (new StructureCandleHut(JigsawConfiguration.CODEC)));
 
     public static void init() {
 
         LogHelper.log(KCReference.MOD_NAME, "Initializing Structures");
 
         setupMapSpacingAndLand(VAMPIRE_MANOR.get(), new StructureFeatureConfiguration(KCConfig.worldgen.vampireManorAverageSpread.get(), KCConfig.worldgen.vampireManorMinSpread.get(), 548495843), true);
+        setupMapSpacingAndLand(CANDLE_HUT.get(), new StructureFeatureConfiguration(KCConfig.worldgen.candleHutAverageSpread.get(), KCConfig.worldgen.candleHutMinSpread.get(), 548495843), true);
     }
 
     /**

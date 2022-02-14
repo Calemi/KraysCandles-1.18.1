@@ -1,6 +1,9 @@
 {
   "name": "Kray's Compendium",
-  "landing_text": "Welcome to the first edition of Kray's Compendium: A Guide to the Wonderful World of Candles. Within this book, you will be able to find and learn the beginner steps to get you started with the world of candle making. Reference this compendium and you will go far. Good luck! ",
-
+  "landing_text": "Welcome to the first edition of Kray's Compendium: A Guide to the Wonderful World of Candles. With this book, you will be able to learn the beginner steps to get you started with your candle making journey.",
+  "book_texture": "patchouli:textures/gui/book_purple.png",
+  "creative_tab": "krayscandles.tabMain",
+  "model": "krayscandles:book",
+  "use_blocky_font": true,
   "version": 1
 }

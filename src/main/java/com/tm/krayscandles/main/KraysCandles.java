@@ -3,6 +3,7 @@ package com.tm.krayscandles.main;
 import com.tm.krayscandles.config.KCConfig;
 import com.tm.krayscandles.events.StructureEvents;
 import com.tm.krayscandles.init.*;
+import com.tm.krayscandles.structures.StructureCandleHut;
 import com.tm.krayscandles.structures.StructureVampireManor;
 import com.tm.krayscandles.tab.KCCandleTab;
 import com.tm.krayscandles.tab.KCMainTab;
@@ -52,6 +53,7 @@ public class KraysCandles {
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
         forgeBus.addListener(EventPriority.NORMAL, StructureEvents::addDimensionalSpacing);
         forgeBus.addListener(EventPriority.NORMAL, StructureVampireManor::setupStructureSpawns);
+        forgeBus.addListener(EventPriority.NORMAL, StructureCandleHut::setupStructureSpawns);
 
         InitItems.init();
         InitSounds.SOUNDS.register(MOD_EVENT_BUS);
