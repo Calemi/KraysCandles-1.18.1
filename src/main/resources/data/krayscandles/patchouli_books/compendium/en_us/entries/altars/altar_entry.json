@@ -1,0 +1,20 @@
+{
+  "name": "Altar Tiles",
+  "icon": "krayscandles:stone_altar_tile",
+  "category": "krayscandles:altars_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Getting Started with Altars",
+      "text": "Stone Altar Tiles are an essential part of most any ritual. These blocks can be placed in a pattern to fit most any ritual note. Altar tiles can be right-clicked with an item to slot the item into it. Different ritual recipes will require a different assortment of items."
+
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Altar Tiles",
+      "recipe": "krayscandles:blocks/stone_altar_tile",
+      "text": "Altar Tiles are fairly cheap to craft, and only require some basic resources as well as a few Lesser Soul Essences to make."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Basic Candle Making",
+  "icon": "krayscandles:candle_soy",
+  "category": "krayscandles:candle_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In order to get started with candle making, you will need some chunks of soy wax. Reference the wax entry for more information on how to obtain different waxes.",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:wax_chunk_soy_small"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Making the Wick",
+      "recipe": "krayscandles:items/candle_wick",
+      "text": "To make any candle, you are going to need to craft a few candle wicks. These allow for candles to be lit using a Flint and Steel."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Filling the Press",
+      "recipe": "krayscandles:blocks/candle_soy",
+      "text": "Crafting a Basic Soy Candle is very easy. Simply combine some wax and a wick to yield a single candle. These basic Soy Candles can be combined with dye to yield a candle of that dye color."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:blocks/candle_wax_bee",
+      "text": "Bee Wax can be used to create a unique transparent candle."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:blocks/candle_wax_ear",
+      "text": "Ear Wax can also be used to create a decorative melted candle as well."
+    }
+  ]
+}

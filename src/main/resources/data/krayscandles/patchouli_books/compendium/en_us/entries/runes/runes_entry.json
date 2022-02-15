@@ -1,0 +1,79 @@
+{
+  "name": "Crafting Runes",
+  "icon": "krayscandles:rune_catalyst",
+  "category": "krayscandles:rune_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "title": "Making A Rune Catalyst",
+      "recipe": "krayscandles:items/rune_catalyst",
+      "text": "In order to begin crafting different runes, you will need to make a rune catalyst. Each Rune requires one at its base."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Rune Rituals",
+      "text": "Once you have crafted your Rune Catalyst and set up your ritual, you are probably ready to begin crafting runes. To find Rune recipes, hover over the Rune you would like to make in this guide. Hold $(d)SHIFT$() while hovering to reveal the required ingredients."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Rune Rituals",
+      "text": "The items listed must be placed into each corresponding Altar Tile. Order does not matter when slotting the ingredients in. After your items are floating in the tiles, right click the statue with a $(d)Rune Catalyst$() to perform the ritual."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_cursed_night",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_purged_light",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_great_fire",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_great_levitation",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_zen_healing",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_great_magic",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_great_luck",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_great_energy",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_great_mining",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_blessed_flight",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:rune_null",
+      "text": "$(d)Hover over Rune & hold SHIFT for more information on crafting in a ritual.$()"
+    }
+  ]
+}

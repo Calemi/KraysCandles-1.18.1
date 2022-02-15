@@ -1,0 +1,84 @@
+{
+  "name": "Magical Candles",
+  "icon": "krayscandles:candle_cursed",
+  "category": "krayscandles:candle_category",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Candle Rituals",
+      "text": "Once you have crafted the Rune you would like to use and set up your candle ritual, you are probably ready to begin crafting some magical candles. Similar to Runes, hover over the Magical Candle you would like to make in this guide. Hold $(d)SHIFT$() while hovering to reveal the required ingredients."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Candle Rituals",
+      "text": "The items listed must be placed into each corresponding Altar Tile. Order does not matter when slotting the ingredients in. After your items are floating in the tiles, right click the statue with the $(d)Rune$() of your choice to perform the ritual."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Cursed Night Candle",
+      "item": "krayscandles:candle_cursed",
+      "text": "This Candle causes Blindness surrounding it when lit. Used in some Rituals.          $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Purged Light Candle",
+      "item": "krayscandles:candle_purged",
+      "text": "This Candle gives infinite Water Breathing surrounding it when lit.          $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Great Fire Candle",
+      "item": "krayscandles:candle_fire",
+      "text": "This Candle gives infinite Fire Resistance surrounding it when lit. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Levitation Candle",
+      "item": "krayscandles:candle_levitate",
+      "text": "This Candle gives infinite Levitation surrounding it when lit. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Zen Healing Candle",
+      "item": "krayscandles:candle_zen",
+      "text": "This Candle gives infinite Regeneration surrounding it when lit. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Invisibility Candle",
+      "item": "krayscandles:candle_invis",
+      "text": "This Candle gives infinite Invisibility surrounding it when lit. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Luck Candle",
+      "item": "krayscandles:candle_luck",
+      "text": "This Candle gives infinite Luck surrounding it when lit. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Candle of Energy",
+      "item": "krayscandles:candle_energy",
+      "text": "This Candle gives infinite Speed surrounding it when lit. May cause Thunderstorms when placed. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Candle of Caverns",
+      "item": "krayscandles:candle_cavern",
+      "text": "This Candle gives infinite Haste surrounding it when lit. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Blessed Flight Candle",
+      "item": "krayscandles:candle_blessed",
+      "text": "This Candle gives infinite Flight surrounding it when lit. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Nullifier Candle",
+      "item": "krayscandles:candle_null",
+      "text": "This Candle Nullifies the effects of other surrounding candles. Can be used as a filter. $(d)Hover over the Candle & hold SHIFT for more information on crafting in a ritual.$()"
+    }
+  ]
+}

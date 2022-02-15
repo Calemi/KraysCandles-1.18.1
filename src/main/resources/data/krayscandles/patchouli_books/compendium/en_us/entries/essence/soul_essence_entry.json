@@ -1,0 +1,20 @@
+{
+  "name": "Lesser Soul Essence",
+  "icon": "krayscandles:soul_essence_lesser",
+  "category": "krayscandles:essence_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Gathering Soul Essences is a very long but rewarding process. In order to get started with harvesting Soul Essences, you will need to craft yourself a $(d)Blade of the Cursed Night$().",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:blade_night"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Killing Monsters and other creatures with the $(d)Blade of the Cursed Night$() will yield a $(d)Lesser Soul Essence$()",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:soul_essence_lesser"
+    }
+  ]
+}

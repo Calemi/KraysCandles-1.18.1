@@ -1,0 +1,41 @@
+{
+  "name": "Statues",
+  "icon": "krayscandles:statue",
+  "category": "krayscandles:altars_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:statue",
+      "text": "The $(d)Statue of the Ancient Candle$() is a unique statue that is used in the Rune Ritual. The process of crafting this statue can be quite tedious, but charging Runes is an essential part of making advanced candles and wands."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/stone_man_head",
+      "recipe2": "krayscandles:items/stone_man_body"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/stone_man_base",
+      "text": "Once you have obtained the three essential parts of the statue, the rest is fairly simple."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/stone_statue_uncarved",
+      "text": "Combining the three pieces will result in an uncarved statue. This item must be carved and cut properly in order to turn it into something resembling a statue."
+    },
+    {
+      "type": "patchouli:stonecutting",
+      "title": "Carving the Statue",
+      "recipe": "krayscandles:items/stone_statue_carved",
+      "text": "Simply placing an uncarved statue into a stonecutting table will yield a $(d)Carved Stone Statue$()."
+    },
+    {
+    "type": "patchouli:crafting",
+    "title": "Finishing Touches",
+    "recipe": "krayscandles:blocks/statue",
+    "text": "Now take the carved statue and combine it with a simple soy candle. This will finally give you the $(d)Statue of the Ancient Candle$()."
+    }
+  ]
+}

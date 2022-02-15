@@ -1,0 +1,44 @@
+{
+  "name": "Magical Wax",
+  "icon": "krayscandles:wax_chunk_blessed",
+  "category": "krayscandles:wax_category",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "There are three known Magical Waxes that can be used when making candles. To make all three of these waxes, you will need an $(d)Empty Iron Press$(). The recipe can be found under the Basic Wax entry.",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:iron_press"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Cursed Wax",
+      "recipe": "krayscandles:items/iron_press_cursed",
+      "text": "The first of these magical waxes is the $(d)Cursed Wax$(). This can be crafted by combining the above ingredients into an Iron Press."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Purged Wax",
+      "recipe": "krayscandles:items/iron_press_purged",
+      "text": "Next we have the $(d)Purged Wax$(). This can be crafted by combining the above ingredients into an Iron Press."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Blessed Wax",
+      "recipe": "krayscandles:items/iron_press_blessed",
+      "text": "Finally, we have the $(d)Blessed Wax$(). This can be crafted by combining the above ingredients into an Iron Press."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/wax_chunk_cursed",
+      "recipe2": "krayscandles:items/wax_chunk_purged",
+      "title": "Crafting Magical Chunks"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Magical Chunks",
+      "recipe": "krayscandles:items/wax_chunk_blessed",
+      "text": "Each one of these Filled Presses can be used in a crafting grid to yield the matching Magical Wax type."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "How Candles Work",
+  "icon": "minecraft:flint_and_steel",
+  "category": "krayscandles:candle_category",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "How Candles Work",
+      "text": "All Candles that you craft have two states. Lit and Unlit. All candles begin as unlit when placed, but can be changed to lit very easily. Simply right click the candle with a Flint and Steel. This will change the candle state to lit, and will activate the magic inside each candle."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Magic Candles",
+      "text": "Magic candles when lit disperse an effect within a radius of the candle. For Example, a Flight candle when lit will allow you to fly around while staying inside the radius of the candle. Magic Candles can also be filtered to give effects to certain mobs or players."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Filtering Candles",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:lantern_soul_trapped",
+      "text": "This can be done by lighting a candle with a filled $(d)Soul Lantern$(). For Example, a Levitation Candle could be lit with a $(d)Trapped Soul Lantern (Pig)$(). This would cause only pigs to levitate inside the radius of the candle. To learn more about how to capture souls, reference the weapons entry."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Using Crystals",
+      "text": "There are also three types of crystals you can right-click to equip a candle with. This can Expand the Radius of Effect, Increase the Potency of an Effect, or exclude a certain entity from a candle. To learn more about how to make crystals, reference the crystals entry."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Extra Information",
+      "text": "All Candles can be lit with other items such as lanterns, soul lanterns, and filled soul lanterns. This also means that candles placed on top of Dispensers can be lit using redstone."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Try it at Home",
+      "text": "Try placing a candle on top of a dispenser that has a flint & steel inside. Supply a redstone signal to the dispenser and watch the magic happen!"
+    }
+  ]
+}

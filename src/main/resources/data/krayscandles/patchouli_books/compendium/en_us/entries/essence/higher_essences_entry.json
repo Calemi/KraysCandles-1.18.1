@@ -1,0 +1,32 @@
+{
+  "name": "Advanced Essences",
+  "icon": "krayscandles:soul_essence_greater",
+  "category": "krayscandles:essence_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Higher Essences",
+      "text": "Now that you have gathered some Lesser Soul Essences, you can craft higher essences. Remember, that more powerful magic will require more soul essences."
+
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Greater Essence",
+      "recipe": "krayscandles:items/soul_essence_greater_depleted",
+      "text": "By combining 9 Lesser Soul Essences, you can get yourself a single $(d)Greater Soul Essence (Depleted)$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Blessed Essence",
+      "recipe": "krayscandles:items/soul_essence_blessed_depleted",
+      "text": "By combining 9 Greater Soul Essences, you can get yourself a single $(d)Blessed Soul Essence (Depleted)$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Depletion?",
+      "text": "Notice that both of these recipes yield essences that are depleted of any magical properties. In order to recharge these essences, try preforming an $(d)Essence Ritual$()."
+
+    }
+  ]
+}

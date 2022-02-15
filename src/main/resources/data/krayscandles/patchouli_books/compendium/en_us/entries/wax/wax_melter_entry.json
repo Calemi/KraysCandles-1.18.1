@@ -1,0 +1,18 @@
+{
+  "name": "The Wax Melter",
+  "icon": "krayscandles:wax_melter",
+  "category": "krayscandles:wax_category",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Wax Melters can be found in Villages or Candle Maker Huts. These cannot be crafted, but can be moved once found. To use, right click to fill with $(d)Chunks of Raw Wax$().",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:wax_melter"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Note: Allow a few seconds for wax to harden."
+    }
+  ]
+}

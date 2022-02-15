@@ -2,40 +2,43 @@
   "name": "Basic Wax",
   "icon": "krayscandles:wax_chunk_soy",
   "category": "krayscandles:wax_category",
+  "sortnum": 1,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "An Enchantment Library is a storage system for Enchantments.$(p)Simply insert enchanted books, and every enchantment on the book will be stored as points."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "Each library has a $(6)Level Capacity$(), representing the highest level of enchantment it can store.$(p)Excess enchantments are voided."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "Clicking on a stored enchantment will extract one level of that enchantment.$(p)Shift-clicking a stored enchantment will extract as many levels as possible.$(p)Books are generated in the output slot as necessary."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "You may also place a book in the output slot to add enchantments to it.$(p)The library records the max level that has ever been inserted for each enchantment, and can only extract up to that level."
-    },
-    {
-      "type": "patchouli:crafting",
-      "title": "Filling the Press",
-      "recipe": "krayscandles:iron_press_full",
-      "text": "Soy Test text"
-    },
-    {
-      "type": "patchouli:crafting",
-      "title": "Filling the Press",
-      "recipe": "minecraft:furnace",
-      "text": "Test text"
-    },
-    {
+      "text": "In order to get started with candle making, the first thing you will need to get is some Soybeans. These can be grown from Soybean Seeds which are dropped by Witches.",
       "type": "patchouli:spotlight",
-      "item": "krayscandles:wax_chunk_soy_raw",
-      "link_recipe": true,
-      "text": "The $(9)Library of Alexandria$() has a $(6)Level Capacity$() of thirty-one (XXXI).$(p)It cannot be crafted directly, and must be created using $Infusion Enchanting$()."
+      "item": "krayscandles:soybean"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Making the Press",
+      "recipe": "krayscandles:items/iron_press",
+      "text": "Next you will need to craft yourself an $(d)Empty Iron Press$(). This will be used to crush the soybeans into a paste."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Filling the Press",
+      "recipe": "krayscandles:items/iron_press_full",
+      "text": "Fill the press with your soybeans. This will yield a $(d)Full Iron Press$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Making Some Raw Wax",
+      "recipe": "krayscandles:items/wax_chunk_soy_raw",
+      "text": "Now we can press our soybeans and get  16 Chunks of $(d)Raw Soy Wax$()."
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Cooking by the Book",
+      "recipe": "krayscandles:items/wax_chunk_soy",
+      "text": "Now simply place your Chunks of Raw Wax into any furnace and heat. This will provide you with some nice Chunks of $(d)Soy Wax$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "A Chunk of a Chunk",
+      "recipe": "krayscandles:items/wax_chunk_soy_small",
+      "text": "Finally, Regular soy wax can be used in its regular form, or it can be crafted into smaller chunks in a crafting table. Different recipes require different amounts of wax, so remember this recipe."
     }
   ]
 }

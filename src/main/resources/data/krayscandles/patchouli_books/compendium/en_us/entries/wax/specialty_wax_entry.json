@@ -1,0 +1,28 @@
+{
+  "name": "Specialty Wax",
+  "icon": "krayscandles:wax_chunk_bee",
+  "category": "krayscandles:wax_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "There are a few other specialty waxes in the world that do not fit into any specific category. These waxes can be used in various recipes, to make several different candles. Some of which are even used to create the magical waxes."
+    },
+    {
+      "type": "patchouli:smelting",
+      "title": "Bee Wax",
+      "recipe": "krayscandles:items/wax_chunk_bee",
+      "text": "One of these waxes can be obtained from bees. If you would like to make some $(d)Bee Wax$() to use in a recipe, simply smelt some honeycombs in a furnace."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Ear Wax",
+      "recipe": "krayscandles:items/wax_ear",
+      "text": "Another special type of wax is $(d)Ear Wax$(). This wax can be obtained by cleaning out zombie ears with a cotton swab."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(m)Note to self: Write down more specialty wax types.$()"
+    }
+  ]
+}

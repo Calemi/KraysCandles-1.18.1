@@ -1,0 +1,19 @@
+{
+  "name": "Candle Ritual",
+  "icon": "krayscandles:ritual_note_candle",
+  "category": "krayscandles:candle_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "title": "Ritual Note",
+      "recipe": "krayscandles:items/ritual_note_candle",
+      "text": "Craft yourself a candle ritual note using the provided recipe. This will explain how to properly setup and preform a $(d)Candle Ritual$(). This is required for creating any non-basic candle."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Preforming Rituals",
+      "text": "Once the ritual is setup according to the note, you can right click a $(d)Rune$() on the center candle to empower it. This will yield a Candle matching the corresponding rune type."
+    }
+  ]
+}
