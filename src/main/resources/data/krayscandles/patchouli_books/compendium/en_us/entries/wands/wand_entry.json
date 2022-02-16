@@ -1,0 +1,56 @@
+{
+  "name": "Crafting Wands",
+  "icon": "krayscandles:wand_levitation",
+  "category": "krayscandles:wand_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/wand_hilt",
+      "text": "In order to begin crafting different Wands, you will need to make a Great Wand Hilt. Each Wand requires one."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Wand Rituals",
+      "text": "Once you have crafted your Great Wand Hilt and set up your ritual, you are probably ready to begin crafting a Wand. To find Wand recipes, hover over the Wand you would like to make in this guide. Hold $(d)SHIFT$() while hovering to reveal the required ingredients."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Wand Rituals",
+      "text": "The items listed must be placed into each corresponding Altar Tile. Order does not matter when slotting the ingredients in. After your items are floating in the tiles, right click the center tile with a $(d)Great Wand Hilt$() to perform the ritual."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:wand_fire",
+      "text": "This wand allows the user to harness a strange magic from the Netherworld. Users can shoot fireballs, as well as grant themselves some Fire Resistance.       $(d)Hover over the Wand & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:wand_energy",
+      "text": "This wand allows the user to channel the power of a great storm. Users can summon lightning to a target location. Allows the user to charge creepers, as well as smite other enemies.  $(d)Hover over the Wand & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:wand_mining",
+      "text": "This wand grants the user a very explosive summoning capability. Users can summon a cluster of explosive TNT to a target location. Great for mining or clearing out dungeons. $(d)Hover over the Wand & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Magicians Wand",
+      "item": "krayscandles:wand_magician",
+      "text": "This wand grants its user the power to vanish into thin air. Users can turn invisible for 2 minutes, at the cost of summoning a rabbit each time. $(d)Hover over the Wand & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Wand of Levitation",
+      "item": "krayscandles:wand_levitation",
+      "text": "This wand allows the user to gather energy from somewhere in The End. Users can cast Levitation projectiles that will track and target players and mobs. When hit, they will levitate upwards. $(d)Hover over the Wand & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Staff of the Light",
+      "item": "krayscandles:wand_blessed_light",
+      "text": "This is a very unique wand. Taking on the appearance of a staff, this wand grants the user control of a cloud. The cloud will grant users full unlimited flight. $(d)Hover over the Wand & hold SHIFT for more information on crafting in a ritual.$()"
+    }
+  ]
+}

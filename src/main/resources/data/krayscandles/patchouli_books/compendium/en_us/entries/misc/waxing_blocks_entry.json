@@ -1,0 +1,26 @@
+{
+  "name": "Waxing Blocks",
+  "icon": "krayscandles:waxed_red_sand",
+  "category": "krayscandles:misc_category",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Waxing Blocks",
+      "text": "Some blocks that are affected by gravity can be waxed. This will remove the affect of gravity on the block and will make it sticky."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:blocks/waxed_gravel"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:blocks/waxed_sand"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:blocks/waxed_red_sand"
+    }
+  ]
+}
+

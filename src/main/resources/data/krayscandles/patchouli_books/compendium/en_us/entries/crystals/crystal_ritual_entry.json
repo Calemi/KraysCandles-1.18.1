@@ -1,0 +1,19 @@
+{
+  "name": "Crystal Ritual",
+  "icon": "krayscandles:ritual_note_crystal",
+  "category": "krayscandles:crystal_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "title": "Ritual Note",
+      "recipe": "krayscandles:items/ritual_note_crystal",
+      "text": "Craft yourself a Crystal ritual note using the provided recipe. This will explain how to properly setup and preform a $(d)Crystal Ritual$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Preforming Rituals",
+      "text": "Please note that all candles in a ritual must be lit. Different colored candles can be used in place of any basic soy candle. Right click the center candle of the ritual to empower your emerald."
+    }
+  ]
+}

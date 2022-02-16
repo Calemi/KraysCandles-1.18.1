@@ -1,0 +1,20 @@
+{
+  "name": "Wand Ritual",
+  "icon": "krayscandles:ritual_note_wand",
+  "category": "krayscandles:wand_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "title": "Ritual Note",
+      "recipe": "krayscandles:items/ritual_note_wand",
+      "text": "Craft yourself a wand ritual note using the provided recipe. This will explain how to properly setup and preform a $(d)Wand Ritual$(). This is required for crafting any wand."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Preforming Rituals",
+      "item": "krayscandles:wand_hilt",
+      "text": "Once the ritual is setup according to the note, you can right click a $(d)Great Wand Hilt$() on the center candle to preform the ritual. This will yield a Wand of the corresponding type. Reference the Wand entry for crafting details."
+    }
+  ]
+}

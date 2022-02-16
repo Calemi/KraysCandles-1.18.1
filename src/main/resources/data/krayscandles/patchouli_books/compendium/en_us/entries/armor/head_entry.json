@@ -1,0 +1,23 @@
+{
+  "name": "Mask Blessed Night",
+  "icon": "krayscandles:blessed_night_mask",
+  "category": "krayscandles:armor_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:blessed_night_mask",
+      "text": "The $(d)Mask of the Blessed Night$() is a unique mask worn by Ancient Keepers of the Flame. This mask grants its wearer the ability to see all sorts of hidden details about a candle."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/blessed_night_mask",
+      "text": "Using some Blessed Wax and a Rune of the Cursed Night you can easily craft your own version of this ancient relic."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Abilities",
+      "text": "The $(d)Mask of the Blessed Night$() will allow its wearer to see the radius of a Candle. Flame Types and Crystal Effects can all be viewed while wearing this mask. The mask also illuminates those that wear it."
+    }
+  ]
+}

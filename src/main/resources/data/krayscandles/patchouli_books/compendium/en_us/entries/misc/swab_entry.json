@@ -1,0 +1,20 @@
+{
+  "name": "Cotton Swabs",
+  "icon": "krayscandles:q_tip",
+  "category": "krayscandles:misc_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:q_tip",
+      "text": "The $(d)Cotton Swab$() is used to clean wax from Zombie Ears."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/q_tip",
+      "text": "Crafting Cotton Swabs is very easy."
+    }
+  ]
+}
+

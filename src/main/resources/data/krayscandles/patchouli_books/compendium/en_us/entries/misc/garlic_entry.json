@@ -1,0 +1,15 @@
+{
+  "name": "Garlic",
+  "icon": "krayscandles:garlic",
+  "category": "krayscandles:misc_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:garlic",
+      "text": "Garlic is dropped randomly when a Witch is killed. Garlic can be held in your offhand to weaken Vampires, making them easier to kill."
+    }
+  ]
+}
+

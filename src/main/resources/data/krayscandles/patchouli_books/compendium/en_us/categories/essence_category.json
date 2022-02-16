@@ -1,5 +1,6 @@
 {
   "name": "Soul Essences",
+  "sortnum": 2,
   "description": "Some candles and wax types require the use of Soul Essences. Each Soul Essence has to go through a magnificent transformation in order to get the desired outcome.",
   "icon": "krayscandles:soul_essence_blessed"
 }

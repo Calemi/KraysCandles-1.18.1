@@ -1,0 +1,38 @@
+{
+  "name": "Crafting Crystals",
+  "icon": "krayscandles:crystal_potency",
+  "category": "krayscandles:crystal_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:emerald",
+      "text": "In order to begin crafting different Crystals, you will need to find an Emerald. Each Crystal requires one. These can be found naturally in caves or by trading with villagers."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Crystal Rituals",
+      "text": "Once you have your Emerald and set up your ritual, you are probably ready to begin crafting a Crystal. To find Crystal recipes, hover over the type of Crystal you would like to make in this guide. Hold $(d)SHIFT$() while hovering to reveal the required ingredients."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Crystal Rituals",
+      "text": "The items listed must be placed into each corresponding Altar Tiles. Order does not matter when slotting the ingredients in. After your items are floating in the tiles, right click the center candle with an $(d)Emerald$() to perform the ritual."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:crystal_potency",
+      "text": "When used on a magical candle, this Crystal will increase the potency of effects given off by the candle. This Crystal can stack up to 4 times on a candle. Can be combined with Amplifying Crystals.      $(d)Hover over the Crystal & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:crystal_amplifying",
+      "text": "When used on a magical candle, this Crystal will increase the radius of the effects given off by the candle. This Crystal can stack up to 4 times on a candle. Can be combined with Potent Crystals.   $(d)Hover over the Crystal & hold SHIFT for more information on crafting in a ritual.$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:crystal_inverting",
+      "text": "When used on a magical candle that is lit with a $(d)Trapped Soul Lantern$(), this Crystal will filter out that mob. For example, if an invisibility candle is lit with the soul of a Pig, then all mobs will be invisible except pigs.  $(d)Hover over the Crystal & hold SHIFT for more information on crafting in a ritual.$()"
+    }
+  ]
+}

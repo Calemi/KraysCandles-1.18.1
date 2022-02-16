@@ -1,0 +1,38 @@
+{
+  "name": "Cursed Night Blade",
+  "icon": "krayscandles:blade_night",
+  "category": "krayscandles:weapon_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:blade_night",
+      "text": "The $(d)Blade of the Cursed Night$() is a unique weapon that is used to gather soul essences, as well as capture souls in lanterns. The process of crafting this blade can be quite tedious, but it is an essential part of making advanced candles, wands and rituals."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/night_sword_hilt",
+      "text": "Begin by crafting yourself the hilt of the blade. The recipe may be simple, but this hilt will hold up in battle."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "A Dull Blade",
+      "recipe": "krayscandles:items/night_sword_blade_dull",
+      "text": "Next you will need to begin forging the blade. This blade is made from very thick Iron so that it can withstand the energy of each soul that it absorbs."
+    },
+    {
+      "type": "patchouli:stonecutting",
+      "title": "Sharpening Time!",
+      "recipe": "krayscandles:items/night_sword_blade_sharp",
+      "text": "Simply placing a dull blade into a stonecutting table will yield a $(d)Sharpened Blade of the Cursed Night$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Finishing Touches",
+      "recipe": "krayscandles:items/blade_night",
+      "text": "Now take the Hilt, Sharpened Blade, and a Rune of the Cursed Night and combine them to forge the $(d)Blade of the Cursed Night$()."
+    }
+  ]
+}
+

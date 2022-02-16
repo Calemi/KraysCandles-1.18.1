@@ -1,0 +1,19 @@
+{
+  "name": "Wax Katana",
+  "icon": "krayscandles:wax_sword",
+  "category": "krayscandles:weapon_category",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:wax_sword",
+      "text": "The $(d)Wax Katana$() is the weapon of choice for any Candlemaker on a stealth mission. To look cooler than anyone else ever, try duel wielding these weapons."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/wax_sword",
+      "text": "The Katana is a very cheap weapon for a Candlemaker to craft. Sacrifice some wax and make one. Heck, make two."
+    }
+  ]
+}

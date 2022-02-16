@@ -1,0 +1,23 @@
+{
+  "name": "Mantle Blessed Night",
+  "icon": "krayscandles:blessed_night_mantle",
+  "category": "krayscandles:armor_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:blessed_night_mask",
+      "text": "The $(d)Mantle of the Blessed Night$() is a unique set of robes that were worn by Ancient Keepers of the Flame. These robes grant the wearer the ability to summon clouds."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/blessed_night_mantle",
+      "text": "Using some Purified Cloth and a Blood Orb you can craft your own set of these ancient robes."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Abilities",
+      "text": "The $(d)Mantle of the Blessed Night$() will grant its wearer Infinite Flight. Equipping the Mantle will summon a rideable cloud filled with the power of the Ancient Flame."
+    }
+  ]
+}

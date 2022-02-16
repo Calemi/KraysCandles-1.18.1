@@ -1,0 +1,15 @@
+{
+  "name": "Music Discs",
+  "icon": "krayscandles:music_disc_chunk",
+  "category": "krayscandles:misc_category",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:music_disc_chunk",
+      "text": "This is a rare wax dipped disc. The song contained on the Disc was written by the original Keepers of the Ancient Flame. Followers in Villages may be willing to trade this Disc as a high level trade."
+    }
+  ]
+}
+

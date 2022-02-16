@@ -1,5 +1,6 @@
 {
   "name": "Waxes",
+  "sortnum": 1,
   "description": "In order to begin making your first candle, you will need Wax. There are various waxes in this world that you can make candles from.",
   "icon": "krayscandles:wax_chunk_soy"
 }

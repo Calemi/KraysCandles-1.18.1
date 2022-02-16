@@ -1,0 +1,49 @@
+{
+  "name": "Scalpel",
+  "icon": "krayscandles:scalpel",
+  "category": "krayscandles:weapon_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:scalpel",
+      "text": "The $(d)Scalpel$() is a quick weapon that is used to gather several items that can be mixed with candle wax. This weapon is accurate and will fit well in any Candlemakers arsenal"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/scalpel_hilt",
+      "text": "Begin by crafting yourself the hilt of the scalpel. Two of these are required to make a full scalpel."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "A Dull Blade",
+      "recipe": "krayscandles:items/scalpel_blade_dull",
+      "text": "Next you will need to begin creating the blade. This blade is made from thin Iron so that it can make quick and precise cuts."
+    },
+    {
+      "type": "patchouli:stonecutting",
+      "title": "Sharpening Time!",
+      "recipe": "krayscandles:items/scalpel_blade_sharp",
+      "text": "Simply placing a dull scalpel blade into a stonecutting table will yield a $(d)Sharpened Scalpel Blade$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Finishing Touches",
+      "recipe": "krayscandles:items/scalpel",
+      "text": "Now these items can be combined to give you a $(d)Scalpel$()."
+    },
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:zombie_ear",
+      "text": "The $(d)Scalpel$() can be used to obtain Zombie Ears. Simply hit a Zombie with the blade to chop its ears off."
+    },
+    {
+      "type": "patchouli:text",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:bat_eyeball",
+      "text": "The $(d)Scalpel$() can also be used to harvest Bat Eyeballs. Simply hit a Bat with the blade to cut out its eyes. Caution: Bat Eyes are magical and may grow wings when removed."
+    }
+  ]
+}

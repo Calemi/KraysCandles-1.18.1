@@ -1,5 +1,6 @@
 {
   "name": "Altars & Statues",
+  "sortnum": 5,
   "description": "Some rituals require Altar Tiles or a Statue. This compendium contains the guide to craft each one for your ritual needs.",
   "icon": "krayscandles:stone_altar_tile"
 }
