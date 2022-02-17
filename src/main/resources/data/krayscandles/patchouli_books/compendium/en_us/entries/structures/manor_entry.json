@@ -1,0 +1,13 @@
+{
+  "name": "Vampire Manor",
+  "icon": "minecraft:dark_oak_sapling",
+  "category": "krayscandles:structures_category",
+  "sortnum": 30,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Vampire Manors",
+      "text": "A $(d)Vampire Manor$() is a large structure that is usually found in Dark Oak Forests. Beware! These things are always crawling with Vampires, Pillagers, and more. This Manor is a great place to farm some Bloody Cloth or Lesser Soul Essences."
+    }
+  ]
+}

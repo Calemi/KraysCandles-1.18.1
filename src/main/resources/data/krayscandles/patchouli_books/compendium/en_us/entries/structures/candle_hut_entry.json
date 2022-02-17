@@ -1,0 +1,13 @@
+{
+  "name": "Candlemaker Huts",
+  "icon": "minecraft:glow_berries",
+  "category": "krayscandles:structures_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Candlemaker Huts",
+      "text": "A $(d)Candlemaker Hut$() is a unique structure that is usually found in Meadow Biomes. This structure always has a Candlemaker Villager inside, so be sure to trade for some useful items. You will also find a Wax Melter, and various Candle making resources inside."
+    }
+  ]
+}

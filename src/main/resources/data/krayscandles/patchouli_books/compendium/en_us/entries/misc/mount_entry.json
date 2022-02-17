@@ -1,0 +1,19 @@
+{
+  "name": "Candle Mounts",
+  "icon": "krayscandles:candle_soy_mount",
+  "category": "krayscandles:misc_category",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "title": "Crafting Mounts",
+      "recipe": "krayscandles:blocks/candle_soy_mount",
+      "text": "Candle Mounts can be easily crafted using this recipe. "
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Uses",
+      "text": "Soy Candles of any color can be right clicked and slotted into a Candle Mount. Remember, you must light candles after mounting them."
+    }
+  ]
+}

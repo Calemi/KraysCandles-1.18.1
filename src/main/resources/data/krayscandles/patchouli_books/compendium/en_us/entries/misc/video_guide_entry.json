@@ -1,0 +1,18 @@
+{
+"name": "Video Guide",
+"icon": "minecraft:spyglass",
+"category": "krayscandles:misc_category",
+"sortnum": 10000,
+"pages": [
+{
+"type": "patchouli:text",
+"text": "For more information and instructions, please check out the video guide by clicking the $(d)Link$() on the next page."
+},
+{
+"type": "patchouli:link",
+"url": "https://bit.ly/3HSkNiK",
+"link_text": "Kray's Video Guide"
+}
+]
+}
+

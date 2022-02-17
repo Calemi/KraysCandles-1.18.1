@@ -1,0 +1,67 @@
+{
+  "name": "Wraiths",
+  "icon": "krayscandles:wings_wraith",
+  "category": "krayscandles:mobs_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "title": "Wraiths",
+      "entity": "krayscandles:wraith_air",
+      "text": "This Wraith appears when players or villagers fall from a great height and perish. Its unique soul flame can be harvested."
+    },
+    {
+      "type": "patchouli:entity",
+      "title": "Wraiths",
+      "entity": "krayscandles:wraith_explosion",
+      "text": "This Wraith appears when players or villagers die in an explosion. Its unique soul flame can be harvested."
+    },
+    {
+      "type": "patchouli:entity",
+      "title": "Wraiths",
+      "entity": "krayscandles:wraith_fire",
+      "text": "This Wraith appears when players or villagers die from fire or lava. Its unique soul flame can be harvested."
+    },
+    {
+      "type": "patchouli:entity",
+      "title": "Wraiths",
+      "entity": "krayscandles:wraith_magic",
+      "text": "This Wraith appears when players or villagers are killed by magic damage. Its unique soul flame can be harvested."
+    },
+    {
+      "type": "patchouli:entity",
+      "title": "Wraiths",
+      "entity": "krayscandles:wraith_mob",
+      "text": "This Wraith appears when players or villagers are slaughtered by a monster. Its unique soul flame can be harvested."
+    },
+    {
+      "type": "patchouli:entity",
+      "title": "Wraiths",
+      "entity": "krayscandles:wraith_water",
+      "text": "This Wraith appears when players or villagers drown. Its unique soul flame can be harvested."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "The Wraith Ritual",
+      "recipe": "krayscandles:items/ritual_note_wraith",
+      "text": "Craft yourself a ritual note using the provided recipe. This will explain how to properly setup and preform a $(d)Wraith Ritual$()."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Preforming the Ritual",
+      "text": "Please note that all candles in a ritual must be lit with the corresponding color of soul flames. This means you must kill and collect the souls of all 6 Wraiths to perform this ritual."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Ritual Completion",
+      "item": "krayscandles:wings_wraith",
+      "text": "Once you have completed the ritual and fought off whatever Hell throws at you, you will be rewarded with some of these Wings."
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Divine Wings",
+      "recipe": "krayscandles:items/wings_divine",
+      "text": "By coating the impure wings with the blessings given off by blessed wax, you can craft a pair of $(d)Divine Wings$(). These are used in one of the ways to achieve flight."
+    }
+  ]
+}

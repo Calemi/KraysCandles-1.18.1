@@ -1,0 +1,31 @@
+{
+  "name": "Soul Harvesting",
+  "icon": "krayscandles:lantern_soul_trapped",
+  "category": "krayscandles:souls_category",
+  "sortnum": 1,
+  "pages": [
+    {
+      "title": "Required Items",
+      "type": "patchouli:spotlight",
+      "item": "krayscandles:blade_night",
+      "text": "The $(d)Blade of the Cursed Night$() must be acquired before any Soul Capturing can be performed. See weapons category for crafting info."
+    },
+    {
+      "title": "Required Items",
+      "type": "patchouli:spotlight",
+      "item": "minecraft:soul_lantern",
+      "text": "A $(d)Soul Lantern$() must also be crafted before any Soul Capturing can be performed."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Capturing Souls",
+      "text": "To begin capturing souls, simply hold the Blade of the Cursed Night in your main hand and the Soul Lantern in your offhand. Kill any mob, and you will be given a Soul Lantern with the mobs soul inside."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Using Souls",
+      "text": "To use the Soul Lantern containing the $(d)Captured Soul$() inside, simply right click any candle with the lantern. This will light the candle with the contained soul. This is useful for applying Effects given by Candles to certain mobs."
+    }
+  ]
+}
+

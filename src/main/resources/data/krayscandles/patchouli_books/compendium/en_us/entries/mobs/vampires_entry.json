@@ -1,0 +1,51 @@
+{
+  "name": "Vampires",
+  "icon": "krayscandles:orb_cursed",
+  "category": "krayscandles:mobs_category",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "krayscandles:vampire_baron",
+      "text": "Baron Vampires prefer the life of high society. They can be found in $(d)Vampire Manors$()."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "krayscandles:vampire_baroness",
+      "text": "Baroness Vampires also prefer the high society lifestyle. They can be found in $(d)Vampire Manors$() as well."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Bloody Cloth",
+      "item": "krayscandles:cloth_bloody",
+      "text": "Both the Baron and Baroness can sometimes drop Bloody Cloth upon death. This cloth is useless unless purified."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "krayscandles:items/cloth_purified",
+      "text": "By empowering the Bloody Cloth with a Blessed Essence, its impurities can be removed. This will provide a $(d)Purified Cloth$(). These are used in crafting Armor."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "krayscandles:vampire_count",
+      "text": "Counts are a very skilled class of Vampire. They are very rare, because they only come out at Midnight to hunt their prey."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Finding Counts",
+      "text": "Counts come out on certain days at Midnight to Hunt their prey in different areas of the world. These nights are random, so keep an eye out for any warning signs. Hurry, because Counts disappear at first light. $(4)Beware....$()"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Blood Orbs",
+      "item": "krayscandles:orb_depleted",
+      "text": "After a Count has been killed, there is a high chance that they may drop a Blood Orb. To charge the Blood Orb, simply use the Orb on a lit Cursed Candle of The Night."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "Blood Orbs",
+      "item": "krayscandles:orb_cursed",
+      "text": "Once the Blood Orb is back in working shape, it can be used to finish crafting the Mantle Armor Piece"
+    }
+  ]
+}

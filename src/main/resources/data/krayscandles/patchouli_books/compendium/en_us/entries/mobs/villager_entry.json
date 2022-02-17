@@ -1,0 +1,18 @@
+{
+  "name": "Candlemakers",
+  "icon": "krayscandles:blessed_night_mask",
+  "category": "krayscandles:mobs_category",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:villager",
+      "text": "$(d)Candlemaker$() is a type of villager profession. These villagers are attracted to Wax Melters."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Candlemakers",
+      "text": "$(d)Candlemakers$() can be found in Villages as well as in Candle Making Huts. This type of Villager has trades available to speed up the process of making candles, and unlocks a lot of alternate routes to make candles with."
+    }
+  ]
+}
