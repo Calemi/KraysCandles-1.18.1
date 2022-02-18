@@ -92,8 +92,8 @@ public class InitItems {
     public static final RegistryObject<Item> WINGS_WRAITH =                  regItem("wings_wraith", ItemBase::new);
     public static final RegistryObject<Item> WINGS_DIVINE =                  regItem("wings_divine", ItemBase::new);
     public static final RegistryObject<Item> GARLIC =                        regItem("garlic", ItemBase::new);
-    public static final RegistryObject<Item> ORB_DEPLETED =                  regItem("orb_depleted", ItemOrbDepleted::new);
-    public static final RegistryObject<Item> ORB_CURSED =                    regItem("orb_cursed", ItemBase::new);
+    public static final RegistryObject<Item> ORB_DEPLETED =                  regItem("orb_depleted", ItemBase::new);
+    public static final RegistryObject<Item> ORB_CURSED =                    regItem("orb_cursed", () -> new ItemRitual(RitualRecipes.ORB));
 
     public static final RegistryObject<Item> CRYSTAL_AMPLIFYING =            regItem("crystal_amplifying", () -> new ItemCrystal(RitualRecipes.CRYSTAL_AMPLIFYING));
     public static final RegistryObject<Item> CRYSTAL_POTENCY =               regItem("crystal_potency", () -> new ItemCrystal(RitualRecipes.CRYSTAL_POTENCY));
