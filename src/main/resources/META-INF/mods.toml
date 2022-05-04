@@ -4,7 +4,7 @@ license="All rights reserved"
 
 [[mods]]
 modId="krayscandles"
-version="1.1.0"
+version="1.1.1"
 displayName="Kray's Magic Candles"
 authors="CaptainKray, Calemi"
 credits="CaptainKray - Lead Programmer & Lead Artist, Calemi - Programmer & Artist, Kryto627 - Programmer"
@@ -16,27 +16,27 @@ description='''
 [[dependencies.krayscandles]]
 modId="calemicore"
 mandatory=true
-versionRange="1.0.12"
+versionRange="1.0.14"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.krayscandles]]
 modId="patchouli"
 mandatory=false
-versionRange="1.18.1-65"
+versionRange="1.18.2-67"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.krayscandles]]
     modId="forge"
     mandatory=true
-    versionRange="[39.0.9,)"
+    versionRange="[40.1.2,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.krayscandles]]
     modId="minecraft"
     mandatory=true
-    versionRange="1.18.1"
+    versionRange="1.18.2"
     ordering="NONE"
     side="BOTH"

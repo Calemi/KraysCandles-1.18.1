@@ -18,10 +18,10 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.FlatLevelSource;
-import net.minecraft.world.level.levelgen.StructureSettings;
+import net.minecraft.world.level.levelgen.WorldGenSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.StructureFeatureConfiguration;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 
@@ -42,7 +42,7 @@ public class StructureEvents {
                 return;
             }
 
-            StructureSettings worldStructureConfig = chunkGenerator.getSettings();
+            WorldGenSettings worldStructureConfig = chunkGenerator.get();
 
             HashMap<StructureFeature<?>, HashMultimap<ConfiguredStructureFeature<?, ?>, ResourceKey<Biome>>> KCStructureToMultiMap = new HashMap<>();
 
