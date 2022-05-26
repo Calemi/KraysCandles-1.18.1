@@ -1,16 +1,12 @@
 package com.tm.krayscandles.main;
 
 import com.tm.krayscandles.config.KCConfig;
-import com.tm.krayscandles.events.StructureEvents;
 import com.tm.krayscandles.init.*;
-import com.tm.krayscandles.structures.StructureCandleHut;
-import com.tm.krayscandles.structures.StructureVampireManor;
 import com.tm.krayscandles.tab.KCCandleTab;
 import com.tm.krayscandles.tab.KCMainTab;
 import com.tm.krayscandles.tab.KCToolTab;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -45,15 +41,8 @@ public class KraysCandles {
 
         //Registers the client and common setup methods.
         MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
-
-        InitStructures.STRUCTURES.register(MOD_EVENT_BUS);
         MOD_EVENT_BUS.addListener(InitSetup::initCommon);
         MOD_EVENT_BUS.addListener(InitSetup::initClient);
-
-        IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-        forgeBus.addListener(EventPriority.NORMAL, StructureEvents::addDimensionalSpacing);
-        forgeBus.addListener(EventPriority.NORMAL, StructureVampireManor::setupStructureSpawns);
-        forgeBus.addListener(EventPriority.NORMAL, StructureCandleHut::setupStructureSpawns);
 
         InitItems.init();
         InitSounds.SOUNDS.register(MOD_EVENT_BUS);
