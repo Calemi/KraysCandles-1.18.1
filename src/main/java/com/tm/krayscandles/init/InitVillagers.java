@@ -1,25 +1,33 @@
 package com.tm.krayscandles.init;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
+import com.mojang.serialization.Lifecycle;
 import com.tm.calemicore.util.helper.LogHelper;
 import com.tm.krayscandles.main.KCReference;
-import com.tm.krayscandles.mixin.StructureTemplatePoolAccessor;
-import net.minecraft.core.Registry;
+import com.tm.krayscandles.mixin.SingleJigsawAccess;
+import it.unimi.dsi.fastutil.objects.Object2IntLinkedOpenHashMap;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import net.minecraft.core.WritableRegistry;
+import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.data.worldgen.ProcessorLists;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.VillagerProfession;
-import net.minecraft.world.level.levelgen.structure.pools.LegacySinglePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalInt;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 public class InitVillagers {
 
@@ -32,30 +40,42 @@ public class InitVillagers {
     public static final RegistryObject<VillagerProfession> TYPE_CANDLE = VILLAGER_PROFESSIONS.register("candle", () -> new VillagerProfession("candle", POI_CANDLE.get(), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_LIBRARIAN));
 
     /**
-     * All of the credit for this method goes to the creators of the Waystones mod.
-     * https://github.com/ModdingForBlockheads/Waystones/blob/1.18.x/shared/src/main/java/net/blay09/mods/waystones/worldgen/ModWorldGen.java
+     * All of the credit for this method goes to the creators of the Immersive Engineering mod.
+     * https://github.com/BluSunrize/ImmersiveEngineering/blob/86211504ad15b866e6df4685eb16c239cd6f16bb/src/main/java/blusunrize/immersiveengineering/common/world/Villages.java
      */
-    public static void addVillageStructure(ServerStartingEvent event, String villagePiece, String structureName, int weight) {
+    public static void addVillageStructure(String biome, String structureName, int weight) {
 
-        ResourceLocation structure = new ResourceLocation(KCReference.MOD_ID, structureName);
+        ResourceLocation pool = new ResourceLocation("village/" + biome + "/houses");
+        ResourceLocation toAdd = new ResourceLocation(KCReference.MOD_ID, "village/" + biome + "/" + structureName);
 
-        LegacySinglePoolElement piece = StructurePoolElement.legacy(structure.toString()).apply(StructureTemplatePool.Projection.RIGID);
-        StructureTemplatePool pool = event.getServer().registryAccess().registryOrThrow(Registry.TEMPLATE_POOL_REGISTRY).getOptional(new ResourceLocation(villagePiece)).orElse(null);
+        LogHelper.log(KCReference.MOD_NAME, "Using: " + pool);
+        LogHelper.log(KCReference.MOD_NAME, "Adding: "+ toAdd);
 
-        if (pool != null) {
-            var poolAccessor = (StructureTemplatePoolAccessor) pool;
-            // pretty sure this can be an immutable list (when datapacked) so gotta make a copy to be safe.
-            List<StructurePoolElement> listOfPieces = new ArrayList<>(poolAccessor.getTemplates());
+        StructureTemplatePool old = BuiltinRegistries.TEMPLATE_POOL.get(pool);
+        int id = BuiltinRegistries.TEMPLATE_POOL.getId(old);
 
-            for (int i = 0; i < weight; i++) {
-                listOfPieces.add(piece);
-                LogHelper.log(KCReference.MOD_NAME, "Added weight for " + structure);
-            }
-            poolAccessor.setTemplates(listOfPieces);
+        // Fixed seed to prevent inconsistencies between different worlds
+        List<StructurePoolElement> shuffled;
+        if ( old != null) shuffled = old.getShuffledTemplates(new Random(0));
+        else shuffled = ImmutableList.of();
 
-            List<Pair<StructurePoolElement, Integer>> listOfWeightedPieces = new ArrayList<>(poolAccessor.getRawTemplates());
-            listOfWeightedPieces.add(new Pair<>(piece, weight));
-            poolAccessor.setRawTemplates(listOfWeightedPieces);
-        }
+        Object2IntMap<StructurePoolElement> newPieces = new Object2IntLinkedOpenHashMap<>();
+
+        for(StructurePoolElement p : shuffled) newPieces.computeInt(p, (StructurePoolElement pTemp, Integer i) -> (i==null?0: i)+1);
+
+        newPieces.put(SingleJigsawAccess.construct(Either.left(toAdd), ProcessorLists.EMPTY, StructureTemplatePool.Projection.RIGID), weight);
+
+        List<Pair<StructurePoolElement, Integer>> newPieceList = newPieces.object2IntEntrySet().stream()
+                .map(e -> Pair.of(e.getKey(), e.getIntValue()))
+                .collect(Collectors.toList());
+
+        ResourceLocation name = old.getName();
+
+        ((WritableRegistry<StructureTemplatePool>)BuiltinRegistries.TEMPLATE_POOL).registerOrOverride(
+                OptionalInt.of(id),
+                ResourceKey.create(BuiltinRegistries.TEMPLATE_POOL.key(), name),
+                new StructureTemplatePool(pool, name, newPieceList),
+                Lifecycle.stable()
+        );
     }
 }

@@ -12,7 +12,6 @@ public class InitEvents {
      * Called to initialize common events.
      */
     public static void initCommon() {
-        MinecraftForge.EVENT_BUS.register(new AddVillageStructuresEvent());
         MinecraftForge.EVENT_BUS.register(new RecipeEvents());
         MinecraftForge.EVENT_BUS.register(new RitualEvent());
         MinecraftForge.EVENT_BUS.register(new WeaponKillEvents());
@@ -22,7 +21,6 @@ public class InitEvents {
         MinecraftForge.EVENT_BUS.register(new BlockDropEvents());
         MinecraftForge.EVENT_BUS.register(new MobEffectEvents());
         MinecraftForge.EVENT_BUS.register(new AddTradesEvent());
-        MinecraftForge.EVENT_BUS.register(new AddVillageStructuresEvent());
     }
 
     /**

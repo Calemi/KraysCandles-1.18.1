@@ -5,6 +5,7 @@ import com.tm.krayscandles.client.render.block.RenderCandle;
 import com.tm.krayscandles.client.render.block.RenderCandleMount;
 import com.tm.krayscandles.client.render.block.RenderStoneAltarTile;
 import com.tm.krayscandles.client.render.entity.*;
+import com.tm.krayscandles.events.AddVillageStructuresEvent;
 import com.tm.krayscandles.main.DispenserLightBehavior;
 import com.tm.krayscandles.main.KCReference;
 import com.tm.krayscandles.packet.KCPacketHandler;
@@ -29,6 +30,7 @@ public class InitSetup {
      * Used to register everything the mod needs on the client and server side.
      */
     public static void initCommon(final FMLCommonSetupEvent event) {
+
         LogHelper.log(KCReference.MOD_NAME, "Initializing Common-Side for " + KCReference.MOD_NAME);
 
         KCPacketHandler.init();
@@ -42,12 +44,15 @@ public class InitSetup {
 
         RitualStructureTypes.init();
         RitualRecipes.init();
+
+        AddVillageStructuresEvent.onParallelDispatch(event);
     }
 
     /**
      * Used to register everything the mod needs on the client side only.
      */
     public static void initClient(final FMLClientSetupEvent event) {
+
         LogHelper.log(KCReference.MOD_NAME, "Initializing Client-Side for " + KCReference.MOD_NAME);
 
         InitEvents.initClient();
