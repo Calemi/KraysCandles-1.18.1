@@ -22,6 +22,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Random;
@@ -83,6 +84,29 @@ public class VampireEvents {
     }
 
     @SubscribeEvent
+    public void onVampireSpawn(LivingSpawnEvent.SpecialSpawn event) {
+
+        if (event.getEntity() instanceof VampireBase vampire) {
+            setRandomVampireName(vampire);
+        }
+    }
+
+    private void setRandomVampireName(VampireBase vampireBase) {
+
+        if (vampireBase instanceof VampireCount count) {
+            count.getEntityData().set(VampireBase.VAMPIRE_NAME, count.getRandomName());
+        }
+
+        else if (vampireBase instanceof VampireBaroness baroness) {
+            baroness.getEntityData().set(VampireBaroness.VAMPIRE_NAME, baroness.getRandomName());
+        }
+
+        else if (vampireBase instanceof VampireBaron baron) {
+            baron.getEntityData().set(VampireBase.VAMPIRE_NAME, baron.getRandomName());
+        }
+    }
+
+    @SubscribeEvent
     public void onVampireDeath(LivingDeathEvent event) {
 
         if (event.getSource().getDirectEntity() instanceof Player player) {
@@ -96,6 +120,7 @@ public class VampireEvents {
                     checkCallForReinforcements(level, baroness, (location) -> {
                         VampireBaroness newBaroness = new VampireBaroness(location);
                         location.level.addFreshEntity(newBaroness);
+                        setRandomVampireName(newBaroness);
                         return newBaroness;
                     });
                 }
@@ -107,6 +132,7 @@ public class VampireEvents {
                     checkCallForReinforcements(level, baron, (location) -> {
                         VampireBaron newBaron = new VampireBaron(location);
                         location.level.addFreshEntity(newBaron);
+                        setRandomVampireName(newBaron);
                         return newBaron;
                     });
                 }

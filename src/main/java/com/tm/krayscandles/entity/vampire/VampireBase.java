@@ -34,7 +34,6 @@ public abstract class VampireBase extends Monster {
      */
     public VampireBase(EntityType<? extends Monster> type, Level level) {
         super(type, level);
-        getEntityData().set(VAMPIRE_NAME, getRandomName());
     }
 
     /**
@@ -45,7 +44,6 @@ public abstract class VampireBase extends Monster {
     public VampireBase(EntityType<? extends Monster> type, Location location) {
         super(type, location.level);
         setPos(location.x, location.y, location.z);
-        getEntityData().set(VAMPIRE_NAME, getRandomName());
     }
 
     public abstract String getRankPrefix();
@@ -94,12 +92,12 @@ public abstract class VampireBase extends Monster {
 
     @Override
     public boolean isMaxGroupSizeReached(int size) {
-        return size >= 1;
+        return size >= 4;
     }
 
     @Override
     public int getMaxSpawnClusterSize() {
-        return 1;
+        return 4;
     }
 
     @Override
@@ -135,11 +133,6 @@ public abstract class VampireBase extends Monster {
     @Override
     protected int getExperienceReward(Player player) {
         return 40;
-    }
-
-    @Override
-    public boolean removeWhenFarAway(double distance) {
-        return false;
     }
 
     @Override

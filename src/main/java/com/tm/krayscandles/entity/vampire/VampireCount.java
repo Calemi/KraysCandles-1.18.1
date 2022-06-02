@@ -72,6 +72,11 @@ public class VampireCount extends VampireBase {
     }
 
     @Override
+    public boolean removeWhenFarAway(double distance) {
+        return false;
+    }
+
+    @Override
     protected SoundEvent getAmbientSound() {
         return InitSounds.VAMPIRE_COUNT_AMBIENT.get();
     }
