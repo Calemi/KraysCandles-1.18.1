@@ -19,7 +19,7 @@ public class RecipeEvents {
             if (!ItemBase.hasTag(event.getCrafting().getItem(), "iron_press")) {
 
                 if (ItemBase.hasTag(stackInSlot.getItem(), "iron_press")) {
-                    ItemHelper.spawnStackAtEntity(event.getEntity().getLevel(), event.getEntity(), new ItemStack(InitItems.IRON_PRESS.get()));
+                    //ItemHelper.spawnStackAtEntity(event.getEntity().getLevel(), event.getEntity(), new ItemStack(InitItems.IRON_PRESS.get()));
                     return;
                 }
             }

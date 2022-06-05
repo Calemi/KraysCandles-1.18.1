@@ -211,7 +211,7 @@ public abstract class WraithBase extends Monster {
         AIR ("air", InitParticles.SOUL_FLAME_AIR.get()),
         EXPLOSION ("explosion", InitParticles.SOUL_FLAME_EXPLOSION.get()),
         MAGIC ("magic", InitParticles.SOUL_FLAME_MAGIC.get()),
-        MOB ("monsters", InitParticles.SOUL_FLAME_MOB.get());
+        MOB ("mob", InitParticles.SOUL_FLAME_MOB.get());
 
         private final String nameKey;
         private final SimpleParticleType particle;

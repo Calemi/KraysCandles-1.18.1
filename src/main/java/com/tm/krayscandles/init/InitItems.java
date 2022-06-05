@@ -67,10 +67,10 @@ public class InitItems {
     public static final RegistryObject<Item> SOUL_ESSENCE_BLESSED =          regItem("soul_essence_blessed", () -> new ItemRitual(RitualRecipes.ESSENCE_BLESSED));
 
     public static final RegistryObject<Item> IRON_PRESS =                    regItem("iron_press", () -> new ItemBase().setTag("iron_press"));
-    public static final RegistryObject<Item> IRON_PRESS_FULL =               regItem("iron_press_full", () -> new ItemBase().setTag("iron_press"));
-    public static final RegistryObject<Item> IRON_PRESS_BLESSED =            regItem("iron_press_blessed", () -> new ItemBase().setTag("iron_press"));
-    public static final RegistryObject<Item> IRON_PRESS_CURSED =             regItem("iron_press_cursed", () -> new ItemBase().setTag("iron_press"));
-    public static final RegistryObject<Item> IRON_PRESS_PURGED =             regItem("iron_press_purged", () -> new ItemBase().setTag("iron_press"));
+    public static final RegistryObject<Item> IRON_PRESS_FULL =               regItem("iron_press_full", () -> new ItemBase(new Item.Properties().craftRemainder(IRON_PRESS.get())).setTag("iron_press"));
+    public static final RegistryObject<Item> IRON_PRESS_BLESSED =            regItem("iron_press_blessed", () -> new ItemBase(new Item.Properties().craftRemainder(IRON_PRESS.get())).setTag("iron_press"));
+    public static final RegistryObject<Item> IRON_PRESS_CURSED =             regItem("iron_press_cursed", () -> new ItemBase(new Item.Properties().craftRemainder(IRON_PRESS.get())).setTag("iron_press"));
+    public static final RegistryObject<Item> IRON_PRESS_PURGED =             regItem("iron_press_purged", () -> new ItemBase(new Item.Properties().craftRemainder(IRON_PRESS.get())).setTag("iron_press"));
 
     public static final RegistryObject<Item> WAND_HILT =                     regItem("wand_hilt", ItemBase::new);
     public static final RegistryObject<Item> SCALPEL_HILT =                  regItem("scalpel_hilt", ItemBase::new);
